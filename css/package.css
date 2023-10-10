@@ -1,0 +1,29 @@
+.star-rating {
+    display: inline-block;
+    font-size: 0;
+}
+
+.star-rating input {
+    display: none; /* Hide the radio buttons */
+}
+
+.star-rating label {
+    font-size: 30px;
+    padding: 5px;
+    cursor: pointer;
+    color: gold;
+}
+
+.star-rating label::before {
+    content: "\2605"; /* Unicode character for a star */
+}
+.prePage{
+    text-decoration: none;
+    color: black;
+}
+
+.prePage:hover{
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
