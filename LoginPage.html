@@ -26,17 +26,24 @@
 
                 <form>
                     <div class="align-content-center">
-                        <img class="rounded mx-auto d-block" src="/assents/img/logo.png" width="250"
+                        <img class="rounded mx-auto d-block" src="/img/logo.png" width="250"
                              style="margin-bottom: 50px">
                     </div>
+                    <div class="form-group">
+                        <select class="form-control form-control-lg mb-4" id="role_Type" name="role_Type">
+                            <option value="RoleType">Choose Role</option>
+                            <option value="admin">Admin</option>
+                            <option value="Registered_User">Registered User</option>
+                            <option value="User">User</option>
+                        </select>
+                    </div>
                     <div class="form-outline mb-4">
-                        <input type="email" id="form3Example3" class="form-control form-control-lg"
-                               placeholder="Enter a valid email address"/>
-
+                        <input type="text" id="Username" class="form-control form-control-lg"
+                               placeholder="Username"/>
                     </div>
                     <div class="form-outline mb-3">
                         <input type="password" id="form3Example4" class="form-control form-control-lg"
-                               placeholder="Enter password"/>
+                               placeholder="Password"/>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="form-check mb-0">

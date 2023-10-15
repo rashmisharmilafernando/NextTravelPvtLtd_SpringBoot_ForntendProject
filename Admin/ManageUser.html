@@ -28,11 +28,11 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="../Admin/ManageHotel.html" id="hotel"><span>Hotel</span></a>
         </li>
-        <li class="nav-item"> <a class="nav-link collapsed" href="../Admin/ManageVehicle.html" id="vehicle">
+        <li class="nav-item"><a class="nav-link collapsed" href="../Admin/ManageVehicle.html" id="vehicle">
             <span>Vehicle</span></a></li>
         <li class="nav-item"><a class="nav-link collapsed" href="../Admin/ManageUser.html" id="customer">
             <span>Customer</span></a></li>
-        <li class="nav-item"> <a class="nav-link collapsed" href="../Admin/ManageGiude.html" id="guide">
+        <li class="nav-item"><a class="nav-link collapsed" href="../Admin/ManageGiude.html" id="guide">
             <span>Guide</span></a></li>
         <li class="nav-item"><a class="nav-link collapsed" href="login.html"><span>Setting</span></a></li>
         <li class="nav-item"><a class="nav-link collapsed" href="login.html"><span>LogOut</span></a></li>
@@ -46,54 +46,79 @@
     <section class="section dashboard">
         <div class="card-body">
             <form>
-                <div class="row">
-                    <div class="col">
-                        <span class="span m-1">User ID</span>
+                <div class="row card-body"
+                     style="background-color: white;padding-top: 20px;box-shadow: 10px 10px 5px -5px rgba(20,10,10,0.15);">
+                    <div class="row" style="margin-bottom: 30px">
+                        <div class="col input-group">
+                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                                   aria-describedby="search-addon"/>
+                            <button type="button" class="btn btn-outline-dark">search</button>
+                        </div>
+                        <div class="col" style="margin-left: 400px">
+                            <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
+                                    formaction="driverForm">Save
+                            </button>
+                            <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
+                            </button>
+                            <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="span m-1">User ID</span>
                             <input class="form-control mt-1" id="userId" readonly
                                    name="user_Id"
                                    placeholder="User ID" type="text">
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Name</span>
+                            <input type="text" class="form-control" placeholder="Kamal Perera">
+                            <span class="control-error"></span>
+                        </div>
                     </div>
-                    <div class="col">
-                        <span class="span m-1">Name</span>
-                        <input type="text" class="form-control" placeholder="Kamal Perera">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <span class="span m-1">NIC</span>
+                            <input type="text" class="form-control" placeholder="XXXXXXXXXXXX/V">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">NIC</span>
+                            <input class="form-control" id="front_View" type="file" name="front_View">
+                            <span class="control-error"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <span class="span m-1">NIC</span>
-                        <input type="text" class="form-control" placeholder="XXXXXXXXXXXX/V">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <span class="span m-1">Age</span>
+                            <input type="text" class="form-control" placeholder="20">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Gender</span>
+                            <select class="form-control" id="Gender">
+                                <option value="">Select Gender</option>
+                                <option value="passengers4">Female</option>
+                                <option value="passengers5">Male</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col">
-                        <span class="span m-1">NIC</span>
-                        <input class="form-control" id="front_View" type="file" name="front_View">
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <span class="span m-1">Age</span>
-                        <input type="text" class="form-control" placeholder="20">
-                    </div>
-                    <div class="col">
-                        <span class="span m-1">Gender</span>
-                        <select class="form-control" id="Gender">
-                            <option value="">Select Gender</option>
-                            <option value="passengers4">Female</option>
-                            <option value="passengers5">Male</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <span class="span m-1">Email</span>
-                        <input type="text" class="form-control" placeholder="kamal@gmail.com">
-                    </div>
-                    <div class="col">
-                        <span class="span m-1">Contact Number</span>
-                        <input type="text" class="form-control" placeholder="xxx-xxx-xxxxx">
-                    </div>
-                    <div class="col">
-                        <span class="span m-1">Address</span>
-                        <input type="text" class="form-control" placeholder="No 19/A Main Rd,Main CIty">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <span class="span m-1">Email</span>
+                            <input type="text" class="form-control" placeholder="kamal@gmail.com">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Contact Number</span>
+                            <input type="text" class="form-control" placeholder="xxx-xxx-xxxxx">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Address</span>
+                            <input type="text" class="form-control" placeholder="No 19/A Main Rd,Main CIty">
+                            <span class="control-error"></span>
+                        </div>
                     </div>
                 </div>
             </form>
