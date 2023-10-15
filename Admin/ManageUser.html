@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link href="/lib/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+
+</head>
+<body>
+
+<header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+        <header>
+            <img src="/img/logo.png" width="100">
+        </header>
+    </div>
+</header>
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+            <a class="nav-link " href="../Admin/AdminDashboard.html"><span>Dashboard</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../Admin/ManagePackage.html" id="package"><span>Package</span> </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../Admin/ManageHotel.html" id="hotel"><span>Hotel</span></a>
+        </li>
+        <li class="nav-item"> <a class="nav-link collapsed" href="../Admin/ManageVehicle.html" id="vehicle">
+            <span>Vehicle</span></a></li>
+        <li class="nav-item"><a class="nav-link collapsed" href="../Admin/ManageUser.html" id="customer">
+            <span>Customer</span></a></li>
+        <li class="nav-item"> <a class="nav-link collapsed" href="../Admin/ManageGiude.html" id="guide">
+            <span>Guide</span></a></li>
+        <li class="nav-item"><a class="nav-link collapsed" href="login.html"><span>Setting</span></a></li>
+        <li class="nav-item"><a class="nav-link collapsed" href="login.html"><span>LogOut</span></a></li>
+    </ul>
+</aside>
+<main id="main" class="main">
+    <div class="pageTitle" id="pageOne">
+        <h1>User Details</h1>
+    </div>
+    <!-- End Page Title -->
+    <section class="section dashboard">
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <span class="span m-1">User ID</span>
+                            <input class="form-control mt-1" id="userId" readonly
+                                   name="user_Id"
+                                   placeholder="User ID" type="text">
+                    </div>
+                    <div class="col">
+                        <span class="span m-1">Name</span>
+                        <input type="text" class="form-control" placeholder="Kamal Perera">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <span class="span m-1">NIC</span>
+                        <input type="text" class="form-control" placeholder="XXXXXXXXXXXX/V">
+                    </div>
+                    <div class="col">
+                        <span class="span m-1">NIC</span>
+                        <input class="form-control" id="front_View" type="file" name="front_View">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <span class="span m-1">Age</span>
+                        <input type="text" class="form-control" placeholder="20">
+                    </div>
+                    <div class="col">
+                        <span class="span m-1">Gender</span>
+                        <select class="form-control" id="Gender">
+                            <option value="">Select Gender</option>
+                            <option value="passengers4">Female</option>
+                            <option value="passengers5">Male</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <span class="span m-1">Email</span>
+                        <input type="text" class="form-control" placeholder="kamal@gmail.com">
+                    </div>
+                    <div class="col">
+                        <span class="span m-1">Contact Number</span>
+                        <input type="text" class="form-control" placeholder="xxx-xxx-xxxxx">
+                    </div>
+                    <div class="col">
+                        <span class="span m-1">Address</span>
+                        <input type="text" class="form-control" placeholder="No 19/A Main Rd,Main CIty">
+                    </div>
+                </div>
+            </form>
+            <div class="row mt-2">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">NIC</th>
+                        <th scope="col">Number</th>
+                        <th scope="col">Address</th>
+                    </tr>
+                    </thead>
+                    <tbody id="userTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
