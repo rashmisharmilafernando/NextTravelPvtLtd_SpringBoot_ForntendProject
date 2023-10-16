@@ -21,19 +21,27 @@
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-            <a class="nav-link " href="../Admin/UserDashboard.html"><span>Dashboard</span></a>
+            <a class="nav-link " href="../admin/AdminDashboard.html"><span>Dashboard</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="../Admin/ManageCustomer.html" id="package"><span>Customer</span> </a>
+            <a class="nav-link collapsed" href="../admin/ManagePackage.html" id="package"><span>Package</span> </a>
         </li>
-        <li style="margin-top: 350px" class="nav-item"><a class="nav-link collapsed"
-                                                          href="login.html"><span>Setting</span></a></li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../admin/ManageHotel.html" id="hotel"><span>Hotel</span></a>
+        </li>
+        <li class="nav-item"> <a class="nav-link collapsed" href="../admin/ManageVehicle.html" id="vehicle">
+            <span>Vehicle</span></a></li>
+        <li class="nav-item"><a class="nav-link collapsed" href="../admin/ManageUser.html" id="customer">
+            <span>User</span></a></li>
+        <li class="nav-item"> <a class="nav-link collapsed" href="../admin/ManageGiude.html" id="guide">
+            <span>Guide</span></a></li>
+        <li style="margin-top: 165px" class="nav-item"><a class="nav-link collapsed" href="../admin/Reports.html"><span>Setting</span></a></li>
         <li class="nav-item"><a class="nav-link collapsed" href="login.html"><span>LogOut</span></a></li>
     </ul>
 </aside>
 <main id="main" class="main">
     <div class="pageTitle" id="pageOne">
-        <h1>Admin Dashboard</h1>
+        <h1>User Dashboard</h1>
     </div>
     <!-- End Page Title -->
     <section class="section dashboard">
@@ -80,7 +88,40 @@
                 </div>
             </div>
         </div>
+        </div>
         <div class="row">
+            <div class="col">
+                <div class="card info-card car-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Admin</span></h5>
+                        <div class="d-flex align-items-center">
+                            <img src="../img/admin.png" width="50px">
+                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="bi bi-car-front-fill"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h6 id="AdminCount">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card info-card driver-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Users</h5>
+                        <div class="d-flex align-items-center">
+                            <img src="../img/user.png" width="50px">
+                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h6 id="UsersCount">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col">
                 <div class="card info-card driver-card">
                     <div class="card-body">
@@ -97,6 +138,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col">
                 <div class="card info-card car-card">
                     <div class="card-body">
@@ -130,6 +173,9 @@
                     </div>
 
                 </div>
+            </div>
+            <div class="col">
+
             </div>
         </div>
     </section>

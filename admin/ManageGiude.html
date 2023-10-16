@@ -20,27 +20,28 @@
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-            <a class="nav-link " href="../Admin/AdminDashboard.html"><span>Dashboard</span></a>
+            <a class="nav-link " href="../admin/AdminDashboard.html"><span>Dashboard</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="../Admin/ManagePackage.html" id="package"><span>Package</span> </a>
+            <a class="nav-link collapsed" href="../admin/ManagePackage.html" id="package"><span>Package</span> </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="../Admin/ManageHotel.html" id="hotel"><span>Hotel</span></a>
+            <a class="nav-link collapsed" href="../admin/ManageHotel.html" id="hotel"><span>Hotel</span></a>
         </li>
-        <li class="nav-item"> <a class="nav-link collapsed" href="../Admin/ManageVehicle.html" id="vehicle">
+        <li class="nav-item"> <a class="nav-link collapsed" href="../admin/ManageVehicle.html" id="vehicle">
             <span>Vehicle</span></a></li>
-        <li class="nav-item"><a class="nav-link collapsed" href="ManageUser.html" id="customer">
+        <li class="nav-item"><a class="nav-link collapsed" href="../admin/ManageUser.html" id="customer">
             <span>User</span></a></li>
-        <li class="nav-item"> <a class="nav-link collapsed" href="../Admin/ManageGiude.html" id="guide">
+        <li class="nav-item"> <a class="nav-link collapsed" href="../admin/ManageGiude.html" id="guide">
             <span>Guide</span></a></li>
-        <li style="margin-top: 165px" class="nav-item"><a class="nav-link collapsed" href="login.html"><span>Setting</span></a></li>
+        <li style="margin-top: 165px" class="nav-item"><a class="nav-link collapsed" href="../admin/Reports.html"><span>Setting</span></a></li>
+
         <li class="nav-item"><a class="nav-link collapsed" href="login.html"><span>LogOut</span></a></li>
     </ul>
 </aside>
 <main id="main" class="main">
     <div class="pageTitle" id="pageOne">
-        <h1>User Details</h1>
+        <h1>Guide Details</h1>
     </div>
     <!-- End Page Title -->
     <section class="section dashboard">
@@ -63,34 +64,22 @@
                             <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col">
-                            <span class="span m-1">User ID</span>
-                            <input class="form-control mt-1" id="userId" readonly
+                            <span class="span m-1">Guide ID</span>
+                            <input class="form-control" id="userId" readonly
                                    name="user_Id"
-                                   placeholder="User_001" type="text">
+                                   placeholder="Guide_001" type="text">
+
                         </div>
                         <div class="col">
                             <span class="span m-1">Name</span>
                             <input type="text" class="form-control" placeholder="">
                             <span class="control-error"></span>
                         </div>
-                    </div>
-                    <div class="row mt-2">
                         <div class="col">
-                            <span class="span m-1">NIC</span>
-                            <input type="text" class="form-control" placeholder=" ">
-                            <span class="control-error"></span>
-                        </div>
-                        <div class="col">
-                            <span class="span m-1">NIC</span>
-                            <input class="form-control" id="front_View" type="file" name="front_View">
-                            <span class="control-error"></span>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col">
-                            <span class="span m-1">Age</span>
+                            <span class="span m-1">Address</span>
                             <input type="text" class="form-control" placeholder="">
                             <span class="control-error"></span>
                         </div>
@@ -105,22 +94,40 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <span class="span m-1">Email</span>
-                            <input type="text" class="form-control" placeholder=" ">
+                            <span class="span m-1">Number</span>
+                            <input type="text" class="form-control" placeholder="">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
-                            <span class="span m-1">Contact Number</span>
-                            <input type="text" class="form-control" placeholder=" ">
+                            <span class="span m-1">Experience</span>
+                            <input type="text" class="form-control" placeholder="">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
-                            <span class="span m-1">Address</span>
-                            <input type="text" class="form-control" placeholder=" ">
+                            <span class="span m-1">Man-day Value</span>
+                            <input type="text" class="form-control" placeholder="">
+                            <span class="control-error"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+
+                        <div class="col">
+                            <span class="span m-1">Image</span>
+                            <input class="form-control" id="Guide_Image" type="file" name="Guide_Image">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">NIC</span>
+                            <input class="form-control" id="Nic_Image" type="file" name="Nic_Image">
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Guide ID</span>
+                            <input class="form-control" id="Guide_ID" type="file" name="Guide_ID">
                             <span class="control-error"></span>
                         </div>
                     </div>
                 </div>
+
             </form>
             <div class="row mt-2">
                 <table class="table">
@@ -134,7 +141,7 @@
                         <th scope="col">Contact Number</th>
                     </tr>
                     </thead>
-                    <tbody id="userTable"></tbody>
+                    <tbody id="giudeTable"></tbody>
                 </table>
             </div>
         </div>
