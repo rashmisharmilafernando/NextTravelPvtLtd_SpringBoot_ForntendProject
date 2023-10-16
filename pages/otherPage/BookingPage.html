@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <link rel="stylesheet" href="../../assets/css/booking.css">
+    <link rel="stylesheet" href="../../assets/lib/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll"
+     style="background-image: none; background-color: rgb(241,165,1)">
+    <div class="container">
+        <a class="navbar-brand" href="/index.html"><img src="../../assets/img/logo.png" height="24" width="110"
+                                                        alt="logo"></a>
+    </div>
+</nav>
+<main class="main">
+    <section class="vh-100" style="padding: 100px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a class="prePage" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active " aria-current="page">Booking</li>
+            </ol>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mt-lg-0 mt-3 mb-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="h5">Reservation Details</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <span class="span m-1">Package</span>
+                                        <select class="form-control" id="Package">
+                                            <option value="regular">Regular</option>
+                                            <option value="mid-level">Mid-Level</option>
+                                            <option value="luxury">Luxury</option>
+                                            <option value="SuperLuxury">Super Luxury</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Total headcount</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="headcount">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Package Value</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="value">
+                                    </div>
+
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <span class="span m-1">Start Date</span>
+                                        <input class="form-control" type="date" id="startDate"
+                                               name="trip-start"
+                                               value="YYYY-MM-DD" min="2023-10-01" max="2030-12-31"/>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">End Date</span>
+                                        <input class="form-control" type="date" id="endDate"
+                                               name="trip-start"
+                                               value="YYYY-MM-DD" min="2023-10-01" max="2030-12-31"/>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">No of Adults</span>
+                                        <input type="number" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">No of Children</span>
+                                        <input type="number" class="form-control" placeholder="" >
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Guide</span>
+                                        <select class="form-control" id="guide">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mt-lg-0 mt-6 mb-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="h5">Hotel Details</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row ">
+                                    <div class="col">
+                                        <span class="span m-1">Hotel</span>
+                                        <select class="form-control" id="hotel">
+                                            <option value="">Select Hotel</option>
+                                            <option value="passengers4">Blue Water Hotel Wadduwa</option>
+                                            <option value="passengers5">Anantara Hotel</option>
+                                            <option value="passengers5">Light House Hotel</option>
+                                            <option value="passengers5">Jetwing - Negombo</option>
+                                            <option value="passengers5">Kingsbury Hotel</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Pet Status</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="PetStatus">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Star Status</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="StarStatus">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-body">
+
+                            <iframe id="map-container-google-1" class="z-depth-1-half map-container"
+                                    src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0"
+                                    style="border:0;height: 300px;width: 500px" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="h5">Vehicle Details</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="span m-1">Vehicle</span>
+                                        <select class="form-control" id="vehicle">
+                                            <option value="">Select vehicle</option>
+                                            <option value="v1">Audi</option>
+                                            <option value="v2">Audi</option>
+                                            <option value="v3">Audi</option>
+                                            <option value="v4">Audi</option>
+                                            <option value="v5">Audi</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Vehicle Type</span>
+                                        <input type="text" class="form-control" readonly name="VehicleType">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col">
+                                        <span class="span m-1">Fuel Status</span>
+                                        <input type="text" class="form-control" placeholder=""  readonly name="FuelStatus">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Hybrid</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="HybridStatus">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col">
+                                        <span class="span m-1">fuel Usage(km/l)</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="fuelUsage">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Seat Capacity</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="SeatCapacity">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col">
+                                        <span class="span m-1">Transmission</span>
+                                        <input type="text" class="form-control" placeholder="Last name" readonly name="HybridStatus">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Driver Name</span>
+                                        <input type="text" class="form-control" placeholder="Last name" readonly name="HybridStatus">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Driver's Contact No</span>
+                                        <input type="text" class="form-control" placeholder="Last name "readonly name="number">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row mt-2">
+                                <div class="col">
+                                 <div class="card-img">
+                                     <img class="card-img-top"
+                                          src="https://cdn2.rcstatic.com/images/car_images/web/suzuki/alto_lrg.jpg"
+                                          alt="Card image cap">
+                                 </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card-img">
+                                        <img class="card-img-top"
+                                             src="https://cdn2.rcstatic.com/images/car_images/web/suzuki/alto_lrg.jpg"
+                                             alt="Card image cap">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card-img">
+                                        <img class="card-img-top"
+                                             src="https://cdn2.rcstatic.com/images/car_images/web/suzuki/alto_lrg.jpg"
+                                             alt="Card image cap">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <a href="Payment.html" class="btn btn-dark">Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+<script src="lib/jquery-3.6.4.min.js"></script>
+<script>
+    $(function () {
+        $('#datepicker').datepicker();
+    });
+</script>
+</html>

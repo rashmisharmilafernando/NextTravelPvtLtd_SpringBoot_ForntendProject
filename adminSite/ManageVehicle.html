@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Next Travel</title>
+    <link href="/assets/lib/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/admin.css" rel="stylesheet">
+</head>
+<body>
+<!--Start Header-->
+<header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+        <!--Business Logo-->
+        <header>
+            <img src="/assets/img/logo.png" width="100" alt="logo">
+        </header>
+    </div>
+</header>
+<!--End Header-->
+
+<!--Start Sidebar-->
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <!--Dashboard-->
+        <li class="nav-item">
+            <a class="nav-link " href="../adminSite/AdminDashboard.html"><span>Dashboard</span></a>
+        </li>
+        <!--Package-->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../adminSite/ManagePackage.html" id="package"><span>Package</span> </a>
+        </li>
+        <!--Hotel-->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../adminSite/ManageHotel.html" id="hotel"><span>Hotel</span></a>
+        </li>
+        <!--Vehicle-->
+        <li class="nav-item"> <a class="nav-link collapsed" href="../adminSite/ManageVehicle.html" id="vehicle">
+            <span>Vehicle</span></a></li>
+        <!--User-->
+        <li class="nav-item"><a class="nav-link collapsed" href="../adminSite/ManageUser.html" id="customer">
+            <span>User</span></a></li>
+        <!--Guide-->
+        <li class="nav-item"> <a class="nav-link collapsed" href="../adminSite/ManageGuide.html" id="guide">
+            <span>Guide</span></a></li>
+        <!--Report-->
+        <li class="nav-item"><a class="nav-link collapsed" href="../adminSite/Reports.html"><span>Report</span></a></li>
+        <!--Logout-->
+        <li style="margin-top: 165px" class="nav-item"><a class="nav-link collapsed" href="../pages/otherPage/LoginPage.html"><span>LogOut</span></a></li>
+    </ul>
+</aside>
+<main id="main" class="main">
+    <div class="pageTitle" id="pageOne">
+        <h1>Vehicle</h1>
+    </div>
+    <!-- End Page Title -->
+    <section class="section dashboard">
+        <div class="card-body">
+            <form>
+                <div class="row card-body"
+                     style="background-color: white;padding-top: 20px;box-shadow: 10px 10px 5px -5px rgba(20,10,10,0.15);">
+                    <div class="row" style="margin-bottom: 30px">
+                        <div class="col input-group">
+                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                                   aria-describedby="search-addon"/>
+                            <button type="button" class="btn btn-dark">search</button>
+                        </div>
+                        <div class="col" style="margin-left: 400px">
+                            <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
+                                    formaction="driverForm">Save
+                            </button>
+                            <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
+                            </button>
+                            <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="span m-1">Vehicle ID</span>
+                            <input class="form-control" id="userId" readonly
+                                   name="user_Id"
+                                   placeholder="Vehicle ID" type="text">
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Vehicle brand</span>
+                            <input type="text" class="form-control" placeholder=" ">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Category</span>
+                            <select class="form-control" id="rate">
+                                <option value="">Select Category</option>
+                                <option value="Economy">Economy</option>
+                                <option value="Mid-Range">Mid-Range</option>
+                                <option value="Luxury">Luxury</option>
+                                <option value="SuperLuxury">Super Luxury</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <span class="span m-1">Fuel type</span>
+                            <select class="form-control" id="fueltype">
+                                <option value="">Select Fuel typ</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Petrol">Petrol</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Hybrid Status </span>
+                            <select class="form-control" id="hybridStatus">
+                                <option value="">Select Status</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Fuel Usage(KM/L)</span>
+                            <input type="text" class="form-control" placeholder="">
+                            <span class="control-error"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <span class="span m-1">Seat Capacity</span>
+                            <input type="text" class="form-control" placeholder="">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Vehicle type</span>
+                            <select class="form-control" id="vehicletype">
+                                <option value="">Select type</option>
+                                <option value="Car">Car</option>
+                                <option value="Van">Van</option>
+                                <option value="SUV">SUV</option>
+                                <option value="Bus">Bus</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Transmission type</span>
+                            <select class="form-control" id="Transmissiontype">
+                                <option value="">Select type</option>
+                                <option value="auto">Auto</option>
+                                <option value="manual">Manual</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <span class="span m-1">Driver Name</span>
+                            <input class="form-control" id="drivername" type="text" name="driverName">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Contact No</span>
+                            <input class="form-control" id="contactNumber" type="text" name="contactNumber">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">license(Font View)</span>
+                            <input class="form-control" id="Font_View" type="file" name="Font_View">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">license(Rear View)</span>
+                            <input class="form-control" id="Rear_View" type="file" name="Rear_View">
+                            <span class="control-error"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <span class="span m-1">Rear View</span>
+                            <input class="form-control" id="vehicleRear_View" type="file" name="vehicleRear_View">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Font View</span>
+                            <input class="form-control" id="vehicleFont_View" type="file" name="vehicleFont_View">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Side View</span>
+                            <input class="form-control" id="vehicleSide_View" type="file" name="vehicleSide_View">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col">
+                            <span class="span m-1">Other Side View</span>
+                            <input class="form-control" id="vehicleOtherSide_View" type="file" name="vehicleOtherSide_View">
+                            <span class="control-error"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+            </form>
+            <div class="row mt-2">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">brand</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Vehicle type</th>
+                        <th scope="col">Transmission type</th>
+                        <th scope="col">Fuel type</th>
+                        <th scope="col">Driver Name</th>
+                        <th scope="col">Contact number</th>
+                    </tr>
+                    </thead>
+                    <tbody id=vehicleTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
