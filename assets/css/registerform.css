@@ -84,7 +84,10 @@
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
+.control-error{
+    color: #ce1212;
+    font-size: 1em;
+}
 @-webkit-keyframes fadein {
     from {
         bottom: 0;
