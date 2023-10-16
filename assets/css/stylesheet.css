@@ -267,7 +267,7 @@ tfoot tr:nth-child(2) th {
 #home{
     width: 100%;
     height: 100%;
-    background-image: url("../img/bgimage.png");
+    background-image: url("assets/img/bgimage.png");
     background-size: cover;
 }
 #aboutpage{
