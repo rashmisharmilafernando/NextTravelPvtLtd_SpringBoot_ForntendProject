@@ -104,7 +104,7 @@ function loadAllRegisterUser(){
                 $("#registerUserTable").append(row)
             }
             autoGenerateid();
-
+            checkValidity(registerUserValidation);
         }
     })
 }

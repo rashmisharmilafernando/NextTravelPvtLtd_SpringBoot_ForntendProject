@@ -19,7 +19,7 @@ function setTextError(txtField, error) {
         defaultText(txtField, "");
     } else {
         txtField.css('border', '2px solid red');
-        txtField.parent().children('span').text(error);
+      //  txtField.parent().children('span').text(error);
     }
 }
 
@@ -28,13 +28,13 @@ function textSuccess(txtField, error) {
         defaultText(txtField, "");
     } else {
         txtField.css('border', '2px solid green');
-        txtField.parent().children('span').text(error);
+       // txtField.parent().children('span').text(error);
     }
 }
 
 function defaultText(txtField, error) {
     txtField.css("border", "1px solid #ced4da");
-    txtField.parent().children('span').text(error);
+  //  txtField.parent().children('span').text(error);
 }
 
 function focusText(txtField) {
