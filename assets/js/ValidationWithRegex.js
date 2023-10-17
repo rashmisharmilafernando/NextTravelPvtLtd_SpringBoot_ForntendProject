@@ -1,4 +1,4 @@
-//Customer
+/*--------------Customer------------------*/
 
 const reguserName=/^[A-z ]{3,20}$/;
 const reguserEmail=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -40,7 +40,8 @@ $("#regname,#regEmail,#regNIC,#regUsername,#regPassword,#regAddress").on('blur',
     checkValidity(registerUserValidation);
 });
 
-//hotel
+/*--------------Hotel------------------*/
+
 const hotelName = /^[A-Za-z ]{3,20}$/;
 const hotelEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const hotelContactNumber1 = /^\+\d{1,3}-[2-9]\d{2}-\d{4}$/;
@@ -48,6 +49,7 @@ const hotelContactNumber2 = /^\+\d{1,3}-[2-9]\d{2}-\d{4}$/;
 const hotelfee = /^\d{3,20}$/;
 
 let hotelValidation = [];
+
 hotelValidation.push({
     reg: hotelName,
     field: $('#hName')
@@ -77,3 +79,51 @@ $("#hName,#hEmail,#hNumber1,#hNumber2,#hfee").on('keyup', function (event) {
 $("#hName,#hEmail,#hNumber1,#hNumber2,#hfee").on('blur', function (event) {
     checkValidity(hotelValidation);
 });
+
+/*--------------User------------------*/
+
+const userName = /^[A-z ]{3,20}$/;
+const usernic = /^([0-9]{12}|[0-9V]{10})$/;
+const userAge = /^\d+$/;
+const userEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const usernumber = /^\+\d{1,3}-[2-9]\d{2}-\d{4}$/;
+const userAddress = /^[A-z0-9/ ]{4,30}$/;
+
+let userValidation = [];
+userValidation.push({
+    reg: userName,
+    field: $('#userName')
+});
+userValidation.push({
+    reg: usernic,
+    field: $('#userNic')
+});
+userValidation.push({
+    reg: userAge,
+    field: $('#userAge')
+});
+userValidation.push({
+    reg: userEmail,
+    field: $('#userEmail')
+});
+userValidation.push({
+    reg: usernumber,
+    field: $('#userNumber')
+});
+userValidation.push({
+    reg: userAddress,
+    field: $('#userAddress')
+});
+
+
+$("#userName,#userNic,#userAge,#userEmail,#userNumber,#userAddress").on('keyup', function (event) {
+    checkValidity(userValidation);
+});
+
+$("#userName,#userNic,#userAge,#userEmail,#userNumber,#userAddress").on('blur', function (event) {
+    checkValidity(userValidation);
+});
+
+
+/*--------Guide-------------*/
+

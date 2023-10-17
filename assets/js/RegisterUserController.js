@@ -35,7 +35,7 @@ $("#btnSaveRegUser").click(function (){
 
 //search Customer form ManageCustomer.html
 $("#searchRegUser").on("keypress",function (event){
-    if (event.which ===20){
+    if (event.which ===13){
         var searchRegisterUser=$("#searchRegUser").val();
         $("#registerUserTable").empty();
         $.ajax({
@@ -44,7 +44,7 @@ $("#searchRegUser").on("keypress",function (event){
             contentType:"application/json",
             dataType:"json",
             success:function (res){
-                $("#RegUserId").val(res.RegutserId);
+                $("#RegUserId").val(res.Id);
                 $("#regname").val(res.Regutsername);
                 $("#regEmail").val(res.RegutserEmail);
                 $("#regPassword").val(res.RegutserPassword);
@@ -52,7 +52,7 @@ $("#searchRegUser").on("keypress",function (event){
                 $("#regNIC").val(res.Regutsernic);
                 $("#regAddress").val(res.Regutseraddrss);
 
-                let row ="<tr><td>" + res.RegutserId+"</td>" +
+                let row ="<tr><td>" + res.Id+"</td>" +
                     "<td>" + res.Regutsername + "</td>" +
                     "<td>" + res.RegutserEmail+"</td>"+
                     "<td>" + res.Regutsernic+"</td>"+

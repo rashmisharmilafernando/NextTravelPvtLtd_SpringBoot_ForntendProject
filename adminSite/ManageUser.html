@@ -62,16 +62,16 @@
                     <div class="row" style="margin-bottom: 30px">
                         <div class="col input-group">
                             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                                   aria-describedby="search-addon"/>
+                                   aria-describedby="search-addon" id="searchuserbtn"/>
                             <button type="button" class="btn btn-dark">search</button>
                         </div>
                         <div class="col" style="margin-left: 400px">
-                            <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
+                            <button class="btn btn-success me-md-1" id="saveuserbtn" type="button"
                                     formaction="driverForm">Save
                             </button>
-                            <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
+                            <button type="button" class="btn btn-warning me-md-1" id="updateuserbtn">Update
                             </button>
-                            <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
+                            <button type="button" class="btn btn-danger" id="deleteuserbtn">Delete</button>
                         </div>
                     </div>
                     <div class="row">
@@ -79,33 +79,33 @@
                             <span class="span m-1">User ID</span>
                             <input class="form-control mt-1" id="userId" readonly
                                    name="user_Id"
-                                   placeholder="User_001" type="text">
+                                   placeholder="" type="text">
                         </div>
                         <div class="col">
                             <span class="span m-1">Name</span>
-                            <input type="text" class="form-control" placeholder="">
-                            <span class="control-error"></span>
+                            <input type="text" class="form-control" placeholder="" id="userName" name="user_name">
+
                         </div>
                         <div class="col">
                             <span class="span m-1">NIC</span>
-                            <input type="text" class="form-control" placeholder=" ">
-                            <span class="control-error"></span>
+                            <input type="text" class="form-control" placeholder=" " id="userNic" name="user_nic">
+
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">NIC</span>
-                            <input class="form-control" id="front_View" type="file" name="front_View">
-                            <span class="control-error"></span>
+                            <input class="form-control" id="userNicImage" type="file" name="user_nic_Image">
+
                         </div>
                         <div class="col">
                             <span class="span m-1">Age</span>
-                            <input type="text" class="form-control" placeholder="">
-                            <span class="control-error"></span>
+                            <input type="text" class="form-control" placeholder="" id="userAge" name="user_Age">
+
                         </div>
                         <div class="col">
                             <span class="span m-1">Gender</span>
-                            <select class="form-control" id="Gender">
+                            <select class="form-control" id="userGender" name="user_gender">
                                 <option value="">Select Gender</option>
                                 <option value="Female">Female</option>
                                 <option value="Male">Male</option>
@@ -115,18 +115,15 @@
                     <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Email</span>
-                            <input type="text" class="form-control" placeholder=" ">
-                            <span class="control-error"></span>
+                            <input type="text" class="form-control" placeholder=" " id="userEmail" name="user_Email">
                         </div>
                         <div class="col">
                             <span class="span m-1">Contact Number</span>
-                            <input type="text" class="form-control" placeholder=" ">
-                            <span class="control-error"></span>
+                            <input type="text" class="form-control" placeholder=" " id="userNumber" name="user_Number">
                         </div>
                         <div class="col">
                             <span class="span m-1">Address</span>
-                            <input type="text" class="form-control" placeholder=" ">
-                            <span class="control-error"></span>
+                            <input type="text" class="form-control" placeholder=" " id="userAddress" name="user_Address" >
                         </div>
                     </div>
                 </div>
@@ -138,7 +135,7 @@
                         <th scope="col">#ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">NIC</th>
-                        <th scope="col">Number</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Address</th>
                         <th scope="col">Contact Number</th>
                     </tr>
@@ -149,5 +146,10 @@
         </div>
     </section>
 </main>
+<script src="../assets/lib/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/lib/jquery-3.6.4.min.js"></script>
+<script src="../assets/js/UserController.js"></script>
+<script src="../assets/js/Validation.js"></script>
+<script src="../assets/js/ValidationWithRegex.js"></script>
 </body>
 </html>
