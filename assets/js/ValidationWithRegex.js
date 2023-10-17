@@ -165,3 +165,44 @@ $("#guideName,#guideAddress,#guideNumber,#guideExperience,#guideDayValue").on('k
 $("#guideName,#guideAddress,#guideNumber,#guideExperience,#guideDayValue").on('blur', function (event) {
     checkValidity(guideValidation);
 });
+
+/*----------------Vehicle-------------------*/
+
+const vehicleName = /^[A-z ]{3,20}$/;
+const vehicleFuelUsage =  /^\d{4,20}$/;
+const vehicleSeatCapacity =/^\d{1,20}$/;
+const DriverName  = /^[A-z ]{3,20}$/;
+const DriverNumber  =/^(?:\+94|0)[1-9]\d{8}$/;
+
+
+let vehicleValidation = [];
+vehicleValidation.push({
+    reg: vehicleName,
+    field: $('#vehicle_brand')
+});
+vehicleValidation.push({
+    reg: vehicleFuelUsage,
+    field: $('#vehicle_Fuel_Usage')
+});
+vehicleValidation.push({
+    reg: vehicleSeatCapacity,
+    field: $('#vehicle_Seat_Capacity')
+});
+vehicleValidation.push({
+    reg: DriverName,
+    field: $('#vehicle_Driver_Name')
+});
+vehicleValidation.push({
+    reg: DriverNumber,
+    field: $('#vehicle_Drive_Number')
+});
+
+
+
+$("#vehicle_brand,#vehicle_Fuel_Usage,#vehicle_Seat_Capacity,#vehicle_Driver_Name,#vehicle_Drive_Number").on('keyup', function (event) {
+    checkValidity(vehicleValidation);
+});
+
+$("#vehicle_brand,#vehicle_Fuel_Usage,#vehicle_Seat_Capacity,#vehicle_Driver_Name,#vehicle_Drive_Number").on('blur', function (event) {
+    checkValidity(guideValidation);
+});

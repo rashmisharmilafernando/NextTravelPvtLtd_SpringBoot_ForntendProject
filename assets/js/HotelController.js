@@ -12,36 +12,46 @@ $("saveHotelBtn").click(function () {
         processData: false,
         success: function (res) {
             loadAllHotel();
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 })
 
 //Update Hotel
-$("#UpdateHotelBtn").click(function (){
-    let formData=new FormData($("#hotelTable")[0]);
+$("#UpdateHotelBtn").click(function () {
+    let formData = new FormData($("#hotelTable")[0]);
     $.ajax({
-        url:HotelBaseUrl+"hotel/update",
-        method:"PUT",
-        data:formData,
-        contentType:false,
+        url: HotelBaseUrl + "hotel/update",
+        method: "PUT",
+        data: formData,
+        contentType: false,
         processData: false,
-        success:function (res){
+        success: function (res) {
             loadAllHotel();
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 });
 //Delete Hotel
-$("#DeleteHotelBtn").click(function (){
-    let id=$("#Id").val();
+$("#DeleteHotelBtn").click(function () {
+    let id = $("#Id").val();
     $.ajax({
-        url:RegisterBaseUrl+"hotel?id" +id,
-        method:"DELETE",
-        dataType:"json",
-        success:function (res){
+        url: RegisterBaseUrl + "hotel?id" + id,
+        method: "DELETE",
+        dataType: "json",
+        success: function (res) {
             loadAllHotel();
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 });
+
 // Get All Hotels
 function loadAllHotel() {
     $("#hotelTable").empty();
@@ -79,6 +89,9 @@ function loadAllHotel() {
             }
             autoGenerateHotelId();
             checkValidity(hotelValidation);
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 }
@@ -103,8 +116,10 @@ function autoGenerateHotelId() {
                 $("#hId").val("H" + tempid);
             }
         },
-        error:function (ob,statusText,error){}
-        })
+        error: function (error) {
+            console.log(error);
+        }
+    })
 }
 
 

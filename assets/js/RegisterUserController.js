@@ -77,6 +77,9 @@ $("#btnUpdateRegUser").click(function (){
         processData: false,
         success:function (res){
             loadAllRegisterUser();
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 
@@ -91,6 +94,9 @@ $("#btnDeleteRegUser").click(function (){
         dataType:"json",
         success:function (res){
             loadAllRegisterUser();
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 
@@ -122,6 +128,9 @@ function loadAllRegisterUser(){
             }
             autoGenerateid();
             checkValidity(registerUserValidation);
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 }
@@ -146,8 +155,8 @@ function autoGenerateid(){
                 $("#Id").val("C"+tempid);
             }
         },
-        error:function (ob,statusText,error){
-
+        error: function (error) {
+            console.log(error);
         }
     })
 }

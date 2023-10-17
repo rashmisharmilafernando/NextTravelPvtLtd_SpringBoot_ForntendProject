@@ -2,7 +2,7 @@ let GuiderBaseurl = "";
 loadAllGuide();
 
 //Save Guider
-$("saveGuidebtn").click(function () {
+$("#saveGuidebtn").click(function () {
     let formDate = new FormData($("#giudeTable")[0]);
     $.ajax({
         url: HotelBaseUrl + "guide",
@@ -12,9 +12,14 @@ $("saveGuidebtn").click(function () {
         processData: false,
         success: function (res) {
             loadAllGuide();
+        },
+        error:function (error){
+            console.log(error);
         }
     })
 })
+
+
 //update Guider
 $("#updateGuidebtn").click(function () {
     let formData = new FormData($("#giudeTable")[0]);
@@ -26,9 +31,14 @@ $("#updateGuidebtn").click(function () {
         processData: false,
         success: function (res) {
             loadAllGuide();
+        },
+        error:function (error){
+            console.log(error);
         }
     })
 });
+
+
 //delete Guider
 $("#deleteGuidebtn").click(function () {
     let id = $("#guideid").val();
@@ -38,13 +48,48 @@ $("#deleteGuidebtn").click(function () {
         dataType: "json",
         success: function (res) {
             loadAllGuide();
+        },
+        error:function (error){
+            console.log(error);
         }
     })
 });
+
+
 //Search Guider
+$("#searchGuide").on("keypress",function (event){
+    if (event.which ===13){
+        var searchGuide=$("#searchGuide").val();
+        $("#giudeTable").empty();
+        $.ajax({
+            url:RegisterBaseUrl + "guide/searchGuide/?guideid="+searchGuide,
+            method:"GET",
+            contentType:"application/json",
+            dataType:"json",
+            success:function (res){
+                $("#guideid").val(res.guide_id);
+                $("#guideName").val(res.guide_Name);
+                $("#guideAddress").val(res.guide_Address);
+                $("#guideNumber").val(res.guide_Number);
+                $("#guideDayValue").val(res.guide_Day_Value);
+
+                let row ="<tr><td>" + res.guide_id+"</td>" +
+                    "<td>" + res.guide_Name + "</td>" +
+                    "<td>" + res.guide_Address+"</td>"+
+                    "<td>" + res.guide_Number+"</td>"+
+                    "<td>" + res.guide_Day_Value+"</td></tr>";
+                $("#registerUserTable").append(row)
+            },
+            error:function (error){
+                loadAllGuide()
+            }
+        })
+    }
+})
+
 
 //Get All Guider details
-function loadAllHotel() {
+function loadAllGuide() {
     $("#giudeTable").empty();
     $.ajax({
         url: HotelBaseUrl + "guide/loadAllguide",
@@ -71,9 +116,13 @@ function loadAllHotel() {
             autoGenerateId();
             checkValidity(guideValidation);
 
+        },
+        error:function (error){
+            console.log(error);
         }
     })
 }
+
 
 //Auto Generate id
 function autoGenerateId() {
@@ -95,7 +144,10 @@ function autoGenerateId() {
                 $("#guideid").val("G" + tempid);
             }
         },
-        error:function (ob,statusText,error){}
+        
+        error:function (error){
+        console.log(error);
+    }
     })
 }
 

@@ -12,6 +12,9 @@ $("#saveuserbtn").click(d = function () {
         processData: false,
         success: function (res) {
             loadAllUser();
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 })
@@ -26,6 +29,9 @@ $("#updateuserbtn").click(function () {
         processData: false,
         success: function (res) {
             loadAllUser();
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 });
@@ -38,6 +44,9 @@ $("#deleteuserbtn").click(function () {
         dataType: "json",
         success: function (res) {
             loadAllUser();
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 });
@@ -102,6 +111,9 @@ function loadAllUser() {
             }
             autoGenerateid();
             checkValidity(userValidation);
+        },
+        error: function (error) {
+            console.log(error);
         }
     })
 }
@@ -126,7 +138,8 @@ function autoGenerateid() {
                 $("#userId").val("U"+tempid);
             }
         },
-        error:function (ob,statusText,error){
+        error: function (error) {
+            console.log(error);
         }
     })
 }
