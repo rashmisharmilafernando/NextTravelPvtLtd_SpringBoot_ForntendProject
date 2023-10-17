@@ -1,7 +1,7 @@
 let RegisterBaseUrl="";
 loadAllRegisterUser();
 
-//Save Register User
+//Save Customer form RegisterPage.html
 $("#register_button").click(function (){
     let formDate=new FormData($("#registerForm")[0]);
     console.log(formDate);
@@ -17,7 +17,23 @@ $("#register_button").click(function (){
     })
 })
 
-//search id
+//Save Customer form ManageCustomer.html
+$("#btnSaveRegUser").click(function (){
+    let formDate=new FormData($("#registerForm")[0]);
+    console.log(formDate);
+    $.ajax({
+        url:RegisterBaseUrl+"registerUser",
+        method:"POST",
+        data:formDate,
+        contentType:false,
+        processData: false,
+        success:function (res){
+            loadAllRegisterUser();
+        }
+    })
+})
+
+//search Customer form ManageCustomer.html
 $("#searchRegUser").on("keypress",function (event){
     if (event.which ===20){
         var searchRegisterUser=$("#searchRegUser").val();
@@ -50,7 +66,7 @@ $("#searchRegUser").on("keypress",function (event){
     }
 })
 
-//update Register User
+//update Customer form ManageCustomer.html
 $("#btnUpdateRegUser").click(function (){
     let formData=new FormData($("#registerUserTable")[0]);
     $.ajax({
@@ -66,11 +82,11 @@ $("#btnUpdateRegUser").click(function (){
 
 });
 
-//Delete Register User
+//Delete Customer form ManageCustomer.html
 $("#btnDeleteRegUser").click(function (){
     let id=$("#Id").val();
     $.ajax({
-        url:RegisterBaseUrl+"regUser?id" +id+" ",
+        url:RegisterBaseUrl+"regUser?id" +id,
         method:"DELETE",
         dataType:"json",
         success:function (res){
@@ -79,7 +95,8 @@ $("#btnDeleteRegUser").click(function (){
     })
 
 });
-// Customer Table
+
+// Get All customer Details  form ManageCustomer.html
 function loadAllRegisterUser(){
     $("#registerUserTable").empty();
     $.ajax({
@@ -109,7 +126,7 @@ function loadAllRegisterUser(){
     })
 }
 
-//autoGenerateid
+//Auto Generate Customer id
 function autoGenerateid(){
     $("#Id").val("C001");
     $.ajax({
@@ -122,11 +139,11 @@ function autoGenerateid(){
             let tempid=parseInt(id.split("-")[1]);
             tempid=tempid+1;
             if (tempid <= 9){
-                $("#Id").val("C00-00" + tempid);
+                $("#Id").val("C00" + tempid);
             }else if (tempid <= 99){
-                $("#Id").val("C00-0" + tempid);
+                $("#Id").val("C0" + tempid);
             }else {
-                $("#Id").val("C00-"+tempid);
+                $("#Id").val("C"+tempid);
             }
         },
         error:function (ob,statusText,error){
@@ -206,37 +223,3 @@ document.addEventListener("change", function (event) {
 });
 
 
-//Validation
-const reguserName=/^[A-z ]{3,20}$/;
-const reguserEmail=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const reguserPassword=/^([A-Z a-z]{5,15}[0-9]{1,10})$/;
-const regUsername=/^[A-z0-9/ ]{4,30}$/;
-const reguserNic=/^([0-9]{12}|[0-9V]{10})$/;
-const reguserAddress=/^[A-z0-9/ ]{4,30}$/;
-
-let registerUserValidation=[];
-registerUserValidation.push({
-    reg:reguserName,field:$('#regname')
-})
-registerUserValidation.push({
-    reg:reguserEmail,field:$('#regEmail')
-})
-registerUserValidation.push({
-    reg:reguserPassword,field:$('#regPassword')
-})
-registerUserValidation.push({
-    reg:regUsername,field:$('#regUsername')
-})
-registerUserValidation.push({
-    reg:reguserNic,field:$('#regNIC')
-})
-registerUserValidation.push({
-    reg:reguserAddress,field:$('#regAddress')
-})
-$("#regname,#regEmail,#regNIC,#regUsername,#regPassword,#regAddress").on('keyup', function (event) {
-    checkValidity(registerUserValidation);
-});
-
-$("#regname,#regEmail,#regNIC,#regUsername,#regPassword,#regAddress").on('blur', function (event) {
-    checkValidity(registerUserValidation);
-});

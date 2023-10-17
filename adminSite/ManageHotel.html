@@ -66,29 +66,29 @@
                             <button type="button" class="btn btn-dark">search</button>
                         </div>
                         <div class="col" style="margin-left: 400px">
-                            <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
+                            <button class="btn btn-success me-md-1" id="saveHotelBtn" type="button"
                                     formaction="driverForm">Save
                             </button>
-                            <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
+                            <button type="button" class="btn btn-warning me-md-1" id="UpdateHotelBtn">Update
                             </button>
-                            <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
+                            <button type="button" class="btn btn-danger" id="DeleteHotelBtn">Delete</button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <span class="span m-1">Hotel ID</span>
-                            <input class="form-control mt-1" id="userId" readonly
-                                   name="user_Id"
+                            <input class="form-control mt-1" id="hId" readonly
+                                   name="hotel_Id"
                                    placeholder="Hotel_001" type="text">
                         </div>
                         <div class="col">
                             <span class="span m-1">Name</span>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" id="hName"  name="hotel_name" class="form-control" placeholder="">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
                             <span class="span m-1">Stars rate </span>
-                            <select class="form-control" id="rate">
+                            <select class="form-control" name="hotel_rate" id="hrate">
                                 <option value="">Select Stars rate</option>
                                 <option value="2stars">2 Stars</option>
                                 <option value="3stars">3 Stars</option>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="col">
                             <span class="span m-1">Category</span>
-                            <select class="form-control" id="category">
+                            <select class="form-control" name="hotel_Category" id="hcategory">
                                 <option value="">Select Category</option>
                                 <option value="regular">Regular</option>
                                 <option value="midLevel">Mid-Level</option>
@@ -111,7 +111,7 @@
                     <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Location </span>
-                            <select class="form-control" id="location">
+                            <select class="form-control" name="hotel_location" id="hlocation">
                                 <option value="">Select Location</option>
                                 <option value="l1">Kandy and Upcountry</option>
                                 <option value="l2">Eastern Coast</option>
@@ -128,7 +128,7 @@
                         </div>
                         <div class="col">
                             <span class="span m-1">coordinates</span>
-                            <select class="form-control" id="coordinates ">
+                            <select class="form-control" name="hotel_coordinates" id="hcoordinates">
                                 <option value="">Select coordinates</option>
                                 <option value="lc1">7.2996° N, 80.6369° E</option>
                                 <option value="lc2">07°55 N 81°30 E</option>
@@ -145,24 +145,24 @@
                         </div>
                         <div class="col">
                             <span class="span m-1">Email</span>
-                            <input type="email" class="form-control" placeholder="">
+                            <input type="email" class="form-control" name="hotel_Email" id="hEmail" placeholder="">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
                             <span class="span m-1">Contact Number</span>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" name="hotel_Number1" id="hNumber1" placeholder="">
                             <span class="control-error"></span>
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Contact Number</span>
-                            <input type="text" class="form-control" placeholder="xxx-xxx-xxxxx">
+                            <input type="text" class="form-control" name="hotel_Number2" id="hNumber2" placeholder="">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
                             <span class="span m-1">Pets Allowed Status</span>
-                            <select class="form-control" id="petsAllowed ">
+                            <select class="form-control"  name="Pets_Allowed" id="hpetsAllowed">
                                 <option value="">Select Status</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -170,12 +170,12 @@
                         </div>
                         <div class="col">
                             <span class="span m-1">Hotel fee</span>
-                            <input type="text" class="form-control" placeholder=" ">
+                            <input type="text" class="form-control" name="Hotel_fee" id="hfee" placeholder="">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
                             <span class="span m-1">Cancellation Criteria</span>
-                            <select class="form-control" id="CancellationCriteria ">
+                            <select class="form-control" id="CancellationCriteria" name="hCancellationCriteria">
                                 <option value="">Select Status</option>
                                 <option value="Free">Free</option>
                                 <option value="Non-Free">Non-Free</option>
@@ -206,5 +206,10 @@
         </div>
     </section>
 </main>
+<script src="../assets/lib/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/lib/jquery-3.6.4.min.js"></script>
+<script src="../assets/js/HotelController.js"></script>
+<script src="../assets/js/Validation.js"></script>
+<script src="../assets/js/ValidationWithRegex.js"></script>
 </body>
 </html>
