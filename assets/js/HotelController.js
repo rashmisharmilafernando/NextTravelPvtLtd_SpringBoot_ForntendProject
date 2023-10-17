@@ -18,7 +18,7 @@ $("saveHotelBtn").click(function () {
 
 //Update Hotel
 $("#UpdateHotelBtn").click(function (){
-    let formData=new FormData($("hotelTable")[0]);
+    let formData=new FormData($("#hotelTable")[0]);
     $.ajax({
         url:HotelBaseUrl+"hotel/update",
         method:"PUT",
@@ -42,7 +42,7 @@ $("#DeleteHotelBtn").click(function (){
         }
     })
 });
-// Load Hotels
+// Get All Hotels
 function loadAllHotel() {
     $("#hotelTable").empty();
     $.ajax({

@@ -44,8 +44,8 @@ $("#regname,#regEmail,#regNIC,#regUsername,#regPassword,#regAddress").on('blur',
 
 const hotelName = /^[A-Za-z ]{3,20}$/;
 const hotelEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const hotelContactNumber1 = /^\+\d{1,3}-[2-9]\d{2}-\d{4}$/;
-const hotelContactNumber2 = /^\+\d{1,3}-[2-9]\d{2}-\d{4}$/;
+const hotelContactNumber1 = /^(?:\+94|0)[1-9]\d{8}$/;
+const hotelContactNumber2 = /^(?:\+94|0)[1-9]\d{8}$/;
 const hotelfee = /^\d{3,20}$/;
 
 let hotelValidation = [];
@@ -86,7 +86,7 @@ const userName = /^[A-z ]{3,20}$/;
 const usernic = /^([0-9]{12}|[0-9V]{10})$/;
 const userAge = /^\d+$/;
 const userEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const usernumber = /^\+\d{1,3}-[2-9]\d{2}-\d{4}$/;
+const usernumber = /^(?:\+94|0)[1-9]\d{8}$/;
 const userAddress = /^[A-z0-9/ ]{4,30}$/;
 
 let userValidation = [];
@@ -127,3 +127,41 @@ $("#userName,#userNic,#userAge,#userEmail,#userNumber,#userAddress").on('blur', 
 
 /*--------Guide-------------*/
 
+const guideName = /^[A-z ]{3,20}$/;
+const guideAddress =  /^[A-z0-9/ ]{4,30}$/;
+const guideNumber = /^(?:\+94|0)[1-9]\d{8}$/;
+const guideExprince = /^[A-z ]{3,20}$/;
+const guidedayValue = /^\d{3,20}$/;
+
+
+let guideValidation = [];
+guideValidation.push({
+    reg: guideName,
+    field: $('#guideName')
+});
+guideValidation.push({
+    reg: guideAddress,
+    field: $('#guideAddress')
+});
+guideValidation.push({
+    reg: guideNumber,
+    field: $('#guideNumber')
+});
+guideValidation.push({
+    reg: guideExprince,
+    field: $('#guideExperience')
+});
+guideValidation.push({
+    reg: guidedayValue,
+    field: $('#guideDayValue')
+});
+
+
+
+$("#guideName,#guideAddress,#guideNumber,#guideExperience,#guideDayValue").on('keyup', function (event) {
+    checkValidity(guideValidation);
+});
+
+$("#guideName,#guideAddress,#guideNumber,#guideExperience,#guideDayValue").on('blur', function (event) {
+    checkValidity(guideValidation);
+});

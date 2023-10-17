@@ -61,41 +61,41 @@
                      style="background-color: white;padding-top: 20px;box-shadow: 10px 10px 5px -5px rgba(20,10,10,0.15);">
                     <div class="row" style="margin-bottom: 30px">
                         <div class="col input-group">
-                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            <input type="search" id="searchGuider" class="form-control rounded" placeholder="Search" aria-label="Search"
                                    aria-describedby="search-addon"/>
                             <button type="button" class="btn btn-dark">search</button>
                         </div>
                         <div class="col" style="margin-left: 400px">
-                            <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
+                            <button class="btn btn-success me-md-1" id="saveGuidebtn" type="button"
                                     formaction="driverForm">Save
                             </button>
-                            <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
+                            <button type="button" class="btn btn-warning me-md-1" id="updateGuidebtn">Update
                             </button>
-                            <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
+                            <button type="button" class="btn btn-danger" id="deleteGuidebtn">Delete</button>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <span class="span m-1">Guide ID</span>
-                            <input class="form-control" id="userId" readonly
-                                   name="user_Id"
-                                   placeholder="Guide_001" type="text">
+                            <input class="form-control" id="guideid" readonly
+                                   name="guide_id"
+                                   placeholder="" type="text">
 
                         </div>
                         <div class="col">
                             <span class="span m-1">Name</span>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" id="guideName"  name="guide_Name">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
                             <span class="span m-1">Address</span>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" id="guideAddress"  name="guide_Address">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
                             <span class="span m-1">Gender</span>
-                            <select class="form-control" id="Gender">
+                            <select class="form-control" id="guideGender" name="guide_Gender">
                                 <option value="">Select Gender</option>
                                 <option value="Female">Female</option>
                                 <option value="Male">Male</option>
@@ -105,33 +105,33 @@
                     <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Number</span>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder=""  id="guideNumber" name="guide_Number">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
                             <span class="span m-1">Experience</span>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" id="guideExperience" name="guide_Experience">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
                             <span class="span m-1">Man-day Value</span>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" id="guideDayValue" name="guide_Day_Value">
                             <span class="control-error"></span>
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Image</span>
-                            <input class="form-control" id="Guide_Image" type="file" name="Guide_Image">
+                            <input class="form-control" id="GuideImage" type="file" name="Guide_Image">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
                             <span class="span m-1">NIC</span>
-                            <input class="form-control" id="Nic_Image" type="file" name="Nic_Image">
+                            <input class="form-control" id="NicImage" type="file" name="Nic_Image">
                         </div>
                         <div class="col">
                             <span class="span m-1">Guide ID</span>
-                            <input class="form-control" id="Guide_ID" type="file" name="Guide_ID">
+                            <input class="form-control" id="GuideIDImage" type="file" name="Guide_ID_Image">
                             <span class="control-error"></span>
                         </div>
                     </div>
@@ -144,7 +144,6 @@
                     <tr>
                         <th scope="col">#ID</th>
                         <th scope="col">Name</th>
-                        <th scope="col">NIC</th>
                         <th scope="col">Number</th>
                         <th scope="col">Address</th>
                         <th scope="col">Contact Number</th>
@@ -157,5 +156,10 @@
         </div>
     </section>
 </main>
+<script src="../assets/lib/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/lib/jquery-3.6.4.min.js"></script>
+<script src="../assets/js/GuideController.js"></script>
+<script src="../assets/js/Validation.js"></script>
+<script src="../assets/js/ValidationWithRegex.js"></script>
 </body>
 </html>
