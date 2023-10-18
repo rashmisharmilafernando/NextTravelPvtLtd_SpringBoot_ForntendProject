@@ -17,7 +17,8 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
+    -->
     <!--import AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -27,30 +28,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll" style="background-image: none; background-color: rgba(215,215,215,0.51);">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll"
+     style="background-image: none; background-color: rgba(215,215,215,0.51);">
     <div class="container">
-        <a class="navbar-brand" href="/index.html"><img src="assets/img/logo.png" height="24" width="110" alt="logo"></a>
+        <a class="navbar-brand" href="/index.html"><img src="assets/img/logo.png" height="24" width="110"
+                                                        alt="logo"></a>
         <div class="collapse navbar-collapse  border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav font-base align-items-center align-items-start">
                 <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" href="#home">HOME</a></li>
                 <li class="nav-item px-3 px-xl-1"><a class="nav-link fw-medium" href="#aboutpage">ABOUT US</a></li>
                 <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" href="#packagePage">PACKAGES</a></li>
-                <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" href="#destinationPage">DESTINATION</a></li>
+                <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" href="#destinationPage">DESTINATION</a>
+                </li>
                 <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" href="#ContactPage">CONTACT</a></li>
 
-                <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="pages/otherPage/LoginPage.html">Login</a></li>
-                <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark  fw-medium" href="pages/otherPage/RegisterPage.html">Sign Up</a></li>
+                <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page"
+                                                     href="pages/otherPage/LoginPage.html">Login</a></li>
+                <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark  fw-medium"
+                                                     href="pages/otherPage/RegisterPage.html">Sign Up</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <main class="main">
     <!--Home Page-->
-    <section id="home" >
+    <section id="home">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 m-15px-tb">
-                    <h4 class="main-subtitle" >
+                    <h4 class="main-subtitle">
                         BEST DESTINATIONS AROUND THE SRI LANKA</h4>
                     <div class="content">
                         <h1 class="homePageTitle">Travel, enjoy <br>and live a new <br>and full life</h1>
@@ -120,8 +126,130 @@
                 <div class="col-md-12">
                     <div class="section-title">
                         <h1 class="mb-0 pageTile" style="font-weight: 150">OUR PACKAGES</h1>
+                        <span class="row">
+                            <div class="col-3">
+                                <h6 class="card-title">Package</h6>
+                                 <select class="form-control" id="Package">
+                                    <option value="">Choose Type</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Mid-Level">Mid-Level</option>
+                                    <option value="Luxury">Luxury</option>
+                                    <option value="SuperLuxury">Super Luxury</option>
+                                </select>
+                            </div>
+                           <div class="col-3 mt-2">
+                                 <button type="button" class="btn btn-dark mt-lg-4" style="">Search</button>
+                            </div>
+                        </span>
+                        <hr>
                         <br>
-                        <div class="row row-cols-1 row-cols-md-4 g-5">
+                        <span class="row">
+                            <div class="col-3">
+                                 <select class="form-control" id="starRate">
+                                    <option value="">Star Rate</option>
+                                    <option value="DIESEL">2 Star</option>
+                                    <option value="PETROL">3 Star</option>
+                                </select>
+                            </div>
+                            <div class="col-3">
+                                 <select class="form-control" id="location">
+                                    <option value="">Location</option>
+                                     <option value="KandyandUpcountry"> Kandy and Upcountry</option>
+                                    <option value="EasternCoast">Eastern Coast</option>
+                                    <option value="CapitalColombo">Capital Colombo</option>
+                                    <option value="WesternCoast">Western Coast</option>
+                                    <option value="NorthPeninsula">North Peninsula</option>
+                                    <option value="DownSouth">Down South</option>
+                                    <option value="Sigiriya">Sigiriya and Dambulla</option>
+                                    <option value="Anuradhapura">Anuradhapura and Polonnaruwa</option>
+                                    <option value="Matale">Matale</option>
+                                </select>
+                            </div>
+                           <div class="col-3">
+                                 <button type="button" class="btn btn-dark" style="">Search</button>
+                            </div>
+                        </span>
+                        <br>
+                        <div id="packageCard"></div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img class="card-img-top"
+                                             src="https://ak-d.tripcdn.com/images/022691200082a1y3nCFAC_R_640_440_R5_D.webp"
+                                             alt="Card image cap">
+                                        <div style="line-height: 18px">
+                                            <h6 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h6>
+                                            <small>Wadduwa</small><br>
+                                            <div class="star-rating">
+                                                <input type="radio" name="rating" value="3"><label></label>
+                                                <input type="radio" name="rating" value="2"><label></label>
+                                                <input type="radio" name="rating" value="1"><label></label>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img class="card-img-top"
+                                             src="https://ak-d.tripcdn.com/images/0200o12000asg0yos1B93_R_640_440_R5_D.webp"
+                                             alt="Card image cap">
+                                        <div style="line-height: 18px">
+                                            <h6 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h6>
+                                            <small>Anuradhapura</small><br>
+                                            <div class="star-rating">
+                                                <input type="radio" name="rating" value="3"><label></label>
+                                                <input type="radio" name="rating" value="2"><label></label>
+                                                <input type="radio" name="rating" value="1"><label></label>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img class="card-img-top"
+                                             src="https://ak-d.tripcdn.com/images/22080u000000j9q5gAA9A_R_640_440_R5_D.webp"
+                                             alt="Card image cap">
+                                        <div style="line-height: 18px">
+                                            <h6 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h6>
+                                            <small>Mathale</small><br>
+                                            <div class="star-rating">
+                                                <input type="radio" name="rating" value="3"><label></label>
+                                                <input type="radio" name="rating" value="2"><label></label>
+                                                <input type="radio" name="rating" value="1"><label></label>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img class="card-img-top"
+                                             src="https://ak-d.tripcdn.com/images/0224y12000amy6hga2AAF_R_640_440_R5_D.webp"
+                                             alt="Card image cap">
+                                        <div style="line-height: 18px">
+                                            <h6 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h6>
+                                            <small>Colombo</small><br>
+                                            <div class="star-rating">
+                                                <input type="radio" name="rating" value="3"><label></label>
+                                                <input type="radio" name="rating" value="2"><label></label>
+                                                <input type="radio" name="rating" value="1"><label></label>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="row row-cols-1 row-cols-md-4 g-5">
                             <div class="col">
                                 <div class="card packagecard" style="width: 18rem;">
                                     <img class="card-img-top"
@@ -178,7 +306,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--<div class="col">
+                            &lt;!&ndash;<div class="col">
                                 <div class="card packagecard" style="width: 18rem;">
                                     <img class="card-img-top"
                                          src="https://ak-d.tripcdn.com/images/220k0s000000icy08F0E4_R_640_440_R5_D.webp"
@@ -191,8 +319,92 @@
                                         <a href="Package4.html" class="btn btn-warning ">Let's GO</a>
                                     </div>
                                 </div>
-                            </div>-->
+                            </div>&ndash;&gt;
+                        </div>-->
+
+                        <span class="row mt-5">
+                            <div class="col-3">
+                                 <select class="form-control" id="passengers">
+                                    <option value="">No of passengers</option>
+                                     <option value="passengers4">4</option>
+                                    <option value="passengers5">5</option>
+                                    <option value="passengers10">10</option>
+                                    <option value="passengers12">12</option>
+                                </select>
+                            </div>
+                            <div class="col-3">
+                                 <select class="form-control" id="Transmission">
+                                         <option value="">Transmission type</option>
+                                     <option value="Auto">Auto Transmission</option>
+                                    <option value="Manual">Manual Transmission</option>
+                                </select>
+                            </div>
+                            <div class="col-3">
+                                 <select class="form-control" id="Sortby">
+                                     <option value="">Fuel type</option>
+                                     <option value="passengers4">Diesel</option>
+                                    <option value="passengers5">Petrol</option>
+                                </select>
+                            </div>
+                            <div class="col-3 ">
+                                  <button type="button" class="btn btn-dark " style="">Search</button>
+                            </div>
+                        </span>
+                        <br> <div class="row">
+                        <div class="col-sm-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img class="card-img-top"
+                                         src="https://cdn2.rcstatic.com/images/car_images/web/suzuki/alto_lrg.jpg"
+                                         alt="Card image cap">
+                                    <h6 class="card-title" style="margin-top: 15px">Suzuki Alto</h6>
+                                    <small>4 seats</small><br>
+                                    <small>Petrol Manual Transmission</small><br>
+                                    <h3 class="h3">LKR 4500</h3>
+                                </div>
+                            </div>
                         </div>
+                        <div class="col-sm-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img class="card-img-top"
+                                         src="https://cdn2.rcstatic.com/images/car_images/web/nissan/wingroad_lrg.jpg"
+                                         alt="Card image cap">
+                                    <h6 class="card-title" style="margin-top: 15px">Nissan Wingroad Estate</h6>
+                                    <small>4 seats</small><br>
+                                    <small>Petrol Auto Transmission</small><br>
+                                    <h3 class="h3">LKR 5000</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img class="card-img-top"
+                                         src="https://cdn2.rcstatic.com/images/car_images/new_images/toyota/corolla_hatch_lrg.jpg"
+                                         alt="Card image cap">
+                                    <h6 class="card-title" style="margin-top: 15px">Toyota Corolla
+                                    </h6>
+                                    <small>4 seats</small><br>
+                                    <small>Petrol Auto Transmission</small><br>
+                                    <h3 class="h3">LKR 5500</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img class="card-img-top"
+                                         src="https://cdn2.rcstatic.com/images/car_images/web/nissan/kicks_lrg.jpg"
+                                         alt="Card image cap">
+                                    <h6 class="card-title" style="margin-top: 15px">Nissan Kicks</h6>
+                                    <small>4 seats</small><br>
+                                    <small>Petrol Auto Transmission</small><br>
+                                    <h3 class="h3">LKR 6000</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -383,7 +595,8 @@
                             <i class="fas fa-gem me-3"></i>Next Travel Pvt Ltd.
                         </h6>
                         <p>
-                            we specialize in curating exceptional travel experiences that cater to your every need and desire.
+                            we specialize in curating exceptional travel experiences that cater to your every need and
+                            desire.
                         </p>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="text-align:left ">
@@ -423,7 +636,7 @@
         }, 3000)
     })
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(document).scrollTop() > 50) {
             $('.nav').addClass('affix');
             console.log("OK");
