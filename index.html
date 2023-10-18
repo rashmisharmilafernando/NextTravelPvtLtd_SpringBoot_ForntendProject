@@ -129,7 +129,7 @@
                         <span class="row">
                             <div class="col-3">
                                 <h6 class="card-title">Package</h6>
-                                 <select class="form-control" id="Package">
+                                 <select class="form-control" id="filterPackage" name="filter_packages">
                                     <option value="">Choose Type</option>
                                     <option value="Regular">Regular</option>
                                     <option value="Mid-Level">Mid-Level</option>
@@ -138,21 +138,21 @@
                                 </select>
                             </div>
                            <div class="col-3 mt-2">
-                                 <button type="button" class="btn btn-dark mt-lg-4" style="">Search</button>
+                                 <button type="button" class="btn btn-dark mt-lg-4" style="" id="searchPackage" name="search_Package">Search</button>
                             </div>
                         </span>
                         <hr>
                         <br>
                         <span class="row">
                             <div class="col-3">
-                                 <select class="form-control" id="starRate">
+                                 <select class="form-control" id="filterstarRate" name="filter_start_Rate">
                                     <option value="">Star Rate</option>
                                     <option value="DIESEL">2 Star</option>
                                     <option value="PETROL">3 Star</option>
                                 </select>
                             </div>
                             <div class="col-3">
-                                 <select class="form-control" id="location">
+                                 <select class="form-control" id="filterlocation" name="filter_locations">
                                     <option value="">Location</option>
                                      <option value="KandyandUpcountry"> Kandy and Upcountry</option>
                                     <option value="EasternCoast">Eastern Coast</option>
@@ -166,165 +166,33 @@
                                 </select>
                             </div>
                            <div class="col-3">
-                                 <button type="button" class="btn btn-dark" style="">Search</button>
+                                 <button type="button" class="btn btn-dark" style="" id="searchHotel" name="search_Hotel">Search</button>
                             </div>
                         </span>
                         <br>
-                        <div id="packageCard"></div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <img class="card-img-top"
-                                             src="https://ak-d.tripcdn.com/images/022691200082a1y3nCFAC_R_640_440_R5_D.webp"
-                                             alt="Card image cap">
-                                        <div style="line-height: 18px">
-                                            <h6 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h6>
-                                            <small>Wadduwa</small><br>
-                                            <div class="star-rating">
-                                                <input type="radio" name="rating" value="3"><label></label>
-                                                <input type="radio" name="rating" value="2"><label></label>
-                                                <input type="radio" name="rating" value="1"><label></label>
-                                            </div>
-                                        </div>
-                                        <br>
-                                    </div>
+                        <div id="hotelSection"></div>
+
+                        <div class="card" style="width: 500px;">
+                            <div class="row no-gutters">
+                                <div class="col-sm-6">
+                                    <img class="card-img-top"
+                                         src="https://ak-d.tripcdn.com/images/022691200082a1y3nCFAC_R_640_440_R5_D.webp"
+                                         alt="Card image cap">
                                 </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
+                                <div class="col-sm-6">
                                     <div class="card-body">
-                                        <img class="card-img-top"
-                                             src="https://ak-d.tripcdn.com/images/0200o12000asg0yos1B93_R_640_440_R5_D.webp"
-                                             alt="Card image cap">
-                                        <div style="line-height: 18px">
-                                            <h6 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h6>
-                                            <small>Anuradhapura</small><br>
-                                            <div class="star-rating">
-                                                <input type="radio" name="rating" value="3"><label></label>
-                                                <input type="radio" name="rating" value="2"><label></label>
-                                                <input type="radio" name="rating" value="1"><label></label>
-                                            </div>
-                                        </div>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <img class="card-img-top"
-                                             src="https://ak-d.tripcdn.com/images/22080u000000j9q5gAA9A_R_640_440_R5_D.webp"
-                                             alt="Card image cap">
-                                        <div style="line-height: 18px">
-                                            <h6 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h6>
-                                            <small>Mathale</small><br>
-                                            <div class="star-rating">
-                                                <input type="radio" name="rating" value="3"><label></label>
-                                                <input type="radio" name="rating" value="2"><label></label>
-                                                <input type="radio" name="rating" value="1"><label></label>
-                                            </div>
-                                        </div>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <img class="card-img-top"
-                                             src="https://ak-d.tripcdn.com/images/0224y12000amy6hga2AAF_R_640_440_R5_D.webp"
-                                             alt="Card image cap">
-                                        <div style="line-height: 18px">
-                                            <h6 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h6>
-                                            <small>Colombo</small><br>
-                                            <div class="star-rating">
-                                                <input type="radio" name="rating" value="3"><label></label>
-                                                <input type="radio" name="rating" value="2"><label></label>
-                                                <input type="radio" name="rating" value="1"><label></label>
-                                            </div>
-                                        </div>
-                                        <br>
+                                        <h4 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h4>
+                                        <small> Wadduwa</small><br>
+                                        <small>2 Star</small>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--<div class="row row-cols-1 row-cols-md-4 g-5">
-                            <div class="col">
-                                <div class="card packagecard" style="width: 18rem;">
-                                    <img class="card-img-top"
-                                         src="https://ak-d.tripcdn.com/images/02044120009p7x8du18A7_R_600_400_R5_D.webp">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><B>Regular</B></h5>
-                                        <br>
-                                        <p class="card-text">For travelers looking for a relaxing and affordable
-                                            experience, our Regular package is ideal.
-                                        </p>
-                                        <a href="pages/hotelPages/RegularHotel.html" class="btn btn-warning">Let's GO</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card packagecard" style="width: 18rem;">
-                                    <img class="card-img-top"
-                                         src="https://ak-d.tripcdn.com/images/1mc4k12000b8vr79m0FD8_R_640_440_R5_D.webp"
-                                         alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><b>Mid-level</b></h5>
-                                        <br>
-                                        <p class="card-text">The Mid-level package finds a happy medium between added
-                                            comfort and affordability. </p>
-                                        <a href="pages/hotelPages/MidLevelHotel.html" class="btn btn-warning">Let's GO</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card packagecard" style="width: 18rem;">
-                                    <img class="card-img-top"
-                                         src="https://ak-d.tripcdn.com/images/0225h120009zun2bq3BEA_R_640_440_R5_D.webp"
-                                         alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><b>Luxury</b></h5>
-                                        <br>
-                                        <p class="card-text"> Our luxury package was built to suit travelers that value
-                                            elegance and lavishness.</p>
-                                        <a href="pages/hotelPages/LuxuryHotel.html" class="btn btn-warning">Let's GO</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card packagecard" style="width: 18rem;">
-                                    <img class="card-img-top"
-                                         src="https://ak-d.tripcdn.com/images/220k0s000000icy08F0E4_R_640_440_R5_D.webp"
-                                         alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><b>Super Luxury</b></h5>
-                                        <br>
-                                        <p class="card-text">Our Super Luxury package embodies extravagance and
-                                            exclusivity to the highest degree. </p>
-                                        <a href="pages/hotelPages/SuperLuxuryHotel.html" class="btn btn-warning ">Let's GO</a>
-                                    </div>
-                                </div>
-                            </div>
-                            &lt;!&ndash;<div class="col">
-                                <div class="card packagecard" style="width: 18rem;">
-                                    <img class="card-img-top"
-                                         src="https://ak-d.tripcdn.com/images/220k0s000000icy08F0E4_R_640_440_R5_D.webp"
-                                         alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><b>Super Luxury</b></h5>
-                                        <br>
-                                        <p class="card-text">Our Super Luxury package embodies extravagance and
-                                            exclusivity to the highest degree. </p>
-                                        <a href="Package4.html" class="btn btn-warning ">Let's GO</a>
-                                    </div>
-                                </div>
-                            </div>&ndash;&gt;
-                        </div>-->
 
+                        <div id="vehicleSection"></div>
                         <span class="row mt-5">
                             <div class="col-3">
-                                 <select class="form-control" id="passengers">
+                                 <select class="form-control" id="filterpassengers" name="filter_Passengers">
                                     <option value="">No of passengers</option>
                                      <option value="passengers4">4</option>
                                     <option value="passengers5">5</option>
@@ -333,24 +201,25 @@
                                 </select>
                             </div>
                             <div class="col-3">
-                                 <select class="form-control" id="Transmission">
+                                 <select class="form-control" id="filterTransmission" name="filter_Transmission">
                                          <option value="">Transmission type</option>
                                      <option value="Auto">Auto Transmission</option>
                                     <option value="Manual">Manual Transmission</option>
                                 </select>
                             </div>
                             <div class="col-3">
-                                 <select class="form-control" id="Sortby">
+                                 <select class="form-control" id="filterFueltype" name="filter_Fueltype">
                                      <option value="">Fuel type</option>
                                      <option value="passengers4">Diesel</option>
                                     <option value="passengers5">Petrol</option>
                                 </select>
                             </div>
                             <div class="col-3 ">
-                                  <button type="button" class="btn btn-dark " style="">Search</button>
+                                  <button type="button" class="btn btn-dark " style="" id="searchVehicle" name="search_Vehicle">Search</button>
                             </div>
                         </span>
-                        <br> <div class="row">
+                        <br>
+                      <!--  <div class="row">
                         <div class="col-sm-3">
                             <div class="card">
                                 <div class="card-body">
@@ -404,7 +273,25 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
+                        <div class="card" style="width: 500px;">
+                            <div class="row no-gutters">
+                                <div class="col-sm-6">
+                                    <img class="card-img-top"
+                                         src="https://cdn2.rcstatic.com/images/car_images/web/nissan/kicks_lrg.jpg"
+                                         alt="Card image cap">
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card-body">
+                                        <h4 class="card-title" style="margin-top: 15px">Nissan Kicks</h4>
+                                        <small>4 seats</small><br>
+                                        <small>Petrol </small><br>
+                                        <small>Auto Transmission</small><br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
