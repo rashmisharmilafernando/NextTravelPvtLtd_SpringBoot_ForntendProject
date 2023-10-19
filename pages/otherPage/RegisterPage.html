@@ -25,23 +25,29 @@
                      class="img-fluid" alt="Sample image">
             </div>
             <div class="col  offset-xl-1">
-                <div class="profile-pic-wrapper">
-                    <div class="pic-holder">
-                        <!-- uploaded pic shown here -->
-                        <img id="profilePic" class="pic"
-                             src="https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg">
-                        <Input class="uploadProfileInput" type="file" name="profile_pic" id="newProfilePhoto"
-                               accept="image/*" style="opacity: 0;"/>
-                        <label for="newProfilePhoto" class="upload-file-block">
-                            <div class="text-center">
-                                <div class="text-uppercase">
-                                    Update <br/> Profile Photo
+
+                <form id="registerForm" class="mx-1 mx-md-4">
+                    <div class="row">
+                        <div class="col mb-4">
+                            <div class="profile-pic-wrapper">
+                                <div class="pic-holder">
+                                    <!-- uploaded pic shown here -->
+                                    <img id="profilePic" class="pic"
+                                         src="https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg">
+                                    <Input class="uploadProfileInput" type="file" name="profile_pic"
+                                           id="newProfilePhoto"
+                                           accept="image/*" style="opacity: 0;"/>
+                                    <label for="newProfilePhoto" class="upload-file-block">
+                                        <div class="text-center">
+                                            <div class="text-uppercase">
+                                                Update <br/> Profile Photo
+                                            </div>
+                                        </div>
+                                    </label>
                                 </div>
                             </div>
-                        </label>
+                        </div>
                     </div>
-                </div>
-                <form id="registerForm" class="mx-1 mx-md-4">
                     <div class="row">
                         <div class="col mb-4">
                             <span class="span m-1">ID</span>
@@ -51,7 +57,7 @@
                         </div>
                         <div class="col mb-4">
                             <span class="span m-1">Name</span>
-                            <input  id="regname"  name="Regutsername" type="text" class="form-control" placeholder="">
+                            <input id="regname" name="Regutsername" type="text" class="form-control" placeholder="">
                         </div>
                         <div class="col mb-4">
                             <span class="span m-1">Email</span>
@@ -62,29 +68,33 @@
                     <div class="row">
                         <div class="col mb-4">
                             <span class="span m-1">Address</span>
-                            <input  id="regAddress" name="Regutseraddrss"  type="text" class="form-control" placeholder="">
+                            <input id="regAddress" name="Regutseraddrss" type="text" class="form-control"
+                                   placeholder="">
 
                         </div>
                         <div class="col mb-4">
                             <span class="span m-1">NIC</span>
-                            <input  id="regNIC" name="Regutsernic" type="text" class="form-control" placeholder="">
+                            <input id="regNIC" name="Regutsernic" type="text" class="form-control" placeholder="">
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col mb-4">
                             <span class="span m-1">username</span>
-                            <input  id="regUsername" name="RegutserUsername" type="text" class="form-control" placeholder="">
+                            <input id="regUsername" name="RegutserUsername" type="text" class="form-control"
+                                   placeholder="">
 
                         </div>
                         <div class="col mb-4">
                             <span class="span m-1">Password</span>
-                            <input id="regPassword" name="RegutserPassword" type="password" class="form-control" placeholder="">
+                            <input id="regPassword" name="RegutserPassword" type="password" class="form-control"
+                                   placeholder="">
 
                         </div>
                     </div>
 
-                    <a href="../../index.html" type="register_button" class="btn btn-outline-warning btn-lg " style="margin-left: 250px">Register</a>
+                    <a href="../../index.html" type="register_button" class="btn btn-outline-warning btn-lg "
+                       style="margin-left: 250px">Register</a>
                 </form>
             </div>
         </div>

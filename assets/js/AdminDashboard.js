@@ -1,6 +1,6 @@
 let adminDashboardBaseUrl="";
 
-//Package
+//--------------------------Number of Package-----------------------
 $("#PackagesCount").val("0");
 $.ajax({
     url:adminDashboardBaseUrl+"packagecount",
@@ -16,7 +16,7 @@ $.ajax({
     }
 })
 
-//Hotel
+//------------------------Number of Hotel--------------------------------
 $("#HotelsCount").val("0");
 $.ajax({
     url:adminDashboardBaseUrl+"hotelsCount",
@@ -32,7 +32,7 @@ $.ajax({
     }
 })
 
-//Vehicle
+//------------------------------Number of Vehicle-------------------------------------
 $("#VehiclesCount").val("0");
 $.ajax({
     url:adminDashboardBaseUrl+"vehiclesCount",
@@ -48,7 +48,7 @@ $.ajax({
     }
 })
 
-//Admin
+//---------------------------------Number of Admin-----------------------------------
 $("#VehiclesCount").val("0");
 $.ajax({
     url:adminDashboardBaseUrl+"vehiclesCount",
@@ -64,7 +64,7 @@ $.ajax({
     }
 })
 
-//User
+//------------------------------Number of User---------------------------------------
 $("#UsersCount").val("0");
 $.ajax({
     url:adminDashboardBaseUrl+"userCount",
@@ -80,7 +80,7 @@ $.ajax({
     }
 })
 
-//Guide
+//---------------------------------Number of Guide----------------------------------------------
 $("#GuideCount").val("0");
 $.ajax({
     url:adminDashboardBaseUrl+"GuiderCount",
@@ -95,7 +95,7 @@ $.ajax({
         console.log(error)
     }
 })
-//Customer
+//---------------------------------------Number of Customer--------------------------------------
 $("#customerCount").val("0");
 $.ajax({
     url:adminDashboardBaseUrl+"CustomerCount",
@@ -110,7 +110,7 @@ $.ajax({
         console.log(error)
     }
 })
-//Today Booking
+//---------------------------------------Number of Today Booking----------------------------------
 $("#tBookingCount").val("0");
 $.ajax({
     url: adminDashboardBaseUrl + "booking/bookingActive",

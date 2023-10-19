@@ -69,7 +69,7 @@
                             <div class="row mb-4">
                                 <div class="col">
                                     <span class="span m-1">Package</span>
-                                    <select class="form-control" id="packageName">
+                                    <select class="form-control" id="packageName" name="package_Name">
                                         <!--<option value="">Select Package</option>
                                         <option value="Regular">Regular</option>
                                         <option value="Mid-Level">Mid-Level</option>
@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="col">
                                     <span class="span m-1">Guide or not</span>
-                                    <select class="form-control" id="guideStataus" name="guide_Staus">
+                                    <select class="form-control" id="guideStatus" name="guide_Staus">
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
@@ -192,7 +192,7 @@
                             <div class="row ">
                                 <div class="col">
                                     <span class="span m-1">Guide ID</span>
-                                    <select class="form-control" id="guideid" name="guide_id">
+                                    <select class="form-control" id="guide_id" name="guideid">
                                         <!--<option value="passengers4"></option>
                                         <option value="passengers5">Anantara Hotel</option>
                                         <option value="passengers5">Light House Hotel</option>
@@ -239,13 +239,6 @@
                                     <input type="text" class="form-control" placeholder="" readonly name="total"
                                            id="full_payment">
                                 </div>
-                                <div class="col">
-                                    <span class="span m-1">Pay Amount</span>
-                                    <input type="text" class="form-control" placeholder="" id="amount"
-                                           name="pay_amount">
-                                </div>
-                            </div>
-                            <div class="row ">
                                 <div class="col">
                                     <span class="span m-1">Payment Slip</span>
                                     <input type="file" class="form-control" placeholder="" id="imageofslip"
@@ -322,10 +315,11 @@
             <table class="table" id="bookingDetailsTable">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#No</th>
+                    <th scope="col">#Booking ID</th>
                     <th scope="col">Package</th>
-                    <th scope="col">Hotel</th>
+                    <th scope="col">Hotel </th>
                     <th scope="col">Vehicle</th>
+                    <th scope="col">Guide</th>
                     <th scope="col">Start Date</th>
                     <th scope="col">End Date</th>
                     <th scope="col">Full Payment</th>

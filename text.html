@@ -15,28 +15,44 @@
   </style>
 </head>
 <body>
-<div class="container bcontent">
-  <h2>Bootstrap Horizontal Card</h2>
-  <hr />
-  <div class="card" style="width: 500px;">
-    <div class="row no-gutters">
-      <div class="col-sm-5">
-        <img class="card-img-top"
-             src="https://ak-d.tripcdn.com/images/022691200082a1y3nCFAC_R_640_440_R5_D.webp"
-             alt="Card image cap">
-      </div>
-      <div class="col-sm-7">
-        <div class="card-body">
-          <h6 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h6>
-          <div class="star-rating">
-            <input type="radio" name="rating" value="3"><label></label>
-            <input type="radio" name="rating" value="2"><label></label>
-            <input type="radio" name="rating" value="1"><label></label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="input-container">
+  <label for="dayCount">Enter Day Count:</label>
+  <input type="number" id="dayCount" />
 </div>
+
+<div class="output-container">
+  <p>Package Price: <span id="packagePrice">0</span></p>
+  <p>Guide Value: <span id="guideValue">0</span></p>
+  <p>Days: <span id="totalDays">0</span></p>
+</div>
+
 </body>
+<script>
+  document.getElementById('dayCount').addEventListener('input', function() {
+    // Get the day count entered by the user
+    const dayCount = parseInt(this.value);
+
+    // Make an AJAX request to fetch the package details based on day count
+    if (!isNaN(dayCount)) {
+      // Replace 'your_package_price_api' with the actual URL to fetch package data
+      const apiUrl = `your_package_price_api?dayCount=${dayCount}`;
+
+      // Send an AJAX request
+      fetch(apiUrl)
+              .then(response => response.json())
+              .then(data => {
+                // Update the displayed package price, guide value, and days
+                document.getElementById('packagePrice').textContent = data.packagePrice;
+                document.getElementById('guideValue').textContent = data.guideValue;
+                document.getElementById('totalDays').textContent = dayCount;
+              })
+              .catch(error => {
+                console.error('Error fetching package data:', error);
+              });
+    }
+  });
+
+
+
+</script>
 </html>

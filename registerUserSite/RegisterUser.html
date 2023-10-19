@@ -38,15 +38,15 @@
         <div class="row"  style="background-color: white;padding-top: 20px;box-shadow: 10px 10px 5px -5px rgba(20,10,10,0.15);">
             <div class="container-fluid h-custom">
                 <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <!--<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                         <div class="profile-pic-wrapper">
                             <div class="pic-holder">
-                                <!-- uploaded pic shown here -->
+                                &lt;!&ndash; uploaded pic shown here &ndash;&gt;
                                 <img id="profilePic" class="pic"
                                      src="https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg" alt="profilePic">
-                                <Input class="uploadProfileInput" type="file" name="profile_pic" id="newProfilePhoto"
+                                <Input class="uploadProfileInput" type="file" name="reg_User_ProfilePhoto" id="regUserProfilePhoto"
                                        accept="image/*" style="opacity: 0;" />
-                                <label for="newProfilePhoto" class="upload-file-block">
+                                <label for="regUserProfilePhoto" class="upload-file-block">
                                     <div class="text-center">
                                         <div class="mb-2">
                                             <i class="fa fa-camera fa-2x"></i>
@@ -58,51 +58,71 @@
                                 </label>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-
                         <form id="userAccountDetails" class="mx-1 mx-md-4">
                             <div class="d-flex flex-row align-items-center mb-4">
-                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0">
+                                    <div class="profile-pic-wrapper">
+                                        <div class="pic-holder">
+                                            <!-- uploaded pic shown here -->
+                                            <img id="profilePic" class="pic"
+                                                 src="https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg" alt="profilePic">
+                                            <Input class="uploadProfileInput" type="file" name="reg_User_ProfilePhoto" id="regUserProfilePhoto"
+                                                   accept="image/*" style="opacity: 0;" />
+                                            <label for="regUserProfilePhoto" class="upload-file-block">
+                                                <div class="text-center">
+                                                    <div class="mb-2">
+                                                        <i class="fa fa-camera fa-2x"></i>
+                                                    </div>
+                                                    <div class="text-uppercase">
+                                                        Update <br/> Profile Photo
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
                                     <input type="text" id="customerid" class="form-control" placeholder="Customer ID"
                                            name="customer_id" readonly=""/>
                                 </div>
                             </div>
                             <div class="d-flex flex-row align-items-center mb-4">
-                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                 <div class="form-outline flex-fill mb-0">
-                                    <input type="text" id="name" class="form-control" placeholder="Name"
-                                           name="customer_name"/>
+                                    <input type="text" id="regUserName" class="form-control" placeholder="Name"
+                                           name="reg_User_Name"/>
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row align-items-center mb-4">
-                                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+
                                 <div class="form-outline flex-fill mb-0">
-                                    <input type="email" id="email"  name="customer_email" class="form-control" placeholder="Email" />
+                                    <input type="email" id="regUserEmail"  name="reg_User_Email" class="form-control" placeholder="Email" />
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row align-items-center mb-4">
-                                <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+
                                 <div class="form-outline flex-fill mb-0">
-                                    <input type="password" id="address" name="customer_address" class="form-control" placeholder="Address" />
+                                    <input type="password" id="regUserAddress" name="reg_User_address" class="form-control" placeholder="Address" />
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row align-items-center mb-4">
-                                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+
                                 <div class="form-outline flex-fill mb-0">
-                                    <input type="password" id="password" name="customer_password" class="form-control" placeholder="Password"/>
+                                    <input type="password" id="regUserPassword" name="regUser_password" class="form-control" placeholder="Password"/>
 
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row align-items-center mb-4">
-                                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+
                                 <div class="form-outline flex-fill mb-0">
-                                    <input type="password" id="username"  name="customer_username" class="form-control" placeholder="User name"/>
+                                    <input type="password" id="regUserUsername"  name="reg_User_Username" class="form-control" placeholder="User name"/>
                                     <span class="control-error"></span>
                                 </div>
                             </div>
