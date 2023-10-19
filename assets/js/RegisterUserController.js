@@ -232,3 +232,20 @@ document.addEventListener("change", function (event) {
 });
 
 
+/*-------------------------------------------------------*/
+$("#updateUserDetails").click(function (){
+    let formData=new FormData($("#userAccountDetails")[0]);
+    $.ajax({
+        url:RegisterBaseUrl+"registerUser/updatedtails",
+        method:"post",
+        data:formData,
+        contentType:false,
+        processData:false,
+        success:function (res){
+            loadAllRegisterUser();
+        },
+        error:function (error){
+            console.log(error)
+        }
+    })
+});

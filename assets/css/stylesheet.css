@@ -30,7 +30,7 @@ input:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #1976D2 !important;
+    border: 1px solid #f1a501 !important;
     outline-width: 0;
 }
 
@@ -267,7 +267,7 @@ tfoot tr:nth-child(2) th {
 #home{
     width: 100%;
     height: 100%;
-    background-image: url("assets/img/bgimage.png");
+    background-image: url("../../assets/img/bgimage.png");
     background-size: cover;
 }
 #aboutpage{

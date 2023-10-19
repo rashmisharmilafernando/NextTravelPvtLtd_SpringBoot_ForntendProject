@@ -113,15 +113,16 @@ $.ajax({
 //Today Booking
 $("#tBookingCount").val("0");
 $.ajax({
-    url:adminDashboardBaseUrl+"CustomerCount",
-    method:"GET",
-    contentType:"application/json",
-    dataType:"json",
-    success:function (res){
-        let num=res.count
+    url: adminDashboardBaseUrl + "booking/bookingActive",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
         $("#tBookingCount").text(num);
+
     },
     error:function (error){
         console.log(error)
     }
-})
+});

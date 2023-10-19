@@ -80,6 +80,7 @@ function filterPackages() {
     $.ajax({
         url: indexBaseUrl + "packages/filerPackages?filter_packages",
         method: "GET",
+        data: { filter_packages },
         dataType: "json",
         success: function (res) {
             for (let i of res) {
