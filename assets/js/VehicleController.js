@@ -1,4 +1,5 @@
-let vehicleBasrurl="";
+//http://localhost:8090/vehicleServer/vehicle
+let vehicleBasrurl="http://localhost:8090/vehicleServer/";
 loadVehicles();
 
 //save Vehicle
