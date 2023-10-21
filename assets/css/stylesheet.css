@@ -38,7 +38,7 @@ input:focus {
     position: absolute;
     top: 13px;
     font-size: 20px;
-    color: #1976D2;
+    color: #b78c2a;
     z-index: 1000;
 }
 
@@ -99,8 +99,8 @@ button:focus {
 .datepicker-dropdown {
     top: 180px !important;
     left: calc(50% - 173.5px) !important;
-    border-right: #1976D2;
-    border-left: #1976D2;
+    border-right: #f1a501;
+    border-left: #f1a501;
 }
 
 .datepicker-dropdown.datepicker-orient-left:before {
@@ -109,11 +109,11 @@ button:focus {
 
 .datepicker-dropdown.datepicker-orient-left:after {
     left: calc(50% - 5px) !important;
-    border-bottom-color: #1976D2;
+    border-bottom-color: #f1a501;
 }
 
 .datepicker-dropdown.datepicker-orient-right:after {
-    border-bottom-color: #1976D2;
+    border-bottom-color: #f1a501;
 }
 
 .datepicker table tr td.today, span.focused {
@@ -122,7 +122,7 @@ button:focus {
 }
 
 thead tr:nth-child(2) {
-    background-color: #1976D2 !important;
+    background-color: #f1a501 !important;
 }
 
 /*Weekday title*/

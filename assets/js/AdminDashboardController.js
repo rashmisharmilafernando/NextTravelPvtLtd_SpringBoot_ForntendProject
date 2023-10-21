@@ -32,21 +32,7 @@ $.ajax({
     }
 })
 
-//------------------------------Number of Vehicle-------------------------------------
-$("#VehiclesCount").val("0");
-$.ajax({
-    url:adminDashboardBaseUrl+"vehiclesCount",
-    method:"GET",
-    contentType:"application/json",
-    dataType:"json",
-    success:function (res){
-        let num=res.count
-        $("#VehiclesCount").text(num);
-    },
-    error:function (error){
-        console.log(error)
-    }
-})
+
 
 //---------------------------------Number of Admin-----------------------------------
 $("#VehiclesCount").val("0");

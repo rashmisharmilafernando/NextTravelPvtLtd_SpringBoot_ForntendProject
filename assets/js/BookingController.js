@@ -168,7 +168,7 @@ $("#HotelID").click(function (){
 $("#vehicleRegId").click(function (){
     var serachVehicleRegID=$("#vehicleRegId").val();
     $.ajax({
-        url:bookingBaseUrl+"vehicle/serachVehicleRegid/?vehicleRedId"+serachVehicleRegID,
+        url:bookingBaseUrl+"vehicle/filterVehicleDetails/?vehicleRedId"+serachVehicleRegID,
         method:"GET",
         contentType:"json",
         success:function (res){

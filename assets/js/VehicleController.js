@@ -57,10 +57,10 @@ $("#deleteVehiclebtn").click(function () {
 //search vehicle
 $("#searchbtn").on("keypress",function (event){
     if (event.which ===13){
-        var searchGuide=$("#searchbtn").val();
+        var searchVehicle=$("#searchbtn").val();
         $("#vehicleTable").empty();
         $.ajax({
-            url:RegisterBaseUrl + "vehicle/searchVehicle/?vehicleid="+searchGuide,
+            url:RegisterBaseUrl + "vehicle/searchVehicle/?vehicleId="+searchVehicle,
             method:"GET",
             contentType:"application/json",
             dataType:"json",
@@ -131,7 +131,7 @@ function loadAllHotel() {
 function autoGenerateId(){
     $("#vehicle_id").val("V001");
     $.ajax({
-        url:vehicleBasrurl+"vehicle/autoGenerateid",
+        url:vehicleBasrurl+"vehicle/autoGenerateId",
         method:"GET",
         contentType:"application/json",
         dataType:"json",
@@ -152,3 +152,18 @@ function autoGenerateId(){
         }
     })
 }
+//------------------------------Number of Vehicle-------------------------------------
+$("#VehiclesCount").val("0");
+$.ajax({
+    url:adminDashboardBaseUrl+"vehiclesCount",
+    method:"GET",
+    contentType:"application/json",
+    dataType:"json",
+    success:function (res){
+        let num=res.count
+        $("#VehiclesCount").text(num);
+    },
+    error:function (error){
+        console.log(error)
+    }
+})

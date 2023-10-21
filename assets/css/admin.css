@@ -8,7 +8,19 @@ a {
     color: rgba(241, 165, 1, 0.87);
     text-decoration: none;
 }
+select,input{
+    background-color: #fff !important;
+}
 
+select,input:focus {
+
+    border: 1px solid #cfd8dc !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(73, 72, 72, 0.31) !important;
+    outline-width: 0;
+}
 a:hover {
     color: #000000;
     text-decoration: none;
