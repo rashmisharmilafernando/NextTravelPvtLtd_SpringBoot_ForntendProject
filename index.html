@@ -29,7 +29,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll"
-     style="background-image: none; background-color: rgba(215,215,215,0.51);">
+     style="background-image: none; background-color: rgb(255,255,255);">
     <div class="container">
         <a class="navbar-brand" href="/index.html"><img src="assets/img/logo.png" height="24" width="110"
                                                         alt="logo"></a>
@@ -119,175 +119,124 @@
             </div>
         </div>
     </section>
-    <!--Packages Page-->
+    <!-----Packages-->
     <section id="packagePage" style="margin-top: 20px;">
         <div class="container">
             <div class="row sm-m-25px-b m-35px-b">
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h1 class="mb-0 pageTile" style="font-weight: 150">OUR PACKAGES</h1>
-                        <span class="row">
-                            <div class="col-3">
-                                <h6 class="card-title">Package</h6>
-                                 <select class="form-control" id="filterPackage" name="filter_packages">
-                                    <option value="">Choose Type</option>
-                                    <!--<option value="Regular">Regular</option>
-                                    <option value="Mid-Level">Mid-Level</option>
-                                    <option value="Luxury">Luxury</option>
-                                    <option value="SuperLuxury">Super Luxury</option>-->
-                                </select>
-                            </div>
-                           <div class="col-3 mt-2">
-                                 <button type="button" class="btn btn-dark mt-lg-4" style="" id="searchPackage" name="search_Package">Search</button>
-                            </div>
-                        </span>
-                        <hr>
-                        <br>
-                        <span class="row">
-                            <div class="col-3">
-                                 <select class="form-control" id="filterstarRate" name="filter_start_Rate">
-                                    <!--<option value="">Star Rate</option>
-                                    <option value="DIESEL">2 Star</option>
-                                    <option value="PETROL">3 Star</option>-->
-                                </select>
-                            </div>
-                            <div class="col-3">
-                                 <select class="form-control" id="filterlocation" name="filter_locations">
-                                    <option value="">Location</option>
-                                     <option value="KandyandUpcountry"> Kandy and Upcountry</option>
-                                    <option value="EasternCoast">Eastern Coast</option>
-                                    <option value="CapitalColombo">Capital Colombo</option>
-                                    <option value="WesternCoast">Western Coast</option>
-                                    <option value="NorthPeninsula">North Peninsula</option>
-                                    <option value="DownSouth">Down South</option>
-                                    <option value="Sigiriya">Sigiriya and Dambulla</option>
-                                    <option value="Anuradhapura">Anuradhapura and Polonnaruwa</option>
-                                    <option value="Matale">Matale</option>
-                                </select>
-                            </div>
-                           <div class="col-3">
-                                 <button type="button" class="btn btn-dark" style="" id="searchHotel" name="search_Hotel">Search</button>
-                            </div>
-                        </span>
-                        <br>
-                        <div id="hotelSection"></div>
+                        <h1 class="mb-0  pageTile" style="font-weight: 150">OUR PACKAGES</h1>
+                        <div class="container">
+                            <span class="row justify-content-md-center mt-5">
+                                        <div class="col-3">
+                                             <select class="form-control" id="filterPackage" name="filter_packages">
+                                                <option value="">Packages</option>
+                                                 <!--option value="Regular">Regular</option>
+                                                 <option value="Mid-Level">Mid-Level</option>
+                                                 <option value="Luxury">Luxury</option>
+                                                 <option value="SuperLuxury">Super Luxury</option>-->
+                                             </select>
+                                        </div>
+                                    </span>
+                            <div class="row mt-5">
+                                <div class="col-lg-6 m-15px-tb justify-content-md-center">
 
-                        <div class="card" style="width: 500px;">
-                            <div class="row no-gutters">
-                                <div class="col-sm-6">
-                                    <img class="card-img-top"
-                                         src="https://ak-d.tripcdn.com/images/022691200082a1y3nCFAC_R_640_440_R5_D.webp"
-                                         alt="Card image cap">
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="card-body">
-                                        <h4 class="card-title" style="margin-top: 15px">Kandy City Hotel by Earl's</h4>
-                                        <small> Wadduwa</small><br>
-                                        <small>2 Star</small>
+                                    <span class="row">
+                                         <div class="col-3">
+                                              <select class="form-control" id="filterstarRate" name="filter_start_Rate">
+                                                 <option value="">Star Rate</option>
+                                                  <!--option value="DIESEL">2 Star</option>
+                                                  <option value="PETROL">3 Star</option>-->
+                                             </select>
+                                         </div>
+                                         <div class="col-3">
+                                              <select class="form-control" id="filterlocation" name="filter_locations">
+                                                 <option value="">Location</option>
+                                                  <option value="KandyandUpcountry"> Kandy and Upcountry</option>
+                                                 <option value="EasternCoast">Eastern Coast</option>
+                                                 <option value="CapitalColombo">Capital Colombo</option>
+                                                 <option value="WesternCoast">Western Coast</option>
+                                                 <option value="NorthPeninsula">North Peninsula</option>
+                                                 <option value="DownSouth">Down South</option>
+                                                 <option value="Sigiriya">Sigiriya and Dambulla</option>
+                                                 <option value="Anuradhapura">Anuradhapura and Polonnaruwa</option>
+                                                 <option value="Matale">Matale</option>
+                                             </select>
+                                         </div>
+                                        <div class="col-3">
+                                              <button type="button" class="btn btn-dark" style="" id="searchHotel"
+                                                      name="search_Hotel">Search</button>
+                                        </div>
+                                    </span>
+                                    <br>
+                                    <div id="vehicleSection"></div>
+                                    <div class="card" style="width: 500px;">
+                                        <div class="row no-gutters">
+                                            <div class="col-sm-6">
+                                                <img class="card-img-top"
+                                                     src="https://ak-d.tripcdn.com/images/022691200082a1y3nCFAC_R_640_440_R5_D.webp"
+                                                     alt="Card image cap">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="margin-top: 15px">Kandy City
+                                                        Hotel</h4>
+                                                    <small> Wadduwa</small><br>
+                                                    <small>2 Star</small>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div id="vehicleSection"></div>
-                        <span class="row mt-5">
-                            <div class="col-3">
-                                 <select class="form-control" id="filterpassengers" name="filter_Passengers">
-                                    <option value="">No of passengers</option>
-                                     <option value="passengers4">4</option>
-                                    <option value="passengers5">5</option>
-                                    <option value="passengers10">10</option>
-                                    <option value="passengers12">12</option>
-                                </select>
-                            </div>
-                            <div class="col-3">
-                                 <select class="form-control" id="filterTransmission" name="filter_Transmission">
-                                         <option value="">Transmission type</option>
-                                     <option value="Auto">Auto Transmission</option>
-                                    <option value="Manual">Manual Transmission</option>
-                                </select>
-                            </div>
-                            <div class="col-3">
-                                 <select class="form-control" id="filterFueltype" name="filter_Fueltype">
-                                     <option value="">Fuel type</option>
-                                     <option value="passengers4">Diesel</option>
-                                    <option value="passengers5">Petrol</option>
-                                </select>
-                            </div>
-                            <div class="col-3 ">
-                                  <button type="button" class="btn btn-dark " style="" id="searchVehicle" name="search_Vehicle">Search</button>
-                            </div>
-                        </span>
-                        <br>
-                      <!--  <div class="row">
-                        <div class="col-sm-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img class="card-img-top"
-                                         src="https://cdn2.rcstatic.com/images/car_images/web/suzuki/alto_lrg.jpg"
-                                         alt="Card image cap">
-                                    <h6 class="card-title" style="margin-top: 15px">Suzuki Alto</h6>
-                                    <small>4 seats</small><br>
-                                    <small>Petrol Manual Transmission</small><br>
-                                    <h3 class="h3">LKR 4500</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img class="card-img-top"
-                                         src="https://cdn2.rcstatic.com/images/car_images/web/nissan/wingroad_lrg.jpg"
-                                         alt="Card image cap">
-                                    <h6 class="card-title" style="margin-top: 15px">Nissan Wingroad Estate</h6>
-                                    <small>4 seats</small><br>
-                                    <small>Petrol Auto Transmission</small><br>
-                                    <h3 class="h3">LKR 5000</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img class="card-img-top"
-                                         src="https://cdn2.rcstatic.com/images/car_images/new_images/toyota/corolla_hatch_lrg.jpg"
-                                         alt="Card image cap">
-                                    <h6 class="card-title" style="margin-top: 15px">Toyota Corolla
-                                    </h6>
-                                    <small>4 seats</small><br>
-                                    <small>Petrol Auto Transmission</small><br>
-                                    <h3 class="h3">LKR 5500</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img class="card-img-top"
-                                         src="https://cdn2.rcstatic.com/images/car_images/web/nissan/kicks_lrg.jpg"
-                                         alt="Card image cap">
-                                    <h6 class="card-title" style="margin-top: 15px">Nissan Kicks</h6>
-                                    <small>4 seats</small><br>
-                                    <small>Petrol Auto Transmission</small><br>
-                                    <h3 class="h3">LKR 6000</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
-                        <div class="card" style="width: 500px;">
-                            <div class="row no-gutters">
-                                <div class="col-sm-6">
-                                    <img class="card-img-top"
-                                         src="https://cdn2.rcstatic.com/images/car_images/web/nissan/kicks_lrg.jpg"
-                                         alt="Card image cap">
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="card-body">
-                                        <h4 class="card-title" style="margin-top: 15px">Nissan Kicks</h4>
-                                        <small>4 seats</small><br>
-                                        <small>Petrol </small><br>
-                                        <small>Auto Transmission</small><br>
-
+                                <div class="col-lg-6 m-15px-tb justify-content-md-center">
+                                    <span class="row">
+                                         <div class="col-3">
+                                              <select class="form-control" id="filterpassengers"
+                                                      name="filter_Passengers">
+                                                 <option value="">No of passengers</option>
+                                                  <option value="passengers4">4</option>
+                                                 <option value="passengers10">10</option>
+                                                 <option value="passengers12">12</option>
+                                             </select>
+                                         </div>
+                                         <div class="col-3">
+                                              <select class="form-control" id="filterTransmission"
+                                                      name="filter_Transmission">
+                                                      <option value="">Transmission type</option>
+                                                  <option value="Auto">Auto Transmission</option>
+                                                 <option value="Manual">Manual Transmission</option>
+                                             </select>
+                                         </div>
+                                         <div class="col-3">
+                                              <select class="form-control" id="filterFueltype" name="filter_Fueltype">
+                                                  <option value="">Fuel type</option>
+                                                  <option value="passengers4">Diesel</option>
+                                                 <option value="passengers5">Petrol</option>
+                                             </select>
+                                         </div>
+                                         <div class="col-3 ">
+                                               <button type="button" class="btn btn-dark " style="" id="searchVehicle"
+                                                       name="search_Vehicle">Search</button>
+                                         </div>
+                                    </span>
+                                    <br>
+                                    <div id="hotelSection"></div>
+                                    <div class="card">
+                                        <div class="row no-gutters">
+                                            <div class="col-sm-6">
+                                                <img class="card-img-top"
+                                                     src="https://cdn2.rcstatic.com/images/car_images/web/nissan/kicks_lrg.jpg"
+                                                     alt="Card image cap">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="card-body" >
+                                                    <h4 class="card-title" style="margin-top: 15px">Nissan Kicks</h4>
+                                                    <small>4 seats</small><br>
+                                                    <small>Petrol </small><br>
+                                                    <small>Auto Transmission</small><br>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

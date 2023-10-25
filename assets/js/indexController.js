@@ -1,6 +1,27 @@
 let indexBaseUrl = "";
 loadAllHotel();
 loadAllVehicle();
+loadAllPackageName();
+
+function loadAllPackageName() {
+    $("#filterPackage").empty();
+    $.ajax({
+        url:indexBaseUrl+"packages/filterPackageName",
+        method:"GET",
+        contentType:"json",
+        dataType:"json",
+        success:function (res){
+            for (let i of res){
+                let package_name=i.filter_packages;
+                $("#filterPackage").append(`<option>${package_name}</option>`)
+            }
+        },error:function (error){
+            console.log(error);
+        }
+    })
+}
+
+
 
 function loadAllHotel() {
     $("#hotelSection").empty();
@@ -69,7 +90,7 @@ function loadAllVehicle() {
 
 /*---------------------------------------------------------*/
 
-$("#searchPackage").on("click", function () {
+$("#filterPackage").on("click", function () {
     filterPackages();
 });
 

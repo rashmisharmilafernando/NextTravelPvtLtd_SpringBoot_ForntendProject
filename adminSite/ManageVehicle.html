@@ -79,7 +79,7 @@
                             <span class="span m-1">Vehicle ID</span>
                             <input class="form-control" id="vehicle_id" readonly
                                    name="vehicleid"
-                                   placeholder="Vehicle ID" type="text">
+                                   placeholder="V001" type="text">
                         </div>
                         <div class="col">
                             <span class="span m-1">Vehicle brand</span>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="col">
                             <span class="span m-1">Hybrid Status </span>
-                            <select class="form-control" id="hybridStatus">
+                            <select class="form-control" id="hybridStatus" name="hybrid_Status">
                                 <option value="">Select Status</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -158,13 +158,8 @@
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
-                            <span class="span m-1">license(Font View)</span>
-                            <input class="form-control"  type="file" name="license(FontView)" id="license_(FontView)">
-                            <span class="control-error"></span>
-                        </div>
-                        <div class="col">
-                            <span class="span m-1">license(Rear View)</span>
-                            <input class="form-control" type="file" name="license(RearView)" id="license(Rear_View)">
+                            <span class="span m-1">license</span>
+                            <input class="form-control" type="file" name="license" id="license">
                             <span class="control-error"></span>
                         </div>
                     </div>
@@ -202,9 +197,12 @@
                         <th scope="col">ID</th>
                         <th scope="col">brand</th>
                         <th scope="col">Category</th>
-                        <th scope="col">Vehicle type</th>
+                        <th scope="col">Fuel Type</th>
+                        <th scope="col">Fuel Usage</th>
+                        <th scope="col">Hybrid Status</th>
+                        <th scope="col">Seat Capacity</th>
+                        <th scope="col">Vehicle Type</th>
                         <th scope="col">Transmission type</th>
-                        <th scope="col">Fuel type</th>
                         <th scope="col">Driver Name</th>
                         <th scope="col">Contact number</th>
                     </tr>

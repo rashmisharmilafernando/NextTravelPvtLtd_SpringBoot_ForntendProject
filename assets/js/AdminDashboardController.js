@@ -3,7 +3,7 @@ let adminDashboardBaseUrl="";
 //--------------------------Number of Package-----------------------
 $("#PackagesCount").val("0");
 $.ajax({
-    url:adminDashboardBaseUrl+"packagecount",
+    url:adminDashboardBaseUrl+"packageCount",
     method:"GET",
     contentType:"application/json",
     dataType:"json",

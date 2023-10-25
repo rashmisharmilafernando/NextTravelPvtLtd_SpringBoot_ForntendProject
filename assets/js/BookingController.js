@@ -8,7 +8,7 @@ autoGeneratebookingid();
 function autoGeneratebookingid() {
     $("#searchbookingid").val("NTB001");
     $.ajax({
-        url: bookingBaseUrl + "booking/generatebookingid",
+        url: bookingBaseUrl + "booking/generateBookingId",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -100,91 +100,14 @@ function loadPackageValues(){
     });
 }
 
-//-----------------------select package and filter hotel-------------------------------------
 
-function filterHotelName() {
-    let packageName = $("#packageName").val();
-    console.log(packageName);
-    $("#HotelID").empty();
-    $("#hotelName").empty();
-    $.ajax({
-        url: bookingBaseUrl + "booking/filterHotel/?hotelName" + packageName,
-        method: "GET",
-        contentType: "application/json",
-        dataType: "json",
-        success: function (res) {
-            console.log(res);
-            for (let i of res) {
-                let hotelId = i.hotel_id;
-                let hotelName = i.filter_hotel_name;
-                $("#HotelID").append(`<option>${hotelId}</option>`)
-                $("#hotelName").append(`<option>${hotelName}</option>`)
-            }
-        }
-    });
-}
 
-//-----------------------Select Package and filter the vehicle-----------------------------------
 
-function filterVehicleRegID() {
-    let packageName = $("#packageName").val();
-    console.log(packageName);
-    $("#vehicleRegId").empty();
-    $.ajax({
-        url: bookingBaseUrl + "booking/filterHotel/?packageName" + packageName,
-        method: "GET",
-        contentType: "application/json",
-        dataType: "json",
-        success: function (res) {
-            console.log(res);
-            for (let i of res) {
-                let reg_Id = i.vehicle_Reg_Id;
-                $("#vehicleRegId").append(`<option>${reg_Id}</option>`)
-            }
-        }
-    });
-}
 
-//-------------------Select hotel Id----------------------------------
 
-$("#HotelID").click(function (){
-    var searchHotelName=$("#HotelID").val();
-    $.ajax({
-        url:bookingBaseUrl+"hotel/searchHotel/?HotelID"+searchHotelName,
-        method:"GET",
-        contentType:"application/json",
-        dataType:"json",
-        success:function (res){
-            $("#hotelName").val(res.filter_hotel_name);
-            $("#locations").val(res.filter_Location);
 
-        },error:function (error){
-            console.log(error);
-        }
-    });
-})
-//---------------------Select vehicle register number-------------------------------
 
-$("#vehicleRegId").click(function (){
-    var serachVehicleRegID=$("#vehicleRegId").val();
-    $.ajax({
-        url:bookingBaseUrl+"vehicle/filterVehicleDetails/?vehicleRedId"+serachVehicleRegID,
-        method:"GET",
-        contentType:"json",
-        success:function (res){
-            $("#vehicle_brand").val(res.vehiclebrand);
-            $("#vehicle_seatCapacity").val(res.seatCapacity);
-            $("#vehicle_Fuel_Type").val(res.FuelType);
-            $("#vehicle_transmission").val(res.transmission);
-            let url=res.forntImageInBooking;
-            $("#imageCard").css({
-                "background":`url(${bookingBaseUrl+url})`,"background-size":"cover"
-            });
-        },error:function (error){
-            console.log(error);
-        }
-    });
-})
+
 
 //---------------------- Select Guide or not--------------------------------
 
@@ -210,7 +133,7 @@ $("#guideStataus").click(function (){
 $("#guide_id").click(function (){
     var searchGuide=$("#guide_id").val();
     $.ajax({
-        url:bookingBaseUrl+"guide/serachGuide/?guide_id="+searchGuide,
+        url:bookingBaseUrl+"guide/searchGuide/?guide_id="+searchGuide,
         method:"GET",
         contentType:"application/json",
         dataType:"json",

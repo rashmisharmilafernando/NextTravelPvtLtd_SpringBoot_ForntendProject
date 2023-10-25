@@ -56,7 +56,7 @@ $("#DeleteHotelBtn").click(function () {
 function loadAllHotel() {
     $("#hotelTable").empty();
     $.ajax({
-        url: HotelBaseUrl + "hotel/loadAllhotel",
+        url: HotelBaseUrl + "hotel/loadAllHotel",
         method: "GET",
         dataType: "json",
         success: function (res) {
@@ -100,7 +100,7 @@ function loadAllHotel() {
 function autoGenerateHotelId() {
     $("#hId").val("H001");
     $.ajax({
-        url: HotelBaseUrl + "hotel/autoGenerateid",
+        url: HotelBaseUrl + "hotel/autoGenerateId",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -122,4 +122,50 @@ function autoGenerateHotelId() {
     })
 }
 
+//-------------load Text field values-------------------
 
+function loadTextFieldValues(){
+    $("#hotelTable>tr").on("click",function (){
+
+    })
+}
+
+//-----------------------select package and filter hotel-------------------------------------
+function filterHotelName() {
+    let packageName = $("#packageName").val();
+    console.log(packageName);
+    $("#HotelID").empty();
+    $("#hotelName").empty();
+    $.ajax({
+        url: HotelBaseUrl + "booking/filterHotel/?hotelName" + packageName,
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            console.log(res);
+            for (let i of res) {
+                let hotelId = i.hotel_id;
+                let hotelName = i.filter_hotel_name;
+                $("#HotelID").append(`<option>${hotelId}</option>`)
+                $("#hotelName").append(`<option>${hotelName}</option>`)
+            }
+        }
+    });
+}
+//-------------------Select hotel Id----------------------------------
+$("#HotelID").click(function (){
+    var searchHotelName=$("#HotelID").val();
+    $.ajax({
+        url:HotelBaseUrl+"hotel/searchHotel/?HotelID"+searchHotelName,
+        method:"GET",
+        contentType:"application/json",
+        dataType:"json",
+        success:function (res){
+            $("#hotelName").val(res.filter_hotel_name);
+            $("#locations").val(res.filter_Location);
+
+        },error:function (error){
+            console.log(error);
+        }
+    });
+})
