@@ -70,13 +70,17 @@ $("#searchGuide").on("keypress",function (event){
                 $("#guideid").val(res.guide_id);
                 $("#guideName").val(res.guide_Name);
                 $("#guideAddress").val(res.guide_Address);
+                $("#guideGender").val(res.guide_Gender);
                 $("#guideNumber").val(res.guide_Number);
+                $("#guideExperience").val(res.guide_Experience);
                 $("#guideDayValue").val(res.guide_Day_Value);
 
                 let row ="<tr><td>" + res.guide_id+"</td>" +
                     "<td>" + res.guide_Name + "</td>" +
                     "<td>" + res.guide_Address+"</td>"+
+                    "<td>" + res.guide_Gender+"</td>"+
                     "<td>" + res.guide_Number+"</td>"+
+                    "<td>" + res.guide_Experience+"</td>"+
                     "<td>" + res.guide_Day_Value+"</td></tr>";
                 $("#registerUserTable").append(row)
             },
@@ -100,16 +104,18 @@ function loadAllGuide() {
             for (let i of res.data) {
                 let id = i.guide_id;
                 let name = i.guide_Name;
-                let number = i.guide_Number;
                 let address = i.guide_Address;
-                let contact = i.guide_Number;
+                let gender = i.guide_Gender;
+                let number = i.guide_Number;
+                let experience = i.guide_Experience;
                 let manDayValue = i.guide_Day_Value;
 
                 let row="<tr><td>" + id + "</td>" +
                     "<td>" + name + "</td>" +
-                    "<td>" + number + "</td>" +
                     "<td>" + address + "</td>" +
-                    "<td>" + contact + "</td>" +
+                    "<td>" + gender + "</td>" +
+                    "<td>" + number + "</td>" +
+                    "<td>" + experience + "</td>" +
                     "<td>" + manDayValue + "</td></tr>";
                 $("#giudeTable").append(row)
             }
@@ -155,7 +161,7 @@ function autoGenerateId() {
 //---------------------------------Number of Guide----------------------------------------------
 $("#GuideCount").val("0");
 $.ajax({
-    url:adminDashboardBaseUrl+"GuiderCount",
+    url:GuiderBaseurl+"GuiderCount",
     method:"GET",
     contentType:"application/json",
     dataType:"json",
@@ -167,6 +173,29 @@ $.ajax({
         console.log(error)
     }
 })
+//-------------------------load text field value---------------------------
+
+function loadTextFieldValues(){
+    $("#giudeTable>tr").on("click",function (){
+        let id = $(this).children().eq(0).text();
+        let name = $(this).children().eq(1).text();
+        let address = $(this).children().eq(2).text();
+        let gender = $(this).children().eq(3).text();
+        let number = $(this).children().eq(4).text();
+        let experience = $(this).children().eq(5).text();
+        let manDayValue = $(this).children().eq(6).text();
+
+        $("#guideid").val(id);
+        $("#guideName").val(name);
+        $("#guideAddress").val(address);
+        $("#guideGender").val(gender);
+        $("#guideNumber").val(number);
+        $("#guideExperience").val(experience);
+        $("#guideDayValue").val(manDayValue);
+    });
+
+}
+
 
 //--------------Load Guide Details-----------------------------------------
 

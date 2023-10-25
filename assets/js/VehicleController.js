@@ -99,7 +99,7 @@ $("#searchbtn").on("keypress",function (event){
     }
 })
 //get all vehicle
-function loadAllHotel() {
+function loadVehicles() {
     $("#vehicleTable").empty();
     $.ajax({
         url: HotelBaseUrl + "vehicle/loadAllVehicle",
