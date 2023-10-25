@@ -6,7 +6,7 @@ autoGeneratebookingid();
 //------------------Auto Generate Booking id--------------------------------
 
 function autoGeneratebookingid() {
-    $("#searchbookingid").val("NTB001");
+    $("#searchbookingid").val("NTB-001");
     $.ajax({
         url: bookingBaseUrl + "booking/generateBookingId",
         method: "GET",
@@ -17,11 +17,11 @@ function autoGeneratebookingid() {
             let tempid = paraseInt(id.split("-")[1]);
             tempid = tempid + 1;
             if (tempid <= 9) {
-                $("#searchbookingid").val("NTB00" + tempid);
+                $("#searchbookingid").val("NTB-00" + tempid);
             } else if (tempid <= 99) {
-                $("#searchbookingid").val("NTB0" + tempid);
+                $("#searchbookingid").val("NTB-0" + tempid);
             } else {
-                $("#searchbookingid").val("NTB" + tempid);
+                $("#searchbookingid").val("NTB-" + tempid);
             }
         }
     })
@@ -61,20 +61,6 @@ $.ajax({
         }
     }
 })
-//---------------------Load Package to select input---------------------
-$("#packageName").empty();
-$.ajax({
-    url:bookingBaseUrl+"packages/loadPackages",
-    method:"GET",
-    contentType:"application/json",
-    dataType:"json",
-    success:function (res){
-        for (let i of res){
-            let package_Name=i.package_Name;
-            $("#packageName").append('<option>${package_Name}</option>');
-        }
-    }
-})
 
 //-------------------select package----------------------------------
 
@@ -82,70 +68,6 @@ $("#packageName").click(function () {
     loadPackageValues();
     filterHotelName();
     filterVehicleRegID();
-});
-
-
-//--------------------------load package value--------------------------------------------------------------------
-function loadPackageValues(){
-    var  loadPackageValue=$("#packageName").val();
-    $.ajax({
-        url:bookingBaseUrl+"package/loadPackage/?packageValue"+loadPackageValue,
-        method:"GET",
-        contentType:"json",
-        success:function (res){
-            $("#package_value").val(res.value);
-        },error:function (error){
-            console.log(error);
-        }
-    });
-}
-
-
-
-
-
-
-
-
-
-
-//---------------------- Select Guide or not--------------------------------
-
-$("#guideStataus").click(function (){
-    let selectedOption=$(this).val();
-
-    if (selectedOption === "yes"){
-        $.ajax({
-            url:bookingBaseUrl+"guide/yesGuide",
-            method:"GET",
-            dataType:"json",
-            success:function (res){
-                $("#guide_id").val(res.guideid);
-            },
-            error:function (error){
-                console.log(error);
-            }
-        });
-    }
-})
-//--------------Load Guide Details-----------------------------------------
-
-$("#guide_id").click(function (){
-    var searchGuide=$("#guide_id").val();
-    $.ajax({
-        url:bookingBaseUrl+"guide/searchGuide/?guide_id="+searchGuide,
-        method:"GET",
-        contentType:"application/json",
-        dataType:"json",
-        success:function (res){
-            $("#guide_name").val(res.guideName);
-            $("#guide_Number").val(res.guideNumber);
-            $("#guideValue").val(res.guide_Value);
-        },
-        error:function (error){
-            console.log(error);
-        }
-    })
 });
 
 
@@ -245,3 +167,20 @@ $.ajax({
         }
     }
 })
+
+//---------------------------------------Number of Today Booking----------------------------------
+$("#tBookingCount").val("0");
+$.ajax({
+    url: adminDashboardBaseUrl + "booking/bookingActive",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
+        $("#tBookingCount").text(num);
+
+    },
+    error:function (error){
+        console.log(error)
+    }
+});

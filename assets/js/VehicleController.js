@@ -141,12 +141,9 @@ function loadAllHotel() {
     })
 }
 
-
-
-
 //Auto Generate id
 function autoGenerateId(){
-    $("#vehicle_id").val("V001");
+    $("#vehicle_id").val("V-001");
     $.ajax({
         url:vehicleBasrurl+"vehicle/autoGenerateId",
         method:"GET",
@@ -157,11 +154,11 @@ function autoGenerateId(){
             let tempid = parseInt(id.split("-")[1]);
             tempid = tempid + 1;
             if (tempid <= 9) {
-                $("#vehicle_id").val("V00" + tempid);
+                $("#vehicle_id").val("V-00" + tempid);
             } else if (tempid <= 99) {
-                $("#vehicle_id").val("V0" + tempid);
+                $("#vehicle_id").val("V-0" + tempid);
             } else {
-                $("#vehicle_id").val("V" + tempid);
+                $("#vehicle_id").val("V-" + tempid);
             }
         },
         error: function (error) {

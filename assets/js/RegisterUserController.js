@@ -249,3 +249,19 @@ $("#updateUserDetails").click(function (){
         }
     })
 });
+
+//---------------------------------------Number of Customer--------------------------------------
+$("#customerCount").val("0");
+$.ajax({
+    url:adminDashboardBaseUrl+"CustomerCount",
+    method:"GET",
+    contentType:"application/json",
+    dataType:"json",
+    success:function (res){
+        let num=res.count
+        $("#customerCount").text(num);
+    },
+    error:function (error){
+        console.log(error)
+    }
+})

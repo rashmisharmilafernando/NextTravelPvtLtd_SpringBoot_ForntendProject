@@ -126,7 +126,7 @@ function loadAllGuide() {
 
 //Auto Generate id
 function autoGenerateId() {
-    $("#guideid").val("G001");
+    $("#guideid").val("G-001");
     $.ajax({
         url:GuiderBaseurl+"guide/autoGenerateid",
         method:"GET",
@@ -137,17 +137,72 @@ function autoGenerateId() {
             let tempid = parseInt(id.split("-")[1]);
             tempid = tempid + 1;
             if (tempid <= 9) {
-                $("#guideid").val("G00" + tempid);
+                $("#guideid").val("G-00" + tempid);
             } else if (tempid <= 99) {
-                $("#guideid").val("G0" + tempid);
+                $("#guideid").val("G-0" + tempid);
             } else {
-                $("#guideid").val("G" + tempid);
+                $("#guideid").val("G-" + tempid);
             }
         },
-        
+
         error:function (error){
         console.log(error);
     }
     })
 }
 
+
+//---------------------------------Number of Guide----------------------------------------------
+$("#GuideCount").val("0");
+$.ajax({
+    url:adminDashboardBaseUrl+"GuiderCount",
+    method:"GET",
+    contentType:"application/json",
+    dataType:"json",
+    success:function (res){
+        let num=res.count
+        $("#GuideCount").text(num);
+    },
+    error:function (error){
+        console.log(error)
+    }
+})
+
+//--------------Load Guide Details-----------------------------------------
+
+$("#guide_id").click(function (){
+    var searchGuide=$("#guide_id").val();
+    $.ajax({
+        url:bookingBaseUrl+"guide/searchGuide/?guide_id="+searchGuide,
+        method:"GET",
+        contentType:"application/json",
+        dataType:"json",
+        success:function (res){
+            $("#guide_name").val(res.guideName);
+            $("#guide_Number").val(res.guideNumber);
+            $("#guideValue").val(res.guide_Value);
+        },
+        error:function (error){
+            console.log(error);
+        }
+    })
+});
+//---------------------- Select Guide or not--------------------------------
+
+$("#guideStataus").click(function (){
+    let selectedOption=$(this).val();
+
+    if (selectedOption === "yes"){
+        $.ajax({
+            url:bookingBaseUrl+"guide/yesGuide",
+            method:"GET",
+            dataType:"json",
+            success:function (res){
+                $("#guide_id").val(res.guideid);
+            },
+            error:function (error){
+                console.log(error);
+            }
+        });
+    }
+})

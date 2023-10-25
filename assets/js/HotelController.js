@@ -98,7 +98,7 @@ function loadAllHotel() {
 
 //auto Generate id
 function autoGenerateHotelId() {
-    $("#hId").val("H001");
+    $("#hId").val("H-001");
     $.ajax({
         url: HotelBaseUrl + "hotel/autoGenerateId",
         method: "GET",
@@ -109,11 +109,11 @@ function autoGenerateHotelId() {
             let tempid = parseInt(id.split("-")[1]);
             tempid = tempid + 1;
             if (tempid <= 9) {
-                $("#hId").val("H00" + tempid);
+                $("#hId").val("H-00" + tempid);
             } else if (tempid <= 99) {
-                $("#hId").val("H0" + tempid);
+                $("#hId").val("H-0" + tempid);
             } else {
-                $("#hId").val("H" + tempid);
+                $("#hId").val("H-" + tempid);
             }
         },
         error: function (error) {
@@ -168,4 +168,20 @@ $("#HotelID").click(function (){
             console.log(error);
         }
     });
+})
+
+//------------------------Number of Hotel--------------------------------
+$("#HotelsCount").val("0");
+$.ajax({
+    url:HotelBaseUrl+"hotelsCount",
+    method:"GET",
+    contentType:"application/json",
+    dataType:"json",
+    success:function (res){
+        let num=res.count
+        $("#HotelsCount").text(num);
+    },
+    error:function (error){
+        console.log(error)
+    }
 })
