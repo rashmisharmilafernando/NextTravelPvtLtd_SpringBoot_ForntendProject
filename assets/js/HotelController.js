@@ -1,7 +1,7 @@
 let HotelBaseUrl = "";
 loadAllHotel();
 
-//Save Hotel
+//-----------------------------Save Hotel-----------------------------------------
 $("saveHotelBtn").click(function () {
     let formDate = new FormData($("#hotelTable")[0]);
     $.ajax({
@@ -19,7 +19,7 @@ $("saveHotelBtn").click(function () {
     })
 })
 
-//Update Hotel
+//----------------------------------Update Hotel------------------
 $("#UpdateHotelBtn").click(function () {
     let formData = new FormData($("#hotelTable")[0]);
     $.ajax({
@@ -36,7 +36,7 @@ $("#UpdateHotelBtn").click(function () {
         }
     })
 });
-//Delete Hotel
+//-------------------------------Delete Hotel-------------------
 $("#DeleteHotelBtn").click(function () {
     let id = $("#Id").val();
     $.ajax({
@@ -52,7 +52,7 @@ $("#DeleteHotelBtn").click(function () {
     })
 });
 
-// Get All Hotels
+//------------------------------Get All Hotels--------------------
 function loadAllHotel() {
     $("#hotelTable").empty();
     $.ajax({
@@ -89,6 +89,7 @@ function loadAllHotel() {
             }
             autoGenerateHotelId();
             checkValidity(hotelValidation);
+            loadTextFieldValues();
         },
         error: function (error) {
             console.log(error);
@@ -96,7 +97,52 @@ function loadAllHotel() {
     })
 }
 
-//auto Generate id
+//-------------Search Hotel--------------------------
+
+$("#searchHotel").on("keypress",function (event){
+    if (event.which===13){
+        var searchHotelId=$("searchHotel").val();
+        $("#hotelTable").empty();
+        $.ajax({
+            url:HotelBaseUrl+"hotel/searchHotel/?hotelId="+searchHotelId,
+            method:"GET",
+            contentType:"application/json",
+            dataType:"json",
+            success:function (res){
+                $("#HotelID").val(res.hotel_Id);
+                $("#hotelName").val(res.hotel_name);
+                $("#hrate").val(res.hotel_rate);
+                $("#hcategory").val(res.hotel_Category);
+                $("#hlocation").val(res.hotel_location);
+                $("#hcoordinates").val(res.hotel_coordinates);
+                $("#hEmail").val(res.hotel_Email);
+                $("#hNumber1").val(res.hotel_Number1);
+                $("#hpetsAllowed").val(res.Pets_Allowed);
+                $("#hfee").val(res.Hotel_fee);
+                $("#CancellationCriteria").val(res.hCancellationCriteria);
+
+                let row="<tr><td>" + res.hotel_Id+"</td>" +
+                    "<td>" + res.hotel_name+"</td>"+
+                    "<td>" + res.hotel_rate+"</td>"+
+                    "<td>" + res.hotel_Category+"</td>"+
+                    "<td>" + res.hotel_location+"</td>"+
+                    "<td>" + res.hotel_coordinates+"</td>"+
+                    "<td>" + res.hotel_Email+"</td>"+
+                    "<td>" + res.hotel_Number1+"</td>"+
+                    "<td>" + res.Pets_Allowed+"</td>"+
+                    "<td>" + res.Hotel_fee+"</td>"+
+                    "<td>" + res.hCancellationCriteria+"</td></tr>";
+                $("#hotelTable").append(row)
+
+            },
+            error:function (error){
+                loadAllHotel();
+            }
+        })
+    }
+})
+
+//-------------------------------auto Generate id----------------------
 function autoGenerateHotelId() {
     $("#hId").val("H-001");
     $.ajax({
@@ -126,6 +172,33 @@ function autoGenerateHotelId() {
 
 function loadTextFieldValues(){
     $("#hotelTable>tr").on("click",function (){
+        let id = $(this).children().eq(0).text();
+        let name =  $(this).children().eq(1).text();
+        let rate =  $(this).children().eq(2).text();
+        let category =  $(this).children().eq(3).text();
+        let location =  $(this).children().eq(4).text();
+        let coordinates =  $(this).children().eq(5).text();
+        let Email =  $(this).children().eq(6).text();
+        let Number1 =  $(this).children().eq(7).text();
+        let petsAllowed =  $(this).children().eq(8).text();
+        let fee =  $(this).children().eq(9).text();
+        let CancellationCriteria = $(this).children().eq(10).text();
+
+        $("#HotelID").val(id);
+        $("#hotelName").val(name);
+        $("#hcategory").val(rate);
+        $("#hcoordinates").val(category);
+        $("#hlocation").val(location);
+        $("#hcoordinates").val(coordinates);
+        $("#hEmail").val(Email);
+        $("#hNumber1").val(Number1);
+        $("#hpetsAllowed").val(petsAllowed);
+        $("#hfee").val(fee);
+        $("#CancellationCriteria").val(CancellationCriteria);
+
+
+
+
 
     })
 }

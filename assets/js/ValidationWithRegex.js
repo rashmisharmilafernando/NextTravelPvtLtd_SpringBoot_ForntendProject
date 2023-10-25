@@ -204,5 +204,46 @@ $("#vehicle_brand,#vehicle_Fuel_Usage,#vehicle_Seat_Capacity,#vehicle_Driver_Nam
 });
 
 $("#vehicle_brand,#vehicle_Fuel_Usage,#vehicle_Seat_Capacity,#vehicle_Driver_Name,#vehicle_Drive_Number").on('blur', function (event) {
-    checkValidity(guideValidation);
+    checkValidity(vehicleValidation);
+});
+/*----------------Package-------------------*/
+
+const packageCategory =  /^[A-z ]{3,20}$/;
+const packageFee =  /^[0-9 ]{1,20}$/;
+const packageNightCount =/^[0-9 ]{1,2}$/;
+const packageDayCount  = /^[0-9 ]{1,2}$/;
+const packageHeadCount  =/^[0-9 ]{1,2}$/;
+
+
+let packageValidation = [];
+packageValidation.push({
+    reg: packageCategory,
+    field: $('#package_category')
+});
+packageValidation.push({
+    reg: packageFee,
+    field: $('#package_Fee')
+});
+packageValidation.push({
+    reg: packageNightCount,
+    field: $('#hotel_Night_Count')
+});
+packageValidation.push({
+    reg: packageDayCount,
+    field: $('#hotel_Day_Count')
+});
+packageValidation.push({
+    reg: packageHeadCount,
+    field: $('#hotel_Head_Count')
+});
+
+
+
+$("#package_category, #package_Fee, #hotel_Night_Count, #hotel_Day_Count, #hotel_Head_Count").on('keyup', function (event) {
+    checkValidity(packageValidation);
+});
+
+
+$("#package_category,#package_Fee,#hotel_Night_Count,#hotel_Day_Count,#hotel_Head_Count").on('blur', function (event) {
+    checkValidity(packageValidation);
 });

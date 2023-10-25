@@ -63,7 +63,7 @@ $("#searchbtn").on("keypress",function (event){
         var searchVehicle=$("#searchbtn").val();
         $("#vehicleTable").empty();
         $.ajax({
-            url:RegisterBaseUrl + "vehicle/searchVehicle/?vehicleId="+searchVehicle,
+            url:vehicleBasrurl + "vehicle/searchVehicle/?vehicleId="+searchVehicle,
             method:"GET",
             contentType:"application/json",
             dataType:"json",
@@ -79,8 +79,7 @@ $("#searchbtn").on("keypress",function (event){
                 $("#vehicle_Driver_Name").val(res.vehicleDriverName);
                 $("#vehicle_Drive_Number").val(res.vehicleDriveNumber);
 
-                let row ="<tr><td>" + res.guide_id+"</td>" +
-                    "<td>" + res.vehicleid + "</td>" +
+                let row ="<tr><td>" + res.vehicleid+"</td>" +
                     "<td>" + res.vehiclebrand+"</td>"+
                     "<td>" + res.vehicleCategory+"</td>"+
                     "<td>" + res.vehicleFueltype+"</td>"+
@@ -98,11 +97,12 @@ $("#searchbtn").on("keypress",function (event){
         })
     }
 })
-//get all vehicle
+
+//------------------------get all vehicle-----------------------
 function loadVehicles() {
     $("#vehicleTable").empty();
     $.ajax({
-        url: HotelBaseUrl + "vehicle/loadAllVehicle",
+        url: vehicleBasrurl + "vehicle/loadAllVehicle",
         method: "GET",
         dataType: "json",
         success: function (res) {

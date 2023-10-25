@@ -53,15 +53,15 @@
                         <div class="col input-group">
                             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                                    aria-describedby="search-addon"/>
-                            <button type="button" class="btn btn-dark">search</button>
+                            <button type="button" class="btn btn-dark" id="searchPackage" name="search_Packages">search</button>
                         </div>
                         <div class="col" style="margin-left: 400px">
-                            <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
+                            <button class="btn btn-success me-md-1" id="saveBtnPackage" type="button"
                                     formaction="driverForm">Save
                             </button>
-                            <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
+                            <button type="button" class="btn btn-warning me-md-1" id="updateBtnPackage">Update
                             </button>
-                            <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
+                            <button type="button" class="btn btn-danger" id="deleteBtnPackage">Delete</button>
                         </div>
                     </div>
                     <div class="row">
@@ -73,44 +73,30 @@
                         </div>
                         <div class="col">
                             <span class="span m-1">Category</span>
-                            <select class="form-control" id="category">
-                                <option value="">Select Category</option>
-                                <option value="regular">Regular</option>
-                                <option value="midLevel">Mid-Level</option>
-                                <option value="luxury">Luxury</option>
-                                <option value="superLuxury">Super Luxury</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <span class="span m-1">Per Day Hotel Fee</span>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" id="package_category" name="packageCategory">
                             <span class="control-error"></span>
                         </div>
                         <div class="col">
-                            <span class="span m-1">No of Night </span>
-                            <input type="number" class="form-control" onclick="multiplication()" placeholder="">
+                            <span class="span m-1">Package free</span>
+                            <input type="text" class="form-control" placeholder="" id="package_Fee" name="PackageFee">
                             <span class="control-error"></span>
                         </div>
+
                     </div>
                         <div class="row">
                             <div class="col">
-                                <span class="span m-1">Total</span>
-                                <input id="displaynightprice" class="form-control" type="text"><br><br>
+                                <span class="span m-1">No of Night </span>
+                                <input type="number" class="form-control" onclick="multiplication()" placeholder="" id="hotel_Night_Count" name="hotelNightCount">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col">
                                 <span class="span m-1">No of Day </span>
-                                <input type="number" class="form-control" onclick="multiplication()" placeholder="">
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col">
-                                <span class="span m-1">Total</span>
-                                <input id="displayDayprice" class="form-control" type="text"><br><br>
+                                <input type="number" class="form-control" onclick="multiplication()" placeholder="" id="hotel_Day_Count" name="hotelDayCount">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col">
                                 <span class="span m-1">Head Count</span>
-                                <input id="headCount" class="form-control" type="number"><br><br>
+                                <input  class="form-control" type="number" id="hotel_Head_Count" name="hotelHeadCount"><br><br>
                                 <span class="control-error"></span>
                             </div>
                         </div>
@@ -123,12 +109,10 @@
                     <tr>
                         <th scope="col">#ID</th>
                         <th scope="col">Category</th>
-                        <th scope="col">Head count</th>
                         <th scope="col">Hotel Price</th>
                         <th scope="col">No of Night</th>
-                        <th scope="col">Price</th>
                         <th scope="col">No of Day</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Head count</th>
                     </tr>
                     </thead>
                     <tbody id="packageTable"></tbody>

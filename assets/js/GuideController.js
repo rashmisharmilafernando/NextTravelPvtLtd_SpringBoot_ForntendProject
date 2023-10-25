@@ -121,7 +121,7 @@ function loadAllGuide() {
             }
             autoGenerateId();
             checkValidity(guideValidation);
-
+            loadTextFieldValues();
         },
         error:function (error){
             console.log(error);
@@ -197,7 +197,7 @@ function loadTextFieldValues(){
 }
 
 
-//--------------Load Guide Details-----------------------------------------
+//----------------------Load Guide Details-----------------------------------------
 
 $("#guide_id").click(function (){
     var searchGuide=$("#guide_id").val();
@@ -216,7 +216,8 @@ $("#guide_id").click(function (){
         }
     })
 });
-//---------------------- Select Guide or not--------------------------------
+
+//------------------------Select Guide or not--------------------------------
 
 $("#guideStataus").click(function (){
     let selectedOption=$(this).val();
