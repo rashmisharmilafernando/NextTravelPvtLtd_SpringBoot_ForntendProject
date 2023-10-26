@@ -169,6 +169,7 @@ $("#guideName,#guideAddress,#guideNumber,#guideExperience,#guideDayValue").on('b
 /*----------------Vehicle-------------------*/
 
 const vehicleName = /^[A-z ]{3,20}$/;
+const vehicleHybridStatus=/^(Yes|No)$/i
 const vehicleFuelUsage =  /^\d{4,20}$/;
 const vehicleSeatCapacity =/^\d{1,20}$/;
 const DriverName  = /^[A-z ]{3,20}$/;
@@ -179,6 +180,10 @@ let vehicleValidation = [];
 vehicleValidation.push({
     reg: vehicleName,
     field: $('#vehicle_brand')
+});
+vehicleValidation.push({
+    reg: vehicleHybridStatus,
+    field: $('#hybridStatus')
 });
 vehicleValidation.push({
     reg: vehicleFuelUsage,

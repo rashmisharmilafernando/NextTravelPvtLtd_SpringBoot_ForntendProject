@@ -7,11 +7,11 @@ $("#saveVehiclebtn").click(function () {
     formData.append("vehiclebrand", $("#vehicle_brand").val());
     formData.append("vehicleCategory", $("#vehicle_Category").val());
     formData.append("vehicleFueltype", $("#vehicle_Fuel_type").val());
-    formData.append("hybrid_Status", $("#hybridStatus").val());
+    formData.append("hybridStatus", $("#hybridStatus").val());
     formData.append("vehicleFuelUsage", $("#vehicle_Fuel_Usage").val());
     formData.append("vehicleSeatCapacity", $("#vehicle_Seat_Capacity").val());
     formData.append("vehicleType", $("#vehicle_type").val());
-    formData.append("TransmissionType", $("#Transmission_type").val());
+    formData.append("transmissionType", $("#transmissionType").val());
     formData.append("vehicleDriverName", $("#vehicle_Driver_Name").val());
     formData.append("vehicleDriveNumber", $("#vehicle_Drive_Number").val())
     formData.append("license", $("#license")[0].files[0]);
@@ -46,11 +46,11 @@ $("#updateVehiclebtn").click(function () {
     formData.append("vehiclebrand", $("#vehicle_brand").val());
     formData.append("vehicleCategory", $("#vehicle_Category").val());
     formData.append("vehicleFueltype", $("#vehicle_Fuel_type").val());
-    formData.append("hybrid_Status", $("#hybridStatus").val());
+    formData.append("hybridStatus", $("#hybridStatus").val());
     formData.append("vehicleFuelUsage", $("#vehicle_Fuel_Usage").val());
     formData.append("vehicleSeatCapacity", $("#vehicle_Seat_Capacity").val());
     formData.append("vehicleType", $("#vehicle_type").val());
-    formData.append("TransmissionType", $("#Transmission_type").val());
+    formData.append("transmissionType", $("#transmissionType").val());
     formData.append("vehicleDriverName", $("#vehicle_Driver_Name").val());
     formData.append("vehicleDriveNumber", $("#vehicle_Drive_Number").val())
     formData.append("license", $("#license")[0].files[0]);
@@ -59,7 +59,7 @@ $("#updateVehiclebtn").click(function () {
     formData.append("vehicle_Side_View", $("#vehicleSideView")[0].files[0]);
     formData.append("vehicle_OtherSide_View", $("#vehicleOtherSideView")[0].files[0]);
     $.ajax({
-        url: vehicleBaseurl + "vehicle/update",
+        url: "http://localhost:8090/vehicleServer/api/v1/vehicle/update",
         method: "PUT",
         data: formData,
         contentType: false,
@@ -79,7 +79,7 @@ $("#updateVehiclebtn").click(function () {
 $("#deleteVehiclebtn").click(function () {
     let id = $("#vehicleId").val();
     $.ajax({
-        url: vehicleBaseurl + "vehicle?id" + id,
+        url: "http://localhost:8090/vehicleServer/api/v1/vehicle/id" + id,
         method: "DELETE",
         dataType: "json",
         success: function (res) {
@@ -93,13 +93,13 @@ $("#deleteVehiclebtn").click(function () {
     })
 });
 
-//search vehicle
+//--------------------------search vehicle--------------------------
 $("#searchbtn").on("keypress", function (event) {
     if (event.which === 13) {
         var searchVehicle = $("#searchbtn").val();
         $("#vehicleTable").empty();
         $.ajax({
-            url: vehicleBaseurl + "vehicle/searchVehicle/?vehicleId=" + searchVehicle,
+            url: "http://localhost:8090/vehicleServer/api/v1/vehicle/searchVehicle" + searchVehicle,
             method: "GET",
             contentType: "application/json",
             dataType: "json",
@@ -108,10 +108,10 @@ $("#searchbtn").on("keypress", function (event) {
                 $("#vehicle_brand").val(res.vehiclebrand);
                 $("#vehicle_Category").val(res.vehicleCategory);
                 $("#vehicle_Fuel_type").val(res.vehicleFueltype);
-                $("#hybridStatus").val(res.hybrid_Status);
+                $("#hybridStatus").val(res.hybridStatus);
                 $("#vehicle_Seat_Capacity").val(res.vehicleSeatCapacity);
                 $("#vehicle_type").val(res.vehicleType);
-                $("#Transmission_type").val(res.TransmissionType);
+                $("#transmissionType").val(res.transmissionType);
                 $("#vehicle_Driver_Name").val(res.vehicleDriverName);
                 $("#vehicle_Drive_Number").val(res.vehicleDriveNumber);
 
@@ -119,10 +119,10 @@ $("#searchbtn").on("keypress", function (event) {
                     "<td>" + res.vehiclebrand + "</td>" +
                     "<td>" + res.vehicleCategory + "</td>" +
                     "<td>" + res.vehicleFueltype + "</td>" +
-                    "<td>" + res.hybrid_Status + "</td>" +
+                    "<td>" + res.hybridStatus + "</td>" +
                     "<td>" + res.vehicleSeatCapacity + "</td>" +
                     "<td>" + res.vehicleType + "</td>" +
-                    "<td>" + res.TransmissionType + "</td>" +
+                    "<td>" + res.transmissionType + "</td>" +
                     "<td>" + res.vehicleDriverName + "</td>" +
                     "<td>" + res.vehicleDriveNumber + "</td></tr>";
                 $("#vehicleTable").append(row)
@@ -149,11 +149,11 @@ function loadVehicles() {
                     let vehiclebrand = i.vehiclebrand;
                     let vehicleCategory = i.vehicleCategory;
                     let vehicleFueltype = i.vehicleFueltype;
-                    let hybrid_Status = i.hybrid_Status;
+                    let hybridStatus = i.hybridStatus;
                     let vehicleFuelUsage = i.vehicleFuelUsage;
                     let vehicleSeatCapacity = i.vehicleSeatCapacity;
                     let vehicleType = i.vehicleType;
-                    let TransmissionType = i.TransmissionType;
+                    let transmissionType = i.transmissionType;
                     let vehicleDriverName = i.vehicleDriverName;
                     let vehicleDriveNumber = i.vehicleDriveNumber;
 
@@ -162,20 +162,20 @@ function loadVehicles() {
                         "<td>" + vehiclebrand + "</td>" +
                         "<td>" + vehicleCategory + "</td>" +
                         "<td>" + vehicleFueltype + "</td>" +
-                        "<td>" + hybrid_Status + "</td>" +
+                        "<td>" + hybridStatus + "</td>" +
                         "<td>" + vehicleFuelUsage + "</td>" +
                         "<td>" + vehicleSeatCapacity + "</td>" +
                         "<td>" + vehicleType + "</td>" +
-                        "<td>" + TransmissionType + "</td>" +
+                        "<td>" + transmissionType + "</td>" +
                         "<td>" + vehicleDriverName + "</td>" +
                         "<td>" + vehicleDriveNumber + "</td>" +
                         "</tr>";
                     $("#vehicleTable").append(row)
                     console.log(row);
                 }
+                loadTextFieldValues();
                 autoGenerateId();
                 checkValidity(vehicleValidation);
-                loadTextFieldValues();
                 console.log(res.message);
             },
             error: function (error) {
@@ -216,7 +216,7 @@ function loadVehicles() {
     $("#VehiclesCount").val("0");
 
     $.ajax({
-        url: vehicleBaseurl + "vehiclesCount",
+        url: "http://localhost:8090/vehicleServer/api/v1/vehicle/vehiclesCount",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -233,29 +233,44 @@ function loadVehicles() {
 
     function loadTextFieldValues() {
         $("#vehicleTable>tr").on("click", function () {
-            let id = $(this).children().eq(0).text();
-            let brand = $(this).children().eq(1).text();
-            let category = $(this).children().eq(2).text();
-            let fuelType = $(this).children().eq(3).text();
-            let isHybrid = $(this).children().eq(4).text();
-            let seatCapacity = $(this).children().eq(5).text();
-            let vehicleType = $(this).children().eq(6).text();
-            let transmissionType = $(this).children().eq(7).text();
-            let driverName = $(this).children().eq(8).text();
-            let driverNumber = $(this).children().eq(9).text();
+            let vehicleId = $(this).children().eq(0).text();
+            let vehiclebrand = $(this).children().eq(1).text();
+            let vehicleCategory = $(this).children().eq(2).text();
+            let vehicleFueltype = $(this).children().eq(3).text();
+            let hybridStatus = $(this).children().eq(4).text();
+            let vehicleFuelUsage = $(this).children().eq(5).text();
+            let vehicleSeatCapacity = $(this).children().eq(6).text();
+            let vehicleType = $(this).children().eq(7).text();
+            let transmissionType = $(this).children().eq(8).text();
+            let vehicleDriverName = $(this).children().eq(9).text();
+            let vehicleDriveNumber = $(this).children().eq(10).text();
 
-            $("#vehicle_id").val(id);
-            $("#vehicle_brand").val(brand);
-            $("#vehicle_Category").val(category);
-            $("#vehicle_Fuel_type").val(fuelType);
-            $("#hybridStatus").val(isHybrid);
-            $("#vehicle_Seat_Capacity").val(seatCapacity);
+            $("#vehicle_id").val(vehicleId);
+            $("#vehicle_brand").val(vehiclebrand);
+            $("#vehicle_Category").val(vehicleCategory);
+            $("#vehicle_Fuel_type").val(vehicleFueltype);
+            $("#hybridStatus").val(hybridStatus);
+            $("#vehicle_Fuel_Usage").val(vehicleFuelUsage);
+            $("#vehicle_Seat_Capacity").val(vehicleSeatCapacity);
             $("#vehicle_type").val(vehicleType);
-            $("#Transmission_type").val(transmissionType);
-            $("#vehicle_Driver_Name").val(driverName);
-            $("#vehicle_Drive_Number").val(driverNumber);
+            $("#transmissionType").val(transmissionType);
+            $("#vehicle_Driver_Name").val(vehicleDriverName);
+            $("#vehicle_Drive_Number").val(vehicleDriveNumber);
 
-
+            console.log(
+                vehicleId,
+                vehiclebrand,
+                vehicleCategory,
+                vehicleCategory,
+                vehicleFueltype,
+                hybridStatus,
+                vehicleFuelUsage,
+                vehicleSeatCapacity,
+                vehicleType,
+                transmissionType,
+                vehicleDriverName,
+                vehicleDriveNumber
+            )
         });
     }
 
