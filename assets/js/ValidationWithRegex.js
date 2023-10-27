@@ -223,32 +223,32 @@ const packageHeadCount  =/^[0-9 ]{1,2}$/;
 let packageValidation = [];
 packageValidation.push({
     reg: packageCategory,
-    field: $('#package_category')
+    field: $('#packageCategory')
 });
 packageValidation.push({
     reg: packageFee,
-    field: $('#package_Fee')
+    field: $('#price')
 });
 packageValidation.push({
     reg: packageNightCount,
-    field: $('#hotel_Night_Count')
+    field: $('#nightCount')
 });
 packageValidation.push({
     reg: packageDayCount,
-    field: $('#hotel_Day_Count')
+    field: $('#dayCount')
 });
 packageValidation.push({
     reg: packageHeadCount,
-    field: $('#hotel_Head_Count')
+    field: $('#totalHeadCount')
 });
 
 
 
-$("#package_category, #package_Fee, #hotel_Night_Count, #hotel_Day_Count, #hotel_Head_Count").on('keyup', function (event) {
+$("#packageCategory, #price, #nightCount, #dayCount, #totalHeadCount").on('keyup', function (event) {
     checkValidity(packageValidation);
 });
 
 
-$("#package_category,#package_Fee,#hotel_Night_Count,#hotel_Day_Count,#hotel_Head_Count").on('blur', function (event) {
+$("#packageCategory, #price, #nightCount, #dayCount, #totalHeadCount").on('blur', function (event) {
     checkValidity(packageValidation);
 });

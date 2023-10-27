@@ -1,6 +1,6 @@
 loadVehicles();
 autoGenerateId();
-
+//----------------save vehicle-------------------------
 $("#saveVehiclebtn").click(function () {
     let formData = new FormData($("#vehicleForm")[0]);
     formData.append("vehicleId", $("#vehicleId").val());
@@ -39,7 +39,7 @@ $("#saveVehiclebtn").click(function () {
 });
 
 
-//update vehicle
+//----------------------------update vehicle-----------------------
 $("#updateVehiclebtn").click(function () {
     let formData = new FormData($("#vehicleForm")[0]);
     formData.append("vehicleId", $("#vehicleId").val());
@@ -74,7 +74,7 @@ $("#updateVehiclebtn").click(function () {
     })
 });
 
-//delete vehicle
+//----------------------delete vehicle---------------------------
 $("#deleteVehiclebtn").click(function () {
     let id = $("#vehicleId").val();
     $.ajax({
@@ -335,4 +335,25 @@ function clearTextFields() {
     $("#vehicleFontView").val("");
     $("#vehicleSideView").val("");
     $("#vehicleOtherSideView").val("");
+}
+
+
+//-------------------------------------------------
+function searchVehicleId() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("searchbtn");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("vehicleTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
 }
