@@ -77,6 +77,17 @@
                             <input class="form-control" id="vehicleId" readonly name="vehicleId" placeholder="NTV-001" type="text">
                         </div>
                         <div class="col">
+                            <span class="span m-1">Vehicle Register Id</span>
+                            <input class="form-control" id="vehicleRegId"  name="vehicleRegId" placeholder="VREG-001" type="text">
+                        </div>
+                        <div class="col">
+
+
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col">
                             <span class="span m-1">Vehicle brand</span>
                             <input type="text" class="form-control" placeholder=" " id="vehicle_brand" name="vehiclebrand">
 
@@ -90,9 +101,7 @@
                                 <option value="SuperLuxury">Super Luxury</option>
                             </select>
                         </div>
-                    </div>
 
-                    <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Fuel type</span>
                             <select class="form-control" name="vehicleFueltype" id="vehicle_Fuel_type">
@@ -100,6 +109,9 @@
                                 <option value="Petrol">Petrol</option>
                             </select>
                         </div>
+
+                    </div>
+                    <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Hybrid Status </span>
                             <input type="text" class="form-control" placeholder="" name="hybridStatus" id="hybridStatus">
@@ -109,13 +121,15 @@
                             <input type="number" class="form-control" placeholder="" name="vehicleFuelUsage" id="vehicle_Fuel_Usage">
                             <span class="control-error"></span>
                         </div>
-                    </div>
-                    <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Seat Capacity</span>
                             <input type="text" class="form-control" placeholder="" name="vehicleSeatCapacity" id="vehicle_Seat_Capacity">
                             <span class="control-error"></span>
                         </div>
+
+
+                    </div>
+                    <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Vehicle type</span>
                             <select class="form-control" id="vehicle_type" name="vehicleType">
@@ -131,51 +145,33 @@
                                 <option value="manual">Manual</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="row mt-2">
                         <div class="col">
                             <span class="span m-1">Driver Name</span>
                             <input class="form-control"  type="text" name="vehicleDriverName" id="vehicle_Driver_Name">
                             <span class="control-error"></span>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col">
                             <span class="span m-1">Contact No</span>
                             <input class="form-control" type="text" name="vehicleDriveNumber" id="vehicle_Drive_Number">
                             <span class="control-error"></span>
                         </div>
-                        <div class="col">
-                            <span class="span m-1">license</span>
-                            <input class="form-control" type="file" name="license" id="license">
 
-                            <span class="control-error"></span>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
                         <div class="col">
-                            <span class="span m-1">Rear View</span>
+                            <span class="span m-1">Image of Vehicle</span>
                             <input class="form-control"  type="file" name="vehicleRearView" id="vehicle_Rear_View">
                             <span class="control-error"></span>
                         </div>
+
                         <div class="col">
-                            <span class="span m-1">Font View</span>
-                            <input class="form-control" id="vehicleFontView" type="file" name="vehicle_Font_View">
-                            <span class="control-error"></span>
-                        </div>
-                        <div class="col">
-                            <span class="span m-1">Side View</span>
-                            <input class="form-control" id="vehicleSideView" type="file" name="vehicle_Side_View">
-                            <span class="control-error"></span>
-                        </div>
-                        <div class="col">
-                            <span class="span m-1">Other Side View</span>
-                            <input class="form-control" id="vehicleOtherSideView" type="file" name="vehicle_OtherSide_View">
+                            <span class="span m-1">Driver License Image</span>
+                            <input class="form-control" type="file" name="license" id="license">
                             <span class="control-error"></span>
                         </div>
                     </div>
                 </div>
-                <div class="row">
 
-                </div>
             </form>
             <div class="row mt-2">
                 <table class="table">
@@ -183,6 +179,7 @@
 
                     <tr>
                         <th scope="col">ID</th>
+                        <th scope="col">Reg ID</th>
                         <th scope="col">brand</th>
                         <th scope="col">Category</th>
                         <th scope="col">Fuel Type</th>

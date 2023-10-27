@@ -143,18 +143,4 @@ function autoGenerateid() {
         }
     })
 }
-//------------------------------Number of User---------------------------------------
-$("#UsersCount").val("0");
-$.ajax({
-    url:UserBaseUrl+"userCount",
-    method:"GET",
-    contentType:"application/json",
-    dataType:"json",
-    success:function (res){
-        let num=res.count
-        $("#UsersCount").text(num);
-    },
-    error:function (error){
-        console.log(error)
-    }
-})
+

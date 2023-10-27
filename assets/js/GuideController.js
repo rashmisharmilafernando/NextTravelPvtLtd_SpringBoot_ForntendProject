@@ -158,21 +158,7 @@ function autoGenerateId() {
 }
 
 
-//---------------------------------Number of Guide----------------------------------------------
-$("#GuideCount").val("0");
-$.ajax({
-    url:GuiderBaseurl+"GuiderCount",
-    method:"GET",
-    contentType:"application/json",
-    dataType:"json",
-    success:function (res){
-        let num=res.count
-        $("#GuideCount").text(num);
-    },
-    error:function (error){
-        console.log(error)
-    }
-})
+
 //-------------------------load text field value---------------------------
 
 function loadTextFieldValues(){

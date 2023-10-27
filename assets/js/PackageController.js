@@ -155,21 +155,6 @@ function loadTextFieldValues(){
     });
 }
 
-//--------------------------Number of Package-----------------------
-$("#PackagesCount").val("0");
-$.ajax({
-    url:packagedBaseUrl+"packageCount",
-    method:"GET",
-    contentType:"application/json",
-    dataType:"json",
-    success:function (res){
-        let num=res.count
-        $("#PackagesCount").text(num);
-    },
-    error:function (error){
-        console.log(error)
-    }
-})
 
 
 //---------------------Load Package to select input---------------------

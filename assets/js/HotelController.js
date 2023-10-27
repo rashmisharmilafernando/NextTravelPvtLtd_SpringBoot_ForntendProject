@@ -243,18 +243,3 @@ $("#HotelID").click(function (){
     });
 })
 
-//------------------------Number of Hotel--------------------------------
-$("#HotelsCount").val("0");
-$.ajax({
-    url:HotelBaseUrl+"hotelsCount",
-    method:"GET",
-    contentType:"application/json",
-    dataType:"json",
-    success:function (res){
-        let num=res.count
-        $("#HotelsCount").text(num);
-    },
-    error:function (error){
-        console.log(error)
-    }
-})
