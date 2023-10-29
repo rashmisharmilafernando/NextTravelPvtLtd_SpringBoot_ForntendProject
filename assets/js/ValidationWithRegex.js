@@ -44,39 +44,39 @@ $("#regname,#regEmail,#regNIC,#regUsername,#regPassword,#regAddress").on('blur',
 
 const hotelName = /^[A-Za-z ]{3,20}$/;
 const hotelEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const hotelContactNumber1 = /^(?:\+94|0)[1-9]\d{8}$/;
-const hotelContactNumber2 = /^(?:\+94|0)[1-9]\d{8}$/;
-const hotelfee = /^\d{3,20}$/;
+const hotelNumber1 = /^(?:\+94|0)[1-9]\d{8}$/;
+const hotelNumber2 = /^(?:\+94|0)[1-9]\d{8}$/;
+const HotelFee = /^\d{3,20}$/;
 
 let hotelValidation = [];
 
 hotelValidation.push({
     reg: hotelName,
-    field: $('#hName')
+    field: $('#hotel_Name')
 });
 hotelValidation.push({
     reg: hotelEmail,
-    field: $('#hEmail')
+    field: $('#hotel_Email')
 });
 hotelValidation.push({
-    reg: hotelContactNumber1,
-    field: $('#hNumber1')
+    reg: hotelNumber1,
+    field: $('#hotel_Number1')
 });
 hotelValidation.push({
-    reg: hotelContactNumber2,
-    field: $('#hNumber2')
+    reg: hotelNumber2,
+    field: $('#hotel_Number2')
 });
 hotelValidation.push({
-    reg: hotelfee,
-    field: $('#hfee')
+    reg: HotelFee,
+    field: $('#hotel_Fee')
 });
 
 
-$("#hName,#hEmail,#hNumber1,#hNumber2,#hfee").on('keyup', function (event) {
+$("#hotel_Name,#hotel_Email,#hotel_Number1,#hotel_Number2,#hotel_Fee").on('keyup', function (event) {
     checkValidity(hotelValidation);
 });
 
-$("#hName,#hEmail,#hNumber1,#hNumber2,#hfee").on('blur', function (event) {
+$("#hotel_Name,#hotel_Email,#hotel_Number1,#hotel_Number2,#hotel_Fee").on('blur', function (event) {
     checkValidity(hotelValidation);
 });
 

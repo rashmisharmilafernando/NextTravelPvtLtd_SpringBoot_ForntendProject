@@ -24,7 +24,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
         <!--Dashboard-->
         <li class="nav-item">
-            <a class="nav-link " href="../adminSite/AdminDashboard.html"><span>Dashboard</span></a>
+            <a class="nav-link collapsed" href="../adminSite/AdminDashboard.html"><span>Dashboard</span></a>
         </li>
         <!--Package-->
         <li class="nav-item">
@@ -35,7 +35,7 @@
             <a class="nav-link collapsed" href="../adminSite/ManageHotel.html" id="hotel"><span>Hotel</span></a>
         </li>
         <!--Vehicle-->
-        <li class="nav-item"> <a class="nav-link collapsed" href="../adminSite/ManageVehicle.html" id="vehicle">
+        <li class="nav-item"> <a class="nav-link " href="../adminSite/ManageVehicle.html" id="vehicle">
             <span>Vehicle</span></a></li>
         <!--User-->
         <li class="nav-item"><a class="nav-link collapsed" href="../adminSite/ManageUser.html" id="customer">
@@ -58,7 +58,7 @@
         <div class="card-body">
             <form action="vehicle" id="vehicleFrom" method="post">
                 <div class="row card-body"
-                     style="background-color: white;padding-top: 20px;box-shadow: 10px 10px 5px -5px rgba(20,10,10,0.15);">
+                     style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
                     <div class="row" style="margin-bottom: 30px">
                         <div class="col input-group">
                             <input type="search" id="searchbtn" class="form-control rounded" placeholder="Search for VehicleId.." aria-label="Search" onkeyup="searchVehicleId()"
@@ -80,8 +80,6 @@
                             <input class="form-control" id="vehicleRegId"  name="vehicleRegId" placeholder="VREG-001" type="text">
                         </div>
                         <div class="col">
-
-
                         </div>
                     </div>
 
@@ -100,7 +98,6 @@
                                 <option value="SuperLuxury">Super Luxury</option>
                             </select>
                         </div>
-
                         <div class="col">
                             <span class="span m-1">Fuel type</span>
                             <select class="form-control" name="vehicleFueltype" id="vehicle_Fuel_type">
@@ -125,8 +122,6 @@
                             <input type="text" class="form-control" placeholder="" name="vehicleSeatCapacity" id="vehicle_Seat_Capacity">
                             <span class="control-error"></span>
                         </div>
-
-
                     </div>
                     <div class="row mt-2">
                         <div class="col">
@@ -156,13 +151,11 @@
                             <input class="form-control" type="text" name="vehicleDriveNumber" id="vehicle_Drive_Number">
                             <span class="control-error"></span>
                         </div>
-
                         <div class="col">
                             <span class="span m-1">Image of Vehicle</span>
                             <input class="form-control"  type="file" name="vehicleRearView" id="vehicle_Rear_View">
                             <span class="control-error"></span>
                         </div>
-
                         <div class="col">
                             <span class="span m-1">Driver License Image</span>
                             <input class="form-control" type="file" name="license" id="license">

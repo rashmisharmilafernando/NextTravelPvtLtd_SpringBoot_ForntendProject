@@ -97,53 +97,27 @@ $("#deleteVehiclebtn").click(function () {
 
 
 //--------------------------search vehicle--------------------------
-$("#searchbtn").on("keypress", function (event) {
-    if (event.which === 13) {
-        var searchVehicle = $("#searchbtn").val();
-        $("#vehicleTable").empty();
-        $.ajax({
-            url: "http://localhost:8090/vehicleServer/api/v1/vehicle/searchVehicle" + searchVehicle,
-            method: "GET",
-            contentType: "application/json",
-            dataType: "json",
-            success: function (res) {
-                $("#vehicleId").val(res.vehicleId);
-                $("#vehicleRegId").val(res.vehicleRegId);
-                $("#vehicle_brand").val(res.vehiclebrand);
-                $("#vehicle_Category").val(res.vehicleCategory);
-                $("#vehicle_Fuel_type").val(res.vehicleFueltype);
-                $("#hybridStatus").val(res.hybridStatus);
-                $("#vehicle_Seat_Capacity").val(res.vehicleSeatCapacity);
-                $("#vehicle_type").val(res.vehicleType);
-                $("#transmissionType").val(res.transmissionType);
-                $("#vehicle_Driver_Name").val(res.vehicleDriverName);
-                $("#vehicle_Drive_Number").val(res.vehicleDriveNumber);
-
-                let row =
-                    "<tr>" +
-                    "<td>" + res.vehicleId + "</td>" +
-                    "<td>" + res.vehicleRegId + "</td>" +
-                    "<td>" + res.vehiclebrand + "</td>" +
-                    "<td>" + res.vehicleCategory + "</td>" +
-                    "<td>" + res.vehicleFueltype + "</td>" +
-                    "<td>" + res.hybridStatus + "</td>" +
-                    "<td>" + res.vehicleSeatCapacity + "</td>" +
-                    "<td>" + res.vehicleType + "</td>" +
-                    "<td>" + res.transmissionType + "</td>" +
-                    "<td>" + res.vehicleDriverName + "</td>" +
-                    "<td>" + res.vehicleDriveNumber + "</td></tr>";
-                $("#vehicleTable").append(row)
-                console.log(res);
-            },
-            error: function (error) {
-                loadVehicles();
-                console.log(error);
+function searchVehicleId() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("searchbtn");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("vehicleTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
-        })
+        }
     }
-})
+}
 
-//------------------------get all vehicle-----------------------
+
+//------------------------get all vehicle---------------------------------
 function loadVehicles() {
     $("#vehicleTable").empty();
     $.ajax({
@@ -339,21 +313,3 @@ function clearTextFields() {
 
 
 //-------------------------------------------------
-function searchVehicleId() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("searchbtn");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("vehicleTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-}

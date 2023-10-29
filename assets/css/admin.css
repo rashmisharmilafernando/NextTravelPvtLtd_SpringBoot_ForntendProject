@@ -1,13 +1,14 @@
 
 body {
 
-    background: rgba(241, 165, 1, 0.27);
+    background: rgb(248, 249, 248);
     color: rgba(68, 68, 68, 0.44);
 }
 a {
     color: rgba(241, 165, 1, 0.87);
     text-decoration: none;
 }
+
 select,input{
     background-color: #fff !important;
 }
@@ -34,13 +35,14 @@ a:hover {
 
 .pageTitle {
     margin-bottom: 10px;
+
 }
 
 .pageTitle h1 {
     font-size: 24px;
     margin-bottom: 0;
     font-weight: 600;
-    color: #000000;
+    color: rgba(52, 58, 64, 0.56);
 }
 
 .card {
@@ -182,6 +184,7 @@ a:hover {
 }
 
 .sidebar-nav .nav-link.collapsed i {
+
     color: rgba(51, 50, 50, 0.17);
 }
 
@@ -227,3 +230,13 @@ a:hover {
 .sidebar-nav .nav-content a.active i {
     background-color: #333232;
 }
+
+table th{
+    color: #343a40;
+    font-size: small;
+}
+tbody{
+    color: #343a40;
+    font-size: small;
+}
+
