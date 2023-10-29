@@ -166,8 +166,8 @@ function filterHotel(){
     filter_start_Rate=$("#filterstarRate").val();
     filter_locations=$("#filterlocation").val();
     $.ajax({
-        url:indexBaseUrl+"hotel/filterHotel?startRate="+filter_start_Rate+
-            "&locations" + filter_locations,
+        url: "http://localhost:8081/hotelServer/api/v1/hotel/filterHotel?startRate="+filter_start_Rate+
+            "&locations=" + filter_locations,
         method:"GET",
         dataType:"json",
         success:function (res){

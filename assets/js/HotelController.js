@@ -246,16 +246,16 @@ function filterHotelName() {
     });
 }
 //-------------------Select hotel Id----------------------------------
-$("#HotelID").click(function (){
-    var searchHotelName=$("#hotelId").val();
+$("#hotel_Id").click(function (){
+    var searchHotelName=$("#hotel_Id").val();
     $.ajax({
         url:HotelBaseUrl+"hotel/searchHotel/?HotelID"+searchHotelName,
         method:"GET",
         contentType:"application/json",
         dataType:"json",
         success:function (res){
-            $("#hotelName").val(res.hotelName);
-            $("#hotelLocation").val(res.hotelLocation);
+            $("#hotel_Name").val(res.hotelName);
+            $("#hotel_Location").val(res.hotelLocation);
 
         },error:function (error){
             console.log(error);
@@ -276,3 +276,5 @@ function clearTextFields() {
     $("#hotel_Fee").val("");
     $("#cancellation_Criteria").val("");
 }
+
+
