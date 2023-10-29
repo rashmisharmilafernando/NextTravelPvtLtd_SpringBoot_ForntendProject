@@ -75,7 +75,7 @@ $("#UpdateHotelBtn").click(function () {
 $("#DeleteHotelBtn").click(function () {
     let id = $("#hotel_Id").val();
     $.ajax({
-        url: "http://localhost:8081/hotelServer/api/v1/hotel?id" + id,
+        url: "http://localhost:8081/hotelServer/api/v1/hotel?id=" + id,
         method: "DELETE",
         dataType: "json",
         success: function (resp) {
