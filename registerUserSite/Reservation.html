@@ -8,11 +8,7 @@
     <link rel="stylesheet" href="../assets/lib/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <link href="../assets/css/admin.css" rel="stylesheet">
-    <style>
-        select option:hover {
-            background-color: pink;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -27,114 +23,115 @@
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-            <a class="nav-link " href="../registerUserSite/RegisterUser.html"><span>Account</span></a>
+            <a class="nav-link collapsed" href="../registerUserSite/RegisterUser.html"><span>Account</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="../registerUserSite/RegisterUserBookingPage.html"><span>Booking</span>
-            </a>
+            <a class="nav-link " href="../registerUserSite/Reservation.html"><span>Reservation</span> </a>
         </li>
-        <li class="nav-item"><a class="nav-link collapsed" href="../pages/otherPage/LoginPage.html"><span>LogOut</span></a>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../registerUserSite/Booking.html"><span>Booking</span> </a>
         </li>
+        <li class="nav-item"><a class="nav-link collapsed" href="../pages/otherPage/LoginPage.html"><span>LogOut</span></a></li>
     </ul>
 </aside>
 <main id="main" class="main">
     <div class="pageTitle" id="pageOne">
-        <h1>Booking</h1>
+        <h1>RESERVATION</h1>
     </div>
-    <section class="section dashboard">
-        <div class="row">
-            <div class="col-lg-12 mt-lg-0 mt-5 mb-2">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="h5 mb-4">Reservation Details</h5>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-4">
-                                    <span class="span m-1">Booking ID</span>
-                                    <input type="number" class="form-control" placeholder="" readonly name="booking_Id"
-                                           id="bookingId">
-                                </div>
-                                <div class="col-4">
-                                    <span class="span m-1">User ID</span>
-                                    <input type="number" class="form-control" placeholder="" readonly
-                                           name="booking_Customer_Id"
-                                           id="bookingCustomerId">
+        </div>
+        <section class="section dashboard">
+            <div class="row">
+                <div class="col-lg-12 mt-lg-0 mt-5 mb-2"  style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
+                    <div class="card" >
+                        <div class="card-header">
+                            <h5 class="h5 mb-4">Reservation Details</h5>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <span class="span m-1">Reservation ID</span>
+                                        <input type="number" class="form-control" placeholder="" readonly name="reservation_Id"
+                                               id="reservationId">
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="span m-1">Customer ID</span>
+                                        <input type="number" class="form-control" placeholder="" readonly
+                                               name="booking_Customer_Id"
+                                               id="bookingCustomerId">
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <span class="span m-1">Package</span>
+                                        <select class="form-control" id="packageName" name="package_Name">
+                                            <!--<option value="">Select Package</option>
+                                            <option value="Regular">Regular</option>
+                                            <option value="Mid-Level">Mid-Level</option>
+                                            <option value="Luxury">Luxury</option>
+                                            <option value="Super Luxury">Super Luxury</option>-->
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Total headcount</span>
+                                        <input type="number" class="form-control" placeholder="" readonly name="head_count"
+                                               id="headCount">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Package Value</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="value"
+                                               id="package_value">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Start Date</span>
+                                        <input class="form-control" type="date" id="startDate"
+                                               name="start_Date"
+                                               value="YYYY-MM-DD" min="2023-10-01" max="2030-12-31"/>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">End Date</span>
+                                        <input class="form-control" type="date" id="endDate"
+                                               name="end_Date"
+                                               value="YYYY-MM-DD" min="2023-10-01" max="2030-12-31"/>
+                                    </div>
 
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <span class="span m-1">Package</span>
-                                    <select class="form-control" id="packageName" name="package_Name">
-                                        <!--<option value="">Select Package</option>
-                                        <option value="Regular">Regular</option>
-                                        <option value="Mid-Level">Mid-Level</option>
-                                        <option value="Luxury">Luxury</option>
-                                        <option value="Super Luxury">Super Luxury</option>-->
-                                    </select>
                                 </div>
-                                <div class="col">
-                                    <span class="span m-1">Total headcount</span>
-                                    <input type="number" class="form-control" placeholder="" readonly name="head_count"
-                                           id="headCount">
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <span class="span m-1">Night Count</span>
+                                        <input class="form-control" type="number" id="nightCount" name="night_Count"/>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Day Count</span>
+                                        <input class="form-control" type="number" id="dayCount" name="dayCount"/>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">No of Adults</span>
+                                        <input type="number" class="form-control" placeholder="" id="adults"
+                                               name="number_of_adults">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">No of Children</span>
+                                        <input type="number" class="form-control" placeholder="" id="children"
+                                               name="number_of_children">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Guide or not</span>
+                                        <select class="form-control" id="guideStatus" name="guide_Staus">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <span class="span m-1">Package Value</span>
-                                    <input type="text" class="form-control" placeholder="" readonly name="value"
-                                           id="package_value">
-                                </div>
-                                <div class="col">
-                                    <span class="span m-1">Start Date</span>
-                                    <input class="form-control" type="date" id="startDate"
-                                           name="start_Date"
-                                           value="YYYY-MM-DD" min="2023-10-01" max="2030-12-31"/>
-                                </div>
-                                <div class="col">
-                                    <span class="span m-1">End Date</span>
-                                    <input class="form-control" type="date" id="endDate"
-                                           name="end_Date"
-                                           value="YYYY-MM-DD" min="2023-10-01" max="2030-12-31"/>
-                                </div>
-
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <span class="span m-1">Night Count</span>
-                                    <input class="form-control" type="number" id="nightCount" name="night_Count"/>
-                                </div>
-                                <div class="col">
-                                    <span class="span m-1">Day Count</span>
-                                    <input class="form-control" type="number" id="dayCount" name="dayCount"/>
-                                </div>
-                                <div class="col">
-                                    <span class="span m-1">No of Adults</span>
-                                    <input type="number" class="form-control" placeholder="" id="adults"
-                                           name="number_of_adults">
-                                </div>
-                                <div class="col">
-                                    <span class="span m-1">No of Children</span>
-                                    <input type="number" class="form-control" placeholder="" id="children"
-                                           name="number_of_children">
-                                </div>
-                                <div class="col">
-                                    <span class="span m-1">Guide or not</span>
-                                    <select class="form-control" id="guideStatus" name="guide_Staus">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
         <div class="row">
-            <div class="col-lg-6 mt-lg-0 mt-6 mb-2">
+            <div class="col-lg-6 mt-lg-0 mt-6 mb-2" style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
                 <div class="card">
                     <div class="card-header">
                         <h5 class="h5">Hotel Details</h5>
@@ -183,7 +180,7 @@
                     </div>
 
                 </div>
-                <div class="card">
+                <div class="card" >
                     <div class="card-header">
                         <h5 class="h5">Guide Details</h5>
                     </div>
@@ -251,7 +248,7 @@
                 </div>
 
             </div>
-            <div class="col-lg-6 mt-lg-0 mt-6">
+            <div class="col-lg-6 mt-lg-0 mt-6" style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
                 <div class="card">
                     <div class="card-header">
                         <h5 class="h5">Vehicle Details</h5>
@@ -308,8 +305,8 @@
             </div>
         </div>
         <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex">
-            <button class="btn btn-success  float-right" id="saveBookingbtn" type="button">Save</button>
-            <button type="button" class="btn btn-warning  float-right" id="updateBookingbtn">Update</button>
+            <button class="btn btn-savebtn  float-right" id="saveBookingbtn" type="button">Confine</button>
+            <button type="button" class="btn btn-cancel  float-right" id="updateBookingbtn">Update</button>
         </div>
         <div class="row mt-2">
             <table class="table" id="bookingDetailsTable">

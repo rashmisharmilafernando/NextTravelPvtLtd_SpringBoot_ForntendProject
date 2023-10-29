@@ -6,7 +6,7 @@ loadAllPackageName();
 function loadAllPackageName() {
     $("#filterPackage").empty();
     $.ajax({
-        url:indexBaseUrl+"packages/filterPackageName",
+        url:"http://localhost:8085/packageServer/api/v1/package/filterPackage",
         method:"GET",
         contentType:"json",
         dataType:"json",

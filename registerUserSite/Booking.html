@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <link rel="stylesheet" href="../assets/css/booking.css">
+    <link rel="stylesheet" href="../assets/lib/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <link href="../assets/css/admin.css" rel="stylesheet">
+
+</head>
+
+<body>
+<header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+        <header>
+            <img src="../assets/img/logo.png" width="100">
+
+        </header>
+    </div>
+</header>
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../registerUserSite/RegisterUser.html"><span>Account</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../registerUserSite/Reservation.html"><span>Reservation</span> </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="../registerUserSite/Booking.html"><span>Booking</span> </a>
+        </li>
+        <li class="nav-item"><a class="nav-link collapsed" href="../pages/otherPage/LoginPage.html"><span>LogOut</span></a></li>
+    </ul>
+</aside>
+<main id="main" class="main">
+    <div class="pageTitle" id="pageOne">
+        <h1>BOOKING</h1>
+    </div>
+    </div>
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-lg-12 mt-lg-0 mt-5 mb-2"  style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
+                <div class="card" >
+                    <div class="card-header">
+                        <h5 class="h5 mb-4">Reservation Details</h5>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-4">
+                                    <span class="span m-1">Reservation ID</span>
+                                    <input type="number" class="form-control" placeholder="" readonly name="bookingReservation_Id"
+                                           id="bookingReservationId">
+                                </div>
+                                <div class="col-4">
+                                    <span class="span m-1">Customer ID</span>
+                                    <input type="number" class="form-control" placeholder="" readonly
+                                           name="reservation_Customer_Id"
+                                           id="reservationCustomerId">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <span class="span m-1">Package</span>
+                                    <input class="form-control" id="packageName" name="package_Name" type="text" readonly>
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1">Total headcount</span>
+                                    <input type="number" class="form-control" placeholder="" readonly name="head_count"
+                                           id="headCount">
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1">Package Value</span>
+                                    <input type="text" class="form-control" placeholder="" readonly name="value"
+                                           id="package_value">
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1">Start Date</span>
+                                    <input class="form-control" type="date" id="startDate"
+                                           name="start_Date"
+                                           value="YYYY-MM-DD" min="2023-10-01" max="2030-12-31" readonly/>
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1">End Date</span>
+                                    <input class="form-control" type="date" id="endDate"
+                                           name="end_Date"
+                                           value="YYYY-MM-DD" min="2023-10-01" max="2030-12-31" readonly/>
+                                </div>
+
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <span class="span m-1">Night Count</span>
+                                    <input class="form-control" type="number" id="nightCount" name="night_Count" readonly/>
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1">Day Count</span>
+                                    <input class="form-control" type="number" id="dayCount" name="dayCount" readonly/>
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1">No of Adults</span>
+                                    <input type="number" class="form-control" placeholder="" id="adults"
+                                           name="number_of_adults" readonly>
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1">No of Children</span>
+                                    <input type="number" class="form-control" placeholder="" id="children"
+                                           name="number_of_children" readonly>
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1">Guide or not</span>
+                                    <input class="form-control" id="guideStatus" name="guide_Staus" readonly>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-lg-0 mt-6 mb-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="h5">Hotel Details</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row ">
+                                    <div class="col-4">
+                                        <span class="span m-1">Hotel ID</span>
+                                        <input class="form-control" id="HotelID" name="hotel_id" readonly>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Hotel</span>
+                                        <input class="form-control" id="hotelName" name="filter_hotel_name" readonly>
+
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Location</span>
+                                        <input class="form-control" id="Location" name="filter_Location" readonly>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="card" >
+                        <div class="card-header">
+                            <h5 class="h5">Guide Details</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row ">
+                                    <div class="col">
+                                        <span class="span m-1">Guide ID</span>
+                                        <input class="form-control" id="guide_id" name="guideid" readonly>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Guide Name</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="guideName"
+                                               id="guide_name" >
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Number</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="guideNumber"
+                                               id="guide_Number">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="h5">Vehicle Details</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="span m-1">Register ID</span>
+                                        <select class="form-control" id="vehicleRegId" name="vehicle_Reg_Id">
+                                            <!-- <option value="">Select ID</option>
+                                             <option value="vehicle1">VRI-001</option>
+                                             <option value="vehicle2">VRI-002</option>
+                                             <option value="vehicle3">VRI-003</option>
+                                             <option value="vehicle4">VRI-004</option>
+                                             <option value="vehicle5">VRI-005</option>-->
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Vehicle brand</span>
+                                        <input class="form-control" id="vehicle_brand" name="vehiclebrand" readonly>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Seat Capacity</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="seatCapacity"
+                                               id="vehicle_seatCapacity">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+
+                                    <div class="col">
+                                        <span class="span m-1">Fuel Type</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="FuelType"
+                                               id="vehicle_Fuel_Type">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Transmission Type</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="transmission"
+                                               id="vehicle_transmission">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="h5">Payment Details</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row ">
+                                    <div class="col">
+                                        <span class="span m-1">Guide value</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="guide_Value"
+                                               id="guideValue">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Number of Days</span>
+                                        <input type="number" class="form-control" placeholder="" name="All_days"
+                                               id="allDays">
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col">
+                                        <span class="span m-1">Total</span>
+                                        <input type="text" class="form-control" placeholder="" readonly name="total"
+                                               id="full_payment">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1">Payment Slip</span>
+                                        <input type="file" class="form-control" placeholder="" id="imageofslip"
+                                               name="image_of_slip">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex">
+                <button class="btn btn-savebtn float-right" id="saveBookingbtn" type="button">Booking</button>
+                <button type="button" class="btn btn-cancel  float-right" id="updateBookingbtn">Cancel</button>
+            </div>
+            <div class="row mt-2">
+                <table class="table" id="bookingDetailsTable">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#Booking ID</th>
+                        <th scope="col">Package</th>
+                        <th scope="col">Hotel </th>
+                        <th scope="col">Vehicle</th>
+                        <th scope="col">Guide</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
+                        <th scope="col">Full Payment</th>
+                    </tr>
+                    </thead>
+                    <tbody id="customerAccountBookingTable"></tbody>
+                </table>
+            </div>
+    </section>
+
+</main>
+</body>
+<script src="../lib/jquery-3.6.4.min.js"></script>
+<script>
+    $(function () {
+        $('#datepicker').datepicker();
+    });
+</script>
+</html>
