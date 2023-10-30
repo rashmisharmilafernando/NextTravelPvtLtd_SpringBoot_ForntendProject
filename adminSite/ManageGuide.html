@@ -56,14 +56,13 @@
     <!-- End Page Title -->
     <section class="section dashboard">
         <div class="card-body">
-            <form>
+            <form  action="guide" id="guideFrom" method="post" >
                 <div class="row card-body"
                      style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
                     <div class="row" style="margin-bottom: 30px">
                         <div class="col input-group">
-                            <input type="search" id="searchGuide" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            <input type="search" id="searchbtn" class="form-control rounded" placeholder="Search for GuideId.." aria-label="Search" onkeyup="searchGuideId()"
                                    aria-describedby="search-addon"/>
-                            <button type="button" class="btn btn-dark">search</button>
                         </div>
                         <div class="col" style="margin-left: 100px">
                             <button class="btn btn-savebtn" id="saveGuidebtn" type="button"

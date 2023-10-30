@@ -1,20 +1,34 @@
-let GuiderBaseurl = "";
 loadAllGuide();
 
 //Save Guider
 $("#saveGuidebtn").click(function () {
-    let formDate = new FormData($("#giudeTable")[0]);
+    let formDate = new FormData($("#guideFrom")[0]);
+    formData.append("guide_id", $("#guideid").val());
+    formData.append("guide_Name", $("#guideName").val());
+    formData.append("guide_Address", $("#guideAddress").val());
+    formData.append("guide_Gender", $("#guide_Gender").val());
+    formData.append("guide_Number", $("#guideNumber").val());
+    formData.append("guide_Experience", $("#guideExperience").val());
+    formData.append("guide_Day_Value", $("#guideDayValue").val());
+    formData.append("Guide_Image", $("#GuideImage")[0].files[0]);
+    formData.append("Nic_Image", $("#NicImage")[0].files[0]);
+    formData.append("Guide_ID_Image", $("#GuideIDImage")[0].files[0]);
+
     $.ajax({
-        url: HotelBaseUrl + "guide",
+        url: "http://localhost:9696/guideServer/api/v1/guide",
         method: "POST",
         date: formDate,
         contentType: false,
         processData: false,
         success: function (res) {
+            console.log("Success:", res);
             loadAllGuide();
+            clearTextFields();
+            alert("Successfully....!");
         },
         error:function (error){
-            console.log(error);
+            console.log("Response Text:", xhr.responseText);
+            alert("Try again....!");
         }
     })
 })
@@ -22,7 +36,18 @@ $("#saveGuidebtn").click(function () {
 
 //update Guider
 $("#updateGuidebtn").click(function () {
-    let formData = new FormData($("#giudeTable")[0]);
+    let formDate = new FormData($("#guideFrom")[0]);
+    formData.append("guide_id", $("#guideid").val());
+    formData.append("guide_Name", $("#guideName").val());
+    formData.append("guide_Address", $("#guideAddress").val());
+    formData.append("guide_Gender", $("#guide_Gender").val());
+    formData.append("guide_Number", $("#guideNumber").val());
+    formData.append("guide_Experience", $("#guideExperience").val());
+    formData.append("guide_Day_Value", $("#guideDayValue").val());
+    formData.append("Guide_Image", $("#GuideImage")[0].files[0]);
+    formData.append("Nic_Image", $("#NicImage")[0].files[0]);
+    formData.append("Guide_ID_Image", $("#GuideIDImage")[0].files[0]);
+
     $.ajax({
         url: HotelBaseUrl + "guide/update",
         method: "PUT",
@@ -31,9 +56,12 @@ $("#updateGuidebtn").click(function () {
         processData: false,
         success: function (res) {
             loadAllGuide();
+            clearTextFields();
+            alert("Successfully....!");
         },
         error:function (error){
             console.log(error);
+            alert("Try again....!");
         }
     })
 });
@@ -48,49 +76,38 @@ $("#deleteGuidebtn").click(function () {
         dataType: "json",
         success: function (res) {
             loadAllGuide();
+            console.log(resp);
+            clearTextFields();
+            alert("Successfully....!");
+
         },
         error:function (error){
             console.log(error);
+            alert("Successfully....!");
         }
     })
 });
 
 
 //Search Guider
-$("#searchGuide").on("keypress",function (event){
-    if (event.which ===13){
-        var searchGuide=$("#searchGuide").val();
-        $("#giudeTable").empty();
-        $.ajax({
-            url:RegisterBaseUrl + "guide/searchGuide/?guideid="+searchGuide,
-            method:"GET",
-            contentType:"application/json",
-            dataType:"json",
-            success:function (res){
-                $("#guideid").val(res.guide_id);
-                $("#guideName").val(res.guide_Name);
-                $("#guideAddress").val(res.guide_Address);
-                $("#guideGender").val(res.guide_Gender);
-                $("#guideNumber").val(res.guide_Number);
-                $("#guideExperience").val(res.guide_Experience);
-                $("#guideDayValue").val(res.guide_Day_Value);
-
-                let row ="<tr><td>" + res.guide_id+"</td>" +
-                    "<td>" + res.guide_Name + "</td>" +
-                    "<td>" + res.guide_Address+"</td>"+
-                    "<td>" + res.guide_Gender+"</td>"+
-                    "<td>" + res.guide_Number+"</td>"+
-                    "<td>" + res.guide_Experience+"</td>"+
-                    "<td>" + res.guide_Day_Value+"</td></tr>";
-                $("#registerUserTable").append(row)
-            },
-            error:function (error){
-                loadAllGuide()
+function searchGuideId() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("searchbtn");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("giudeTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
-        })
+        }
     }
-})
-
+}
 
 //Get All Guider details
 function loadAllGuide() {
@@ -102,26 +119,28 @@ function loadAllGuide() {
         success: function (res) {
             console.log(res);
             for (let i of res.data) {
-                let id = i.guide_id;
-                let name = i.guide_Name;
-                let address = i.guide_Address;
-                let gender = i.guide_Gender;
-                let number = i.guide_Number;
-                let experience = i.guide_Experience;
-                let manDayValue = i.guide_Day_Value;
+                let guide_id = i.guide_id;
+                let guide_Name = i.guide_Name;
+                let guide_Address = i.guide_Address;
+                let guide_Gender = i.guide_Gender;
+                let guide_Number = i.guide_Number;
+                let guide_Experience = i.guide_Experience;
+                let guide_Day_Value = i.guide_Day_Value;
 
-                let row="<tr><td>" + id + "</td>" +
-                    "<td>" + name + "</td>" +
-                    "<td>" + address + "</td>" +
-                    "<td>" + gender + "</td>" +
-                    "<td>" + number + "</td>" +
-                    "<td>" + experience + "</td>" +
-                    "<td>" + manDayValue + "</td></tr>";
+                let row="<tr><td>" + guide_id + "</td>" +
+                    "<td>" + guide_Name + "</td>" +
+                    "<td>" + guide_Address + "</td>" +
+                    "<td>" + guide_Gender + "</td>" +
+                    "<td>" + guide_Number + "</td>" +
+                    "<td>" + guide_Experience + "</td>" +
+                    "<td>" + guide_Day_Value + "</td></tr>";
                 $("#giudeTable").append(row)
+                console.log(row);
             }
             autoGenerateId();
             checkValidity(guideValidation);
             loadTextFieldValues();
+            console.log(res.message);
         },
         error:function (error){
             console.log(error);
@@ -163,21 +182,21 @@ function autoGenerateId() {
 
 function loadTextFieldValues(){
     $("#giudeTable>tr").on("click",function (){
-        let id = $(this).children().eq(0).text();
-        let name = $(this).children().eq(1).text();
-        let address = $(this).children().eq(2).text();
-        let gender = $(this).children().eq(3).text();
-        let number = $(this).children().eq(4).text();
-        let experience = $(this).children().eq(5).text();
-        let manDayValue = $(this).children().eq(6).text();
+        let guide_id = $(this).children().eq(0).text();
+        let guide_Name = $(this).children().eq(1).text();
+        let guide_Address = $(this).children().eq(2).text();
+        let guide_Gender = $(this).children().eq(3).text();
+        let guide_Number = $(this).children().eq(4).text();
+        let guide_Experience = $(this).children().eq(5).text();
+        let guide_Day_Value = $(this).children().eq(6).text();
 
-        $("#guideid").val(id);
-        $("#guideName").val(name);
-        $("#guideAddress").val(address);
-        $("#guideGender").val(gender);
-        $("#guideNumber").val(number);
-        $("#guideExperience").val(experience);
-        $("#guideDayValue").val(manDayValue);
+        $("#guideid").val(guide_id);
+        $("#guideName").val(guide_Name);
+        $("#guideAddress").val(guide_Address);
+        $("#guideGender").val(guide_Gender);
+        $("#guideNumber").val(guide_Number);
+        $("#guideExperience").val(guide_Experience);
+        $("#guideDayValue").val(guide_Day_Value);
     });
 
 }
