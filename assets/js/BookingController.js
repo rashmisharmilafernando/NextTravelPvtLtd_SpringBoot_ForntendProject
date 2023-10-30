@@ -6,9 +6,9 @@ autoGeneratebookingid();
 //------------------Auto Generate Booking id--------------------------------
 
 function autoGeneratebookingid() {
-    $("#searchbookingid").val("NTB-001");
+    $("#bookingReservationId").val("NTB-001");
     $.ajax({
-        url: bookingBaseUrl + "booking/generateBookingId",
+        url: "http://localhost:8085/packageServer/api/v1/booking/bookingIdGenerate",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -17,11 +17,11 @@ function autoGeneratebookingid() {
             let tempid = paraseInt(id.split("-")[1]);
             tempid = tempid + 1;
             if (tempid <= 9) {
-                $("#searchbookingid").val("NTB-00" + tempid);
+                $("#bookingReservationId").val("NTB-00" + tempid);
             } else if (tempid <= 99) {
-                $("#searchbookingid").val("NTB-0" + tempid);
+                $("#bookingReservationId").val("NTB-0" + tempid);
             } else {
-                $("#searchbookingid").val("NTB-" + tempid);
+                $("#bookingReservationId").val("NTB-" + tempid);
             }
         }
     })
@@ -93,17 +93,18 @@ $("#allDays").on("click", function () {
 //--------------Save booking-----------------------------
 
 $("#saveBookingbtn").on("click", function () {
-    let bookingId=$("#bookingId").val();
+    let bookingReservationId=$("#bookingReservationId").val();
+    let reservation_Customer_Id=$("#reservationCustomerId").val();
     let package_Name=$("#packageName").val();
-    let userId=$("#bookingCustomerId").val();
-    let hotelId=$("#HotelID").val();
+    let start_Date=$("#startDate").val();
+    let end_Date=$("#endDate").val();
+    let number_of_adults=$("#adults").val();
+    let number_of_children=$("#children").val();
+    let hotel_id=$("#hotelID").val();
     let vehicleId=$("#vehicleRegId").val();
-    let startDate=$("#startDate").val();
-    let endDate=$("#endDate").val();
+
     let nightCount=$("#nightCount").val();
     let dayCount=$("#dayCount").val();
-    let numberOfAdults=$("#adults").val();
-    let numberOfChildren=$("#children").val();
     let guideId=$("#guide_id").val();
     let location=$("#Location").val();
     let totalPayment=$("#full_payment").val();

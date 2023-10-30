@@ -4,7 +4,7 @@ loadAllVehicle();
 loadAllPackageName();
 
 function loadAllPackageName() {
-    $("#filterPackage").empty();
+    $("#packageName").empty();
     $.ajax({
         url:"http://localhost:8085/packageServer/api/v1/package/filterPackage",
         method:"GET",
@@ -12,8 +12,8 @@ function loadAllPackageName() {
         dataType:"json",
         success:function (res){
             for (let i of res){
-                let package_name=i.filter_packages;
-                $("#filterPackage").append(`<option>${package_name}</option>`)
+                let package_name=i.package_Name;
+                $("#packageName").append(`<option>${package_name}</option>`)
             }
         },error:function (error){
             console.log(error);
@@ -97,15 +97,15 @@ $("#filterPackage").on("click", function () {
 function filterPackages() {
     $("#hotelSection").empty();
     $("#vehicleSection").empty();
-    filter_packages = $("#filterPackage").val();
+    package_Name = $("#packageName").val();
     $.ajax({
         url: indexBaseUrl + "packages/filerPackages?filter_packages",
         method: "GET",
-        data: { filter_packages },
+        data: { package_Name },
         dataType: "json",
         success: function (res) {
             for (let i of res) {
-                let url1 = i.image.Hotel_image;
+                let url1 = i.image.hotelImage;
                 $("#hotelSection").append(
                     `<div class="card" style="width: 500px;">
                          <div class="row no-gutters">
@@ -116,7 +116,8 @@ function filterPackages() {
                               </div>
                                     <div class="col-sm-6">
                                         <div class="card-body">
-                                            <h4 class="card-title" style="margin-top: 15px">${i.hotel_name}</h4>
+                                            <h4 class="card-title" style="margin-top: 15px">
+                                                ${i.hotel_name}</h4>
                                             <small>${i.hotel_location}</small><br>
                                             <small>${i.hotel_rate}</small>
                                         </div>
