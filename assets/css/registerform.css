@@ -128,3 +128,26 @@
         opacity: 0;
     }
 }
+.btn-savebtn{
+    background-color: rgb(255, 159, 67);
+    min-width: 120px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 10px;
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+.card-registration .select-arrow {
+    top: 13px;
+}
+.btn-cancel{
+    background-color: rgba(0, 0, 0, 0.49);
+    min-width: 130px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 10px;
+}

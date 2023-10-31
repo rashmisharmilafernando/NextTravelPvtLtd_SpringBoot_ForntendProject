@@ -20,20 +20,24 @@
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-            <a class="nav-link " href="../userSite/UserDashboard.html"><span>Dashboard</span></a>
+            <a class="nav-link collapsed" href="../userSite/UserDashboard.html"><span>Dashboard</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="../userSite/ManageCustomer.html" id="customer"><span>Customer</span> </a>
+            <a class="nav-link " href="../userSite/ManageCustomer.html" id="customer"><span>Customer</span>
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="../userSite/Reservation.html" id="reservation"><span>Reservation</span> </a>
+            <a class="nav-link collapsed" href="../userSite/Reservation.html" id="reservation"><span>Reservation</span>
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="../userSite/BookingPage.html" id="booking"><span>Booking</span> </a>
         </li>
         <li style="margin-top: 300px" class="nav-item"><a class="nav-link collapsed"
-                                                          href="../userSite/UserProfile.html"><span>Setting</span></a></li>
-        <li class="nav-item"><a class="nav-link collapsed" href="../pages/otherPage/LoginPage.html"><span>LogOut</span></a></li>
+                                                          href="../userSite/UserProfile.html"><span>Setting</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link collapsed" href="../pages/otherPage/LoginPage.html"><span>LogOut</span></a>
+        </li>
     </ul>
 </aside>
 <main id="main" class="main">
@@ -63,47 +67,68 @@
                     </div>
 
                     <div class="row">
-                        <!--//id-->  <div class="col">
+                        <div class="col">
                             <span class="span m-1">ID</span>
                             <input class="form-control" id="RegUserId" readonly
                                    name="Id"
                                    placeholder="" type="text">
                         </div>
-
                         <div class="col mb-4">
                             <span class="span m-1">Name</span>
-                            <input  id="regname"  name="Regutsername" type="text" class="form-control" placeholder="">
+                            <input id="reg_Name" name="name" type="text" class="form-control" placeholder="">
                         </div>
-
                         <div class="col mb-4">
-                            <span class="span m-1">Email</span>
-                            <input id="regEmail" name="RegutserEmail" type="email" class="form-control" placeholder="">
+                            <span class="span m-1 small">NIC</span>
+                            <input id="reg_NIC" name="nic" type="text" class="form-control" placeholder="">
                         </div>
-
                         <div class="col mb-4">
-                            <span class="span m-1">Address</span>
-                            <input  id="regAddress" name="Regutseraddrss"   type="text" class="form-control" placeholder="">
+                            <span class="span m-1 small">Age</span>
+                            <input id="reg_Age" name="age" type="int" class="form-control" placeholder="">
+                        </div>
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Gender</span>
+                            <select id="reg_Gender" name="gender" type="text"
+                                    class="form-control"
+                                    placeholder="">
+                                <option value="FEMALE">FEMALE</option>
+                                <option value="MALE">MALE</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col mb-4">
-                            <span class="span m-1">NIC</span>
-                            <input  id="regNIC" name="Regutsernic" type="text" class="form-control" placeholder="">
+                            <span class="span m-1 small">Email</span>
+                            <input id="reg_Email" name="RegutserEmail" type="email"
+                                   class="form-control"
+                                   placeholder="">
                         </div>
-
                         <div class="col mb-4">
-                            <span class="span m-1">username</span>
-                            <input  id="regUsername" name="RegutserUsername" type="text" class="form-control" placeholder="">
+                            <span class="span m-1 small">Password</span>
+                            <input id="reg_Password" name="password" type="password"
+                                   class="form-control"
+                                   placeholder="">
                         </div>
-
-                        <div class="col mb-4">
-                            <span class="span m-1">Password</span>
-                            <input id="regPassword" name="RegutserPassword" type="password" class="form-control" placeholder="">
-                        </div>
-
                         <div class="col">
-                            <span class="span m-1">Profile_Picture</span>
-                            <input  class="form-control" id="Profile_Picture" type="file" name="Profile_Picture">
+                            <span class="span m-1 small">Role Type</span>
+                            <select id="reg_RoleType" name="roleType" type="text"
+                                    class="form-control"
+                                    placeholder="">
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="USER">USER</option>
+                                <option value="CUSTOMER">CUSTOMER</option>
+                            </select>
+                        </div>
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Address</span>
+                            <input id="rag_address" name="address" type="text"
+                                   class="form-control"
+                                   placeholder="">
+                        </div>
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Contact Number</span>
+                            <input id="rag_contactNumber" name="contactNumber" type="text"
+                                   class="form-control"
+                                   placeholder="">
                         </div>
                     </div>
                 </div>
@@ -114,9 +139,14 @@
                     <tr>
                         <th scope="col">#ID</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Email</th>
                         <th scope="col">NIC</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Role Type</th>
                         <th scope="col">Address</th>
+                        <th scope="col">Contact Number</th>
                     </tr>
                     </thead>
                     <tbody id="registerUserTable"></tbody>

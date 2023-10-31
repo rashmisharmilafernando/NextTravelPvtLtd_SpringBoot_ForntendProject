@@ -26,7 +26,7 @@
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-            <a class="nav-link " href="../userSite/UserDashboard.html"><span>Dashboard</span></a>
+            <a class="nav-link collapsed" href="../userSite/UserDashboard.html"><span>Dashboard</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="../userSite/ManageCustomer.html" id="customer"><span>Customer</span> </a>
@@ -37,16 +37,19 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="../userSite/BookingPage.html" id="booking"><span>Booking</span> </a>
         </li>
-        <li style="margin-top: 300px" class="nav-item"><a class="nav-link collapsed"
+        <li style="margin-top: 300px" class="nav-item"><a class="nav-link "
                                                           href="../userSite/UserProfile.html"><span>Setting</span></a></li>
         <li class="nav-item"><a class="nav-link collapsed" href="../pages/otherPage/LoginPage.html"><span>LogOut</span></a></li>
     </ul>
 </aside>
-<section class="vh-100" style="padding: 100px;">
-    <div class="container-fluid h-custom">
+<section class="vh-100" style="padding: 100px;" >
+    <div class="container-fluid h-custom" >
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style="background-color: white;padding-top: 20px;box-shadow: 10px 10px 5px -5px rgba(20,10,10,0.15);">
-                <h3 class="text-center pb-2">You account details</h3>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
+                <div class="card-header  mb-5" style="background-color: #ff9f43;color: black" >
+                    <h3 class="text-center">Profile</h3>
+                </div>
+
                 <form class="mx-1 mx-md-4">
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -85,7 +88,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center mx-4 mb-3">
-                        <a   type="button" class="btn btn-outline-warning">Save</a>
+                        <a   type="button" class="btn btn-savebtn">Save</a>
                     </div>
                 </form>
             </div>

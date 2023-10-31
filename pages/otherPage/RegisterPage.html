@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Next Travel</title>
@@ -9,98 +9,130 @@
 </head>
 
 <body>
-<header id="header" class="header fixed-top d-flex align-items-center">
-    <div class="d-flex align-items-center justify-content-between">
-        <!--Business Logo-->
-        <header>
-            <img src="../../assets/img/logo.png" width="100" alt="logo" class="m-lg-3">
-        </header>
-    </div>
-</header>
 <section>
-    <div class="container-fluid h-custom" style="
-    margin-top: 100px;">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-
-            <div class="col-md-9 col-lg-6 col-xl-5">
-                <img src="https://i.pinimg.com/564x/5f/ef/8b/5fef8b035e9f6d06d5ad5d80cdb03125.jpg"
-                     class="img-fluid" alt="Sample image">
-
-            </div>
-            <div class="col  offset-xl-1">
-                <div class="pageTitle" id="pageOne">
-                    <h1 class="justify-content-md-center" style=" margin-left: 150px;color: #f1a501">Create an Account</h1>
-                </div>
-                <form id="registerForm" class="mx-1 mx-md-4">
-                    <div class="row">
-                        <div class="col mb-4">
-                            <div class="profile-pic-wrapper">
-                                <div class="pic-holder">
-                                    <!-- uploaded pic shown here -->
-                                    <img id="profilePic" class="pic"
-                                         src="https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg">
-                                    <Input class="uploadProfileInput" type="file" name="profile_pic"
-                                           id="newProfilePhoto"
-                                           accept="image/*" style="opacity: 0;"/>
-                                    <label for="newProfilePhoto" class="upload-file-block">
-                                        <div class="text-center">
-                                            <div class="text-uppercase">
-                                                Update <br/> Profile Photo
+    <div>
+        <div class="row  justify-content-center align-items-center">
+            <div style="padding-right: 0px;padding-left: 0px;">
+                <div class="card card-registration">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img src="https://i.pinimg.com/564x/a2/f7/37/a2f737fc3dd3eabc66cc91bf32248194.jpg"
+                                 alt="Sample photo" class="img-fluid"
+                                 style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem "/>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card-body text-black">
+                                <h3 class="text-uppercase">Create an Account</h3>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="row">
+                                            <div class="col mb-4">
+                                                <div class="profile-pic-wrapper">
+                                                    <div class="pic-holder">
+                                                        <img id="profilePic" class="pic"
+                                                             src="https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg"
+                                                             height="150px">
+                                                        <Input class="uploadProfileInput" type="file" name="profile_pic"
+                                                               id="newProfilePhoto" accept="image/*"
+                                                               style="opacity: 0;"/>
+                                                        <label for="newProfilePhoto" class="upload-file-block">
+                                                            <div class="text-center">
+                                                                <div class="text-uppercase">
+                                                                    Update <br/> Profile Photo
+                                                                </div>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="span m-1 small">ID</span>
+                                        <input class="form-control" id="RegUserId" readonly
+                                               name="Id"
+                                               placeholder="" type="text">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1 small">Name</span>
+                                        <input id="reg_Name" name="name" type="text" class="form-control"
+                                               placeholder="">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="span m-1 small">NIC</span>
+                                        <input id="reg_NIC" name="nic" type="text"
+                                               class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1 small">Age</span>
+                                        <input id="reg_Age" name="age" type="int" class="form-control"
+                                               placeholder="">
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="span m-1 small">Gender</span>
+                                        <select id="reg_Gender" name="gender" type="text"
+                                                class="form-control"
+                                                placeholder="">
+                                            <option value="FEMALE">FEMALE</option>
+                                            <option value="MALE">MALE</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1 small">Email</span>
+                                        <input id="reg_Email" name="RegutserEmail" type="email"
+                                               class="form-control"
+                                               placeholder="">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="span m-1 small">Password</span>
+                                        <input id="reg_Password" name="password" type="password"
+                                               class="form-control"
+                                               placeholder="">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1 small">Password</span>
+                                        <select id="reg_RoleType" name="roleType" type="text"
+                                                class="form-control"
+                                                placeholder="">
+                                            <option value="ADMIN">ADMIN</option>
+                                            <option value="USER">USER</option>
+                                            <option value="CUSTOMER">CUSTOMER</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="span m-1 small">Address</span>
+                                        <input id="rag_address" name="address" type="text"
+                                               class="form-control"
+                                               placeholder="">
+                                    </div>
+                                    <div class="col">
+                                        <span class="span m-1 small">Contact Number</span>
+                                        <input id="rag_contactNumber" name="contactNumber" type="text"
+                                               class="form-control"
+                                               placeholder="">
+                                    </div>
                                 </div>
                             </div>
+                            <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex">
+                                <button class="btn btn-savebtn float-right" id="registerBtn" type="button">Sign Up</button>
+                            </div>
                         </div>
+
                     </div>
-                    <div class="row">
-                        <div class="col mb-4">
-                            <span class="span m-1">ID</span>
-                            <input class="form-control" id="RegUserId" readonly
-                                   name="Id"
-                                   placeholder="" type="text">
-                        </div>
-                        <div class="col mb-4">
-                            <span class="span m-1">Name</span>
-                            <input id="regname" name="Regutsername" type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="col mb-4">
-                            <span class="span m-1">Email</span>
-                            <input id="regEmail" name="RegutserEmail" type="email" class="form-control" placeholder="">
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col mb-4">
-                            <span class="span m-1">Address</span>
-                            <input id="regAddress" name="Regutseraddrss" type="text" class="form-control"
-                                   placeholder="">
-
-                        </div>
-                        <div class="col mb-4">
-                            <span class="span m-1">NIC</span>
-                            <input id="regNIC" name="Regutsernic" type="text" class="form-control" placeholder="">
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col mb-4">
-                            <span class="span m-1">username</span>
-                            <input id="regUsername" name="RegutserUsername" type="text" class="form-control"
-                                   placeholder="">
-
-                        </div>
-                        <div class="col mb-4">
-                            <span class="span m-1">Password</span>
-                            <input id="regPassword" name="RegutserPassword" type="password" class="form-control"
-                                   placeholder="">
-
-                        </div>
-                    </div>
-
-                    <a href="../../index.html" type="register_button" class="btn btn-warning btn-lg "
-                       style="margin-left: 250px">Register</a>
-                </form>
+                </div>
             </div>
         </div>
     </div>
