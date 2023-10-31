@@ -34,21 +34,6 @@ $.ajax({
     }
 });
 
-//---------------------------------Number of Guide----------------------------------------------
-$("#GuideCount").val("0");
-$.ajax({
-    url:GuiderBaseurl+"GuiderCount",
-    method:"GET",
-    contentType:"application/json",
-    dataType:"json",
-    success:function (res){
-        let num=res.count
-        $("#GuideCount").text(num);
-    },
-    error:function (error){
-        console.log(error)
-    }
-})
 
 //------------------------Number of Hotel--------------------------------
 $("#HotelsCount").val("0");
