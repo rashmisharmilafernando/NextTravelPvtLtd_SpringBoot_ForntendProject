@@ -2,7 +2,7 @@ loadAllGuide();
 
 //Save Guider
 $("#saveGuidebtn").click(function () {
-    let formDate = new FormData($("#guideFrom")[0]);
+    let formData = new FormData($("#guideFrom")[0]);
     formData.append("guide_id", $("#guideid").val());
     formData.append("guide_Name", $("#guideName").val());
     formData.append("guide_Address", $("#guideAddress").val());
@@ -17,7 +17,7 @@ $("#saveGuidebtn").click(function () {
     $.ajax({
         url: "http://localhost:9696/guideServer/api/v1/guide",
         method: "POST",
-        date: formDate,
+        date: formData,
         contentType: false,
         processData: false,
         success: function (res) {
@@ -27,7 +27,7 @@ $("#saveGuidebtn").click(function () {
             alert("Successfully....!");
         },
         error:function (error){
-            console.log("Response Text:", xhr.responseText);
+            console.log("Response Text:", error);
             alert("Try again....!");
         }
     })
@@ -36,7 +36,7 @@ $("#saveGuidebtn").click(function () {
 
 //update Guider
 $("#updateGuidebtn").click(function () {
-    let formDate = new FormData($("#guideFrom")[0]);
+    let formData = new FormData($("#guideFrom")[0]);
     formData.append("guide_id", $("#guideid").val());
     formData.append("guide_Name", $("#guideName").val());
     formData.append("guide_Address", $("#guideAddress").val());
@@ -49,7 +49,7 @@ $("#updateGuidebtn").click(function () {
     formData.append("Guide_ID_Image", $("#GuideIDImage")[0].files[0]);
 
     $.ajax({
-        url: HotelBaseUrl + "guide/update",
+        url: "http://localhost:9696/guideServer/api/v1/guide/update",
         method: "PUT",
         data: formData,
         contentType: false,
@@ -71,7 +71,7 @@ $("#updateGuidebtn").click(function () {
 $("#deleteGuidebtn").click(function () {
     let id = $("#guideid").val();
     $.ajax({
-        url: RegisterBaseUrl + "guide?id" + id,
+        url:"http://localhost:9696/guideServer/api/v1/guide?id" + id,
         method: "DELETE",
         dataType: "json",
         success: function (res) {
@@ -113,7 +113,7 @@ function searchGuideId() {
 function loadAllGuide() {
     $("#giudeTable").empty();
     $.ajax({
-        url: HotelBaseUrl + "guide/loadAllguide",
+        url:  "http://localhost:9696/guideServer/api/v1/guide/loadAllguide",
         method: "GET",
         dataType: "json",
         success: function (res) {
@@ -151,22 +151,23 @@ function loadAllGuide() {
 
 //Auto Generate id
 function autoGenerateId() {
-    $("#guideid").val("G-001");
+    $("#guideid").val("NTG-001");
     $.ajax({
-        url:GuiderBaseurl+"guide/autoGenerateid",
+        url:"http://localhost:9696/guideServer/api/v1/guide/autoGenerateid",
         method:"GET",
         contentType: "application/json",
         dataType: "json",
         success: function (resp) {
             let id = resp.value;
+            console.log("id" + id);
             let tempid = parseInt(id.split("-")[1]);
             tempid = tempid + 1;
             if (tempid <= 9) {
-                $("#guideid").val("G-00" + tempid);
+                $("#guideid").val("NTG-00" + tempid);
             } else if (tempid <= 99) {
-                $("#guideid").val("G-0" + tempid);
+                $("#guideid").val("NTG-0" + tempid);
             } else {
-                $("#guideid").val("G-" + tempid);
+                $("#guideid").val("NTG-" + tempid);
             }
         },
 
@@ -207,7 +208,7 @@ function loadTextFieldValues(){
 $("#guide_id").click(function (){
     var searchGuide=$("#guide_id").val();
     $.ajax({
-        url:bookingBaseUrl+"guide/searchGuide/?guide_id="+searchGuide,
+        url:"http://localhost:9696/guideServer/api/v1/guide/searchGuide/?guide_id="+searchGuide,
         method:"GET",
         contentType:"application/json",
         dataType:"json",
