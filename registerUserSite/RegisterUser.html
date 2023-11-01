@@ -39,82 +39,115 @@
         <div class="pageTitle" id="pageOne">
             <h1>Profile</h1>
         </div>
-        <div class="row"  style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
+        <div class="row"
+             style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
             <div class="container-fluid h-custom">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                        <form id="userAccountDetails" class="mx-1 mx-md-4">
-                            <div class="d-flex flex-row align-items-center mb-4">
-                                <div class="form-outline flex-fill mb-0">
-                                    <div class="profile-pic-wrapper">
-                                        <div class="pic-holder">
-                                            <!-- uploaded pic shown here -->
-                                            <img id="profilePic" class="pic"
-                                                 src="https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg" alt="profilePic">
-                                            <Input class="uploadProfileInput" type="file" name="reg_User_ProfilePhoto" id="regUserProfilePhoto"
-                                                   accept="image/*" style="opacity: 0;" />
-                                            <label for="regUserProfilePhoto" class="upload-file-block">
-                                                <div class="text-center">
-                                                    <div class="mb-2">
-                                                        <i class="fa fa-camera fa-2x"></i>
-                                                    </div>
-                                                    <div class="text-uppercase">
-                                                        Update <br/> Profile Photo
-                                                    </div>
+
+                <div class="container rounded bg-white">
+                    <div class="row">
+                        <div class="col-md-5 border-right">
+                            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                <div class="profile-pic-wrapper">
+                                    <div class="pic-holder">
+                                        <img id="profilePic" class="pic"
+                                             src="../assets/img/Profile Pic.jpeg"
+                                             alt="profilePic">
+                                        <Input class="uploadProfileInput" type="file" name="profilepic"
+                                               id="regUserProfilePhoto"
+                                               accept="image/*" style="opacity: 0;"/>
+                                        <label for="regUserProfilePhoto" class="upload-file-block">
+                                            <div class="text-center">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-camera fa-2x"></i>
                                                 </div>
-                                            </label>
-                                        </div>
+                                                <div class="text-uppercase">
+                                                    Update <br/> Profile Photo
+                                                </div>
+                                            </div>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex flex-row align-items-center mb-4">
-                                <div class="form-outline flex-fill mb-0">
-                                    <input type="text" id="customerid" class="form-control" placeholder="Customer ID"
-                                           name="customer_id" readonly=""/>
+                        </div>
+                        <div class="col-md-7 border-right">
+                            <div class="p-3 py-5">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="span m-1">User Id</span>
+                                        <input class="form-control" id="userId" readonly
+                                               name="userId"
+                                               placeholder="" type="text">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="span m-1">Name</span>
+                                        <input id="reg_Name" name="name" type="text" class="form-control"
+                                               placeholder="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex flex-row align-items-center mb-4">
-                                <div class="form-outline flex-fill mb-0">
-                                    <input type="text" id="regUserName" class="form-control" placeholder="Name"
-                                           name="reg_User_Name"/>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="span m-1 small">NIC</span>
+                                        <input id="reg_NIC" name="nic" type="text" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="span m-1 small">Age</span>
+                                        <input id="reg_Age" name="age" type="int" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="span m-1 small">Gender</span>
+                                        <select id="reg_Gender" name="gender" type="text"
+                                                class="form-control"
+                                                placeholder="">
+                                            <option value="FEMALE">FEMALE</option>
+                                            <option value="MALE">MALE</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="span m-1 small">Email</span>
+                                        <input id="reg_Email" name="RegutserEmail" type="email"
+                                               class="form-control"
+                                               placeholder="">
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="span m-1 small">Password</span>
+                                        <input id="reg_Password" name="password" type="password"
+                                               class="form-control"
+                                               placeholder="">
 
-                            <div class="d-flex flex-row align-items-center mb-4">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="span m-1 small">Contact Number</span>
+                                        <input id="rag_contactNumber" name="contactNumber" type="text"
+                                               class="form-control"
+                                               placeholder="">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="span m-1 small">Role Type</span>
+                                        <select id="reg_RoleType" name="roleType" type="text"
+                                                class="form-control"
+                                                placeholder="">
+                                            <option value="CUSTOMER">CUSTOMER</option>
 
-                                <div class="form-outline flex-fill mb-0">
-                                    <input type="email" id="regUserEmail"  name="reg_User_Email" class="form-control" placeholder="Email" />
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="span m-1 small">Address</span>
+                                        <input id="rag_address" name="address" type="text"
+                                               class="form-control"
+                                               placeholder="">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="d-flex flex-row align-items-center mb-4">
-
-                                <div class="form-outline flex-fill mb-0">
-                                    <input type="password" id="regUserAddress" name="reg_User_address" class="form-control" placeholder="Address" />
+                                <div class="mt-5 text-center">
+                                    <button class="btn btn-savebtn profile-button" type="button">Save Profile
+                                    </button>
                                 </div>
+
                             </div>
+                        </div>
 
-                            <div class="d-flex flex-row align-items-center mb-4">
-
-                                <div class="form-outline flex-fill mb-0">
-                                    <input type="password" id="regUserPassword" name="regUser_password" class="form-control" placeholder="Password"/>
-
-                                </div>
-                            </div>
-
-                            <div class="d-flex flex-row align-items-center mb-4">
-
-                                <div class="form-outline flex-fill mb-0">
-                                    <input type="password" id="regUserUsername"  name="reg_User_Username" class="form-control" placeholder="User name"/>
-                                    <span class="control-error"></span>
-                                </div>
-                            </div>
-
-                            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                <a  type="button" class="btn btn-savebtn"  id="updateUserDetails" name="update_User_Details">Save</a>
-                            </div>
-
-                        </form>
+                        <br>
                     </div>
                 </div>
             </div>

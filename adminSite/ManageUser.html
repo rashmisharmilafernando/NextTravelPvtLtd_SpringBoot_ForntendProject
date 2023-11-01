@@ -56,74 +56,92 @@
     <!-- End Page Title -->
     <section class="section dashboard">
         <div class="card-body">
-            <form>
+            <form id="registerForm">
                 <div class="row card-body"
-                     style="background-color: white;padding-top: 20px; border: 1px solid rgba(108,123,136,0.19);font-size: small;border-radius: 10px">
+                     style="background-color: white;padding-top: 20px;box-shadow: 10px 10px 5px -5px rgba(20,10,10,0.15);">
                     <div class="row" style="margin-bottom: 30px">
                         <div class="col input-group">
                             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                                   aria-describedby="search-addon" id="searchuserbtn"/>
-                            <button type="button" class="btn btn-dark">search</button>
+                                   aria-describedby="search-addon"/>
+                            <button type="button" class="btn btn-dark" id="searchRegUser">search</button>
                         </div>
-                        <div class="col" style="margin-left: 50px">
-                            <button class="btn btn-savebtn me-md-1" id="saveuserbtn" type="button"
+                        <div class="col" style="margin-left: 400px">
+                            <button class="btn btn-success me-md-1" id="btnSaveRegUser" type="button"
                                     formaction="driverForm">Save
                             </button>
-                            <button type="button" class="btn btn-cancel me-md-1" id="updateuserbtn">Update
+                            <button type="button" class="btn btn-warning me-md-1" id="btnUpdateRegUser">Update
                             </button>
-                            <button type="button" class="btn btn-delete" id="deleteuserbtn">Delete</button>
+                            <button type="button" class="btn btn-danger" id="btnDeleteRegUser">Delete</button>
                         </div>
                     </div>
+
                     <div class="row">
-                        <div class="col">
-                            <span class="span m-1">User ID</span>
-                            <input class="form-control mt-1" id="userId" readonly
-                                   name="user_Id"
-                                   placeholder="U-001" type="text">
+                        <div class="col mb-4">
+                            <span class="span m-1">ID</span>
+                            <input class="form-control" id="RegUserId" readonly
+                                   name="Id"
+                                   placeholder="" type="text">
                         </div>
-                        <div class="col">
+                        <div class="col mb-4">
                             <span class="span m-1">Name</span>
-                            <input type="text" class="form-control" placeholder="" id="userName" name="user_name">
-
+                            <input id="reg_Name" name="name" type="text" class="form-control" placeholder="">
                         </div>
-                        <div class="col">
-                            <span class="span m-1">NIC</span>
-                            <input type="text" class="form-control" placeholder=" " id="userNic" name="user_nic">
-
+                        <div class="col mb-4">
+                            <span class="span m-1 small">NIC</span>
+                            <input id="reg_NIC" name="nic" type="text" class="form-control" placeholder="">
                         </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col">
-                            <span class="span m-1">NIC</span>
-                            <input class="form-control" id="userNicImage" type="file" name="user_nic_Image">
-
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Age</span>
+                            <input id="reg_Age" name="age" type="int" class="form-control" placeholder="">
                         </div>
-                        <div class="col">
-                            <span class="span m-1">Age</span>
-                            <input type="text" class="form-control" placeholder="" id="userAge" name="user_Age">
-
-                        </div>
-                        <div class="col">
-                            <span class="span m-1">Gender</span>
-                            <select class="form-control" id="userGender" name="user_gender">
-                                <option value="">Select Gender</option>
-                                <option value="Female">Female</option>
-                                <option value="Male">Male</option>
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Gender</span>
+                            <select id="reg_Gender" name="gender" type="text"
+                                    class="form-control"
+                                    placeholder="">
+                                <option value="FEMALE">FEMALE</option>
+                                <option value="MALE">MALE</option>
                             </select>
                         </div>
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Email</span>
+                            <input id="reg_Email" name="email" type="email"
+                                   class="form-control"
+                                   placeholder="">
+                        </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col">
-                            <span class="span m-1">Email</span>
-                            <input type="text" class="form-control" placeholder=" " id="userEmail" name="user_Email">
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Password</span>
+                            <input id="reg_Password" name="password" type="password"
+                                   class="form-control"
+                                   placeholder="">
                         </div>
-                        <div class="col">
-                            <span class="span m-1">Contact Number</span>
-                            <input type="text" class="form-control" placeholder=" " id="userNumber" name="user_Number">
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Role Type</span>
+                            <select id="reg_RoleType" name="roleType" type="text"
+                                    class="form-control"
+                                    placeholder="">
+                                <option value="USER">USER</option>
+                            </select>
                         </div>
-                        <div class="col">
-                            <span class="span m-1">Address</span>
-                            <input type="text" class="form-control" placeholder=" " id="userAddress" name="user_Address" >
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Address</span>
+                            <input id="rag_address" name="address" type="text"
+                                   class="form-control"
+                                   placeholder="">
+                        </div>
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Contact Number</span>
+                            <input id="rag_contactNumber" name="contactNumber" type="text"
+                                   class="form-control"
+                                   placeholder="">
+                        </div>
+                        <div class="col mb-4">
+                            <span class="span m-1 small">Contact Number</span>
+                            <input id="rag_profilepic" name="profilePic" type="file"
+                                   class="form-control"
+                                   placeholder="">
                         </div>
                     </div>
                 </div>

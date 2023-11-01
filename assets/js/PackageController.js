@@ -163,20 +163,9 @@ function clearTextFields() {
 
 
 
-//---------------------Load Package to select input---------------------
-$("#packageCategory").empty();
-$.ajax({
-    url:packagedBaseUrl+"packages/loadPackages",
-    method:"GET",
-    contentType:"application/json",
-    dataType:"json",
-    success:function (res){
-        for (let i of res){
-            let packageCategory=i.packageCategory;
-            $("#packageCategory").append('<option>${packageCategory}</option>');
-        }
-    }
-})
+
+
+
 
 
 //------------------search Packages-----------------------------------

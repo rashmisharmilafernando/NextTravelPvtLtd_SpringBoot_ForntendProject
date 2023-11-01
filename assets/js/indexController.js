@@ -4,8 +4,9 @@ loadAllVehicle();
 //-----------------------------------Load packageName------------------------------------
 function loadAllPackageName() {
     $("#packageName").empty();
+    packgeName=$("#packageName").val();
     $.ajax({
-        url: "http://localhost:8085/packageServer/api/v1/package/filterPackage",
+        url: "http://localhost:8085/packageServer/api/v1/package/getPackageByPackageCategory?packageCategory"+packgeName,
         method: "GET",
         contentType: "json",
         dataType: "json",
@@ -24,8 +25,9 @@ function loadAllPackageName() {
 
 function loadAllHotel() {
     $("#hotelSection").empty();
+    hotelCategory=$("#packageName").val();
     $.ajax({
-        url: indexBaseUrl + "hotel/loadAllHotel",
+        url: indexBaseUrl + "hotel/getAllHotelsByPackageCategory?hotelCategory="+hotelCategory,
         method: "GET",
         dataType: "json",
         success: function (res) {
@@ -57,8 +59,9 @@ function loadAllHotel() {
 
 function loadAllVehicle() {
     $("#vehicleSection").empty();
+    vehicleCategory=$("#packageName").val();
     $.ajax({
-        url: indexBaseUrl + "vehicle/loadAllHotel",
+        url: indexBaseUrl + "vehicle/getAllVehicleCategory?vehicleCategory="+vehicleCategory,
         method: "GET",
         dataType: "json",
         success: function (res) {

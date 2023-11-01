@@ -2,7 +2,7 @@
 //------------------------------Number of Vehicle-------------------------------------
 $("#VehiclesCount").val("00");
 $.ajax({
-    url: "http://localhost:8090/vehicleServer/api/v1/vehicle/vehiclesCount",
+    url: "http://localhost:8090/vehicleServer/api/v1/vehicle/getCountOfVehicle",
     method: "GET",
     contentType: "application/json",
     dataType: "json",
@@ -20,7 +20,7 @@ $.ajax({
 //---------------------------------------Number of Today Booking----------------------------------
 $("#tBookingCount").val("0");
 $.ajax({
-    url: bookingBaseUrl + "booking/bookingActive",
+    url: bookingBaseUrl + "booking/getCountOfBooking",
     method: "GET",
     contentType: "application/json",
     dataType: "json",
@@ -38,7 +38,7 @@ $.ajax({
 //------------------------Number of Hotel--------------------------------
 $("#HotelsCount").val("0");
 $.ajax({
-    url:HotelBaseUrl+"hotelsCount",
+    url:HotelBaseUrl+"getCountOfHotel",
     method:"GET",
     contentType:"application/json",
     dataType:"json",
@@ -54,7 +54,7 @@ $.ajax({
 //--------------------------Number of Package-----------------------
 $("#PackagesCount").val("0");
 $.ajax({
-    url:packagedBaseUrl+"packageCount",
+    url:packagedBaseUrl+"getCountOfPackage",
     method:"GET",
     contentType:"application/json",
     dataType:"json",
@@ -71,7 +71,7 @@ $.ajax({
 //---------------------------------------Number of Customer--------------------------------------
 $("#customerCount").val("0");
 $.ajax({
-    url:adminDashboardBaseUrl+"CustomerCount",
+    url:adminDashboardBaseUrl+"getCountOfCustomer",
     method:"GET",
     contentType:"application/json",
     dataType:"json",
@@ -87,7 +87,7 @@ $.ajax({
 //------------------------------Number of User---------------------------------------
 $("#UsersCount").val("0");
 $.ajax({
-    url:UserBaseUrl+"userCount",
+    url:UserBaseUrl+"getCountOfUser",
     method:"GET",
     contentType:"application/json",
     dataType:"json",
