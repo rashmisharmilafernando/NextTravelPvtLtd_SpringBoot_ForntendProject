@@ -275,7 +275,12 @@ function loadVehicles() {
             url: vehicleBaseurl + "vehicle/filterVehicleDetails/?vehicleRedId" + serachVehicleRegID,
             method: "GET",
             contentType: "json",
-            success: function (res) {
+            data: {
+                category: "yourCategoryValue",
+                seatCapacity: 4,
+                transmissionType: "Automatic",
+                fuelType: "Petrol"
+            },success: function (res) {
                 $("#vehicle_brand").val(res.vehiclebrand);
                 $("#vehicle_seatCapacity").val(res.seatCapacity);
                 $("#vehicle_Fuel_Type").val(res.FuelType);

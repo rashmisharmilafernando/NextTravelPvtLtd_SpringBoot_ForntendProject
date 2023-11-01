@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -70,7 +70,12 @@
                                 <div class="row mb-4">
                                     <div class="col">
                                         <span class="span m-1">Package</span>
-                                        <input class="form-control" id="packageName" name="package_Name" type="text">
+                                        <select class="form-control" id="packageName" name="package_Name" type="text">
+                                            <!--option value="Regular">Regular</option>
+                                                   <option value="Mid-Level">Mid-Level</option>
+                                                   <option value="Luxury">Luxury</option>
+                                                   <option value="SuperLuxury">Super Luxury</option>-->
+                                        </select>
                                     </div>
                                     <div class="col">
                                         <span class="span m-1">Total headcount</span>
@@ -154,7 +159,7 @@
                                         </div>
                                         <div class="col">
                                             <span class="span m-1">Location</span>
-                                            <input class="form-control" id="Location" name="filter_Location" readonly>
+                                            <input class="form-control" id="location" name="locations" readonly>
                                         </div>
                                     </div>
                                 </form>
@@ -200,7 +205,6 @@
                                                 <div class="col">
                                                     <span class="span m-1">Register ID</span>
                                                     <select class="form-control" id="vehicleRegId" name="vehicle_Reg_Id">
-
                                                         <!-- <option value="vehicle1">VRI-001</option>
                                                          <option value="vehicle2">VRI-002</option>
                                                          <option value="vehicle3">VRI-003</option>
@@ -219,8 +223,8 @@
                                                 <div class="col">
                                                     <span class="span m-1">Seat Capacity</span>
                                                     <input type="text" class="form-control" placeholder="" readonly
-                                                           name="seatCapacity"
-                                                           id="vehicle_seatCapacity">
+                                                           name="vehicle_SeatCapacity"
+                                                           id="vehicleSeatCapacity">
                                                 </div>
                                             </div>
                                             <div class="row-cols-1">
@@ -241,7 +245,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mt-lg-0 mt-6">
-                                            <div class="card-img" id="imageCard">
+                                            <div class="card-img" id="rearView">
                                                 <img class="card-img-top"
                                                      src="https://cdn2.rcstatic.com/images/car_images/web/suzuki/alto_lrg.jpg"
                                                      alt="Card image cap" name="forntImageInBooking">
