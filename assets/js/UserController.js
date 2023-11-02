@@ -1,9 +1,19 @@
-let UserBaseUrl = "";
 loadAllUser();
 
 //Save User
 $("#saveuserbtn").click(d = function () {
-    let formData = new FormData($("#userTable")[0]);
+    let formData = new FormData($("#userDetails")[0]);
+    formData.append("userId", $("#userId").val());
+    formData.append("name", $("#name").val());
+    formData.append("nic", $("#nic").val());
+    formData.append("age", $("#age").val());
+    formData.append("gender", $("#gender").val());
+    formData.append("email", $("#email").val());
+    formData.append("password", $("#password").val());
+    formData.append("roleType", $("#roleType").val());
+    formData.append("contactNumber", $("#contactNumber").val());
+    formData.append("address", $("#address").val());
+   formData.append("profilePic", $("#profilePic")[0].files[0]);
     $.ajax({
         url: UserBaseUrl + "user",
         method: "POST",
@@ -20,7 +30,18 @@ $("#saveuserbtn").click(d = function () {
 })
 //Update User
 $("#updateuserbtn").click(function () {
-    let formData = new FormData($("hotelTable")[0]);
+    let formData = new FormData($("#userDetails")[0]);
+    formData.append("userId", $("#userId").val());
+    formData.append("name", $("#name").val());
+    formData.append("nic", $("#nic").val());
+    formData.append("age", $("#age").val());
+    formData.append("gender", $("#gender").val());
+    formData.append("email", $("#email").val());
+    formData.append("password", $("#password").val());
+    formData.append("roleType", $("#roleType").val());
+    formData.append("contactNumber", $("#contactNumber").val());
+    formData.append("address", $("#address").val());
+    formData.append("profilePic", $("#profilePic")[0].files[0]);
     $.ajax({
         url: UserBaseUrl + "user/update",
         method: "PUT",
@@ -51,38 +72,24 @@ $("#deleteuserbtn").click(function () {
     })
 });
 //Search user
-$("#searchuserbtn").on("keypress", function (event) {
-    if (event.which === 13) {
-        var searchUser = $("#searchRegUser").val();
-        $("#userTable").empty();
-        $.ajax({
-            url: UserBaseUrl + "user/searchUser/?userid=" + searchUser,
-            method: "GET",
-            contentType: "application/json",
-            dataType: "json",
-            success: function (res) {
-                $("#userId").val(res.user_Id);
-                $("#username").val(res.user_name);
-                $("#userNic").val(res.user_nic);
-                $("#userEmail").val(res.user_Email);
-                $("#userAddress").val(res.user_Address);
-                $("#userNumber").val(res.user_Number);
-
-                let row = "<tr>" +
-                    "<td>" + res.user_Id + "</td>" +
-                    "<td>" + res.user_name + "</td>" +
-                    "<td>" + res.user_nic + "</td>" +
-                    "<td>" + res.user_Email + "</td>" +
-                    "<td>" + res.user_Address + "</td>" +
-                    "<td>" + res.user_Number + "</td></tr>";
-                $("#userTable").append(row)
-            },
-            error: function (error) {
-                loadAllHotel();
+function searchHotelId() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("searchUser");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("userTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
-        })
+        }
     }
-})
+}
 
 //get all user
 function loadAllUser() {
@@ -120,7 +127,7 @@ function loadAllUser() {
 
 //Auto Generate user id
 function autoGenerateid() {
-    $("#userId").val("U001");
+    $("#userId").val("NTU-001");
     $.ajax({
         url:UserBaseUrl+"user/autoGenerateid",
         method:"GET",
@@ -131,11 +138,11 @@ function autoGenerateid() {
             let tempid=parseInt(id.split("-")[1]);
             tempid=tempid+1;
             if (tempid <= 9){
-                $("#userId").val("U00" + tempid);
+                $("#userId").val("NTU-00" + tempid);
             }else if (tempid <= 99){
-                $("#userId").val("U0" + tempid);
+                $("#userId").val("NTU-0" + tempid);
             }else {
-                $("#userId").val("U"+tempid);
+                $("#userId").val("NTU-"+tempid);
             }
         },
         error: function (error) {

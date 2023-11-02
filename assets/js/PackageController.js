@@ -67,7 +67,7 @@ $("#deleteBtnPackage").click(function () {
     });
 });
 
-//------------------Auto Generate Booking id--------------------------------
+//------------------Auto Generate package id--------------------------------
 function autoGeneratePackageID() {
     $("#packageId").val("NEXT-001");
     $.ajax({
@@ -107,7 +107,7 @@ function loadPackages() {
             console.log(res);
             for (let i of res.data) {
                 let id = i.packageId;
-                let category = i.packageCategory;
+                let category = i.package_Category;
                 let packageFee = i.price;
                 let hotelNightCount = i.nightCount;
                 let hotelDayCount = i.dayCount;
@@ -160,12 +160,6 @@ function clearTextFields() {
     $("#dayCount").val("");
     $("#totalHeadCount").val("");
 }
-
-
-
-
-
-
 
 
 //------------------search Packages-----------------------------------

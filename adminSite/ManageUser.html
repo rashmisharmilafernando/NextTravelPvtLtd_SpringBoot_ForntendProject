@@ -61,9 +61,8 @@
                      style="background-color: white;padding-top: 20px;box-shadow: 10px 10px 5px -5px rgba(20,10,10,0.15);">
                     <div class="row" style="margin-bottom: 30px">
                         <div class="col input-group">
-                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"  id="searchUser" onkeyup="searchUser()"
                                    aria-describedby="search-addon"/>
-                            <button type="button" class="btn btn-dark" id="searchRegUser">search</button>
                         </div>
                         <div class="col" style="margin-left: 400px">
                             <button class="btn btn-success me-md-1" id="btnSaveRegUser" type="button"
@@ -80,7 +79,7 @@
                             <span class="span m-1">ID</span>
                             <input class="form-control" id="RegUserId" readonly
                                    name="Id"
-                                   placeholder="" type="text">
+                                   placeholder="NTU-001" type="text">
                         </div>
                         <div class="col mb-4">
                             <span class="span m-1">Name</span>

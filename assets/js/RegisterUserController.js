@@ -1,4 +1,3 @@
-let RegisterBaseUrl="";
 loadAllRegisterUser();
 
 //Save Customer form RegisterPage.html

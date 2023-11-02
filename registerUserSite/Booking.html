@@ -52,21 +52,25 @@
                                 <div class="col-4">
                                     <span class="span m-1">Reservation ID</span>
                                     <input type="number" class="form-control" placeholder="NTB-001" readonly
-                                           name="bookingReservation_Id"
-                                           id="bookingReservationId">
+                                           name="bookingId"
+                                           id="bookingId">
                                 </div>
                                 <div class="col-4">
                                     <span class="span m-1">Customer ID</span>
                                     <input type="number" class="form-control" placeholder="" readonly
-                                           name="reservation_Customer_Id"
-                                           id="reservationCustomerId">
+                                           name="customerId"
+                                           id="customerId">
+                                </div>
+                                <div class="col-4">
+                                    <span class="span m-1">Date</span>
+                                    <input class="form-control" type="text" id="date" readonly />
                                 </div>
                             </div>
                         </div>
 
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="reservation" id="reservationDetails" method="post">
                             <div class="row mb-4">
                                 <div class="col">
                                     <span class="span m-1">Package</span>
@@ -131,7 +135,7 @@
                             <h5 class="h5">Hotel Details</h5>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="hotel" id="hotelDetails" method="post">
                                 <div class="row ">
                                     <div class="col-4">
                                         <span class="span m-1">Hotel ID</span>
@@ -156,7 +160,7 @@
                             <h5 class="h5">Guide Details</h5>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="guide" id="guideDetails" method="post">
                                 <div class="row ">
                                     <div class="col">
                                         <span class="span m-1">Guide ID</span>
@@ -183,7 +187,7 @@
                             <h5 class="h5">Vehicle Details</h5>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="vehicle" id="vehicleDetails" method="post">
                                 <div class="row">
                                     <div class="col">
                                         <span class="span m-1">Register ID</span>
@@ -229,7 +233,7 @@
                             <h5 class="h5">Payment Details</h5>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="payment" id="paymentDetails" method="post">
                                 <div class="row ">
                                     <div class="col">
                                         <span class="span m-1">Guide value</span>
@@ -246,13 +250,13 @@
                                 <div class="row ">
                                     <div class="col">
                                         <span class="span m-1">Total</span>
-                                        <input type="text" class="form-control" placeholder="" readonly name="total"
-                                               id="full_payment">
+                                        <input type="text" class="form-control" placeholder="" readonly name="price"
+                                               id="price">
                                     </div>
                                     <div class="col">
                                         <span class="span m-1">Payment Slip</span>
-                                        <input type="file" class="form-control" placeholder="" id="imageofslip"
-                                               name="image_of_slip">
+                                        <input type="file" class="form-control" placeholder="" id="paymetSlip"
+                                               name="paymetSlip">
                                     </div>
                                 </div>
                             </form>
@@ -263,25 +267,8 @@
             </div>
 
             <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex">
-                <button class="btn btn-savebtn float-right" id="saveBookingbtn" type="button">Booking</button>
+                <button class="btn btn-savebtn float-right" id="saveBtn" type="button">Booking</button>
                 <button type="button" class="btn btn-cancel  float-right" id="updateBookingbtn">Cancel</button>
-            </div>
-            <div class="row mt-2">
-                <table class="table" id="bookingDetailsTable">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#Booking ID</th>
-                        <th scope="col">Package</th>
-                        <th scope="col">Hotel</th>
-                        <th scope="col">Vehicle</th>
-                        <th scope="col">Guide</th>
-                        <th scope="col">Start Date</th>
-                        <th scope="col">End Date</th>
-                        <th scope="col">Full Payment</th>
-                    </tr>
-                    </thead>
-                    <tbody id="customerAccountBookingTable"></tbody>
-                </table>
             </div>
         </div>
     </section>

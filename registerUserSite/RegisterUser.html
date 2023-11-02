@@ -44,6 +44,7 @@
             <div class="container-fluid h-custom">
 
                 <div class="container rounded bg-white">
+                    <form action="user" method="post" id="userDetails">
                     <div class="row">
                         <div class="col-md-5 border-right">
                             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
@@ -76,7 +77,7 @@
                                         <span class="span m-1">User Id</span>
                                         <input class="form-control" id="userId" readonly
                                                name="userId"
-                                               placeholder="" type="text">
+                                               placeholder="NTU-001" type="text">
                                     </div>
                                     <div class="col-md-6">
                                         <span class="span m-1">Name</span>
@@ -104,8 +105,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <span class="span m-1 small">Email</span>
-                                        <input id="reg_Email" name="RegutserEmail" type="email"
-                                               class="form-control"
+                                        <input id="reg_Email" name="email" type="email"
+                                               class="form-control" n
                                                placeholder="">
                                     </div>
                                 </div>
@@ -140,7 +141,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-5 text-center">
-                                    <button class="btn btn-savebtn profile-button" type="button">Save Profile
+                                    <button class="btn btn-savebtn profile-button" type="button" id="register_button">Save Profile
                                     </button>
                                 </div>
 
@@ -149,6 +150,7 @@
 
                         <br>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

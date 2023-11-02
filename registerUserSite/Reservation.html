@@ -48,25 +48,24 @@
                     <div class="card">
                         <div class="card-header">
                             <h5 class="h5 mb-4">Reservation Details</h5>
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <span class="span m-1">Reservation ID</span>
-                                        <input class="form-control" id="bookingReservationId" name="bookingReservation_Id"
-                                                placeholder="NTB-001" readonly>
-                                    </div>
-                                    <div class="col-4">
-                                        <span class="span m-1">Customer ID</span>
-                                        <input type="number" class="form-control" placeholder="" readonly
-                                               name="reservation_Customer_Id"
-                                               id="reservationCustomerId">
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="reservation" id="reservationDetails" method="post">
+                                <div class="col mb-4">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <span class="span m-1">Reservation ID</span>
+                                            <input class="form-control" id="bookingReservationId" name="bookingReservation_Id"
+                                                   placeholder="NTB-001" readonly>
+                                        </div>
+                                        <div class="col-4">
+                                            <span class="span m-1">Customer ID</span>
+                                            <input type="number" class="form-control" placeholder="" readonly
+                                                   name="reservation_Customer_Id"
+                                                   id="reservationCustomerId">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row mb-4">
                                     <div class="col">
                                         <span class="span m-1">Package</span>
@@ -140,7 +139,7 @@
                                 <h5 class="h5">Hotel Details</h5>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form action="hotel" id="hotelDetails" method="post">
                                     <div class="row ">
                                         <div class="col-4">
                                             <span class="span m-1">Hotel ID</span>
@@ -171,11 +170,11 @@
                                 <h5 class="h5">Guide Details</h5>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form action="guide" id="guideDetails" method="post">
                                     <div class="row ">
                                         <div class="col">
                                             <span class="span m-1">Guide ID</span>
-                                            <input class="form-control" id="guide_id" name="guideid" readonly>
+                                            <input class="form-control" id="guideId" name="guideId" readonly>
                                         </div>
                                         <div class="col">
                                             <span class="span m-1">Guide Name</span>
@@ -198,7 +197,7 @@
                                 <h5 class="h5">Vehicle Details</h5>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form action="vehicle" id="vehicleDetails" method="post">
                                     <div class="row">
                                         <div class="col-lg-6 mt-lg-0 mt-6 mb-2">
                                             <div class="row-cols-1">
@@ -245,11 +244,10 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6 mt-lg-0 mt-6">
-                                            <div class="card-img" id="rearView">
-                                                <img class="card-img-top"
-                                                     src="https://cdn2.rcstatic.com/images/car_images/web/suzuki/alto_lrg.jpg"
-                                                     alt="Card image cap" name="forntImageInBooking">
+                                            <div class="card-img" id="image" style="height: 345px">
+
                                             </div>
+
                                         </div>
                                     </div>
                                 </form>
@@ -267,7 +265,7 @@
                     <table class="table" id="bookingDetailsTable">
                         <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#Booking ID</th>
+                            <th scope="col">Booking ID</th>
                             <th scope="col">Package</th>
                             <th scope="col">Hotel</th>
                             <th scope="col">Vehicle</th>

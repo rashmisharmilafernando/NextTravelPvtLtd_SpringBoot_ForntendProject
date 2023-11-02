@@ -7,7 +7,7 @@ $.ajax({
     contentType: "application/json",
     dataType: "json",
     success: function (resp) {
-        let num = resp.count;
+        let num = resp;
         console.log(num);
         $("#VehiclesCount").text(num);
     },
@@ -25,7 +25,7 @@ $.ajax({
     contentType: "application/json",
     dataType: "json",
     success: function (resp) {
-        let num = resp.count;
+        let num = resp;
         $("#tBookingCount").text(num);
 
     },
@@ -43,7 +43,7 @@ $.ajax({
     contentType:"application/json",
     dataType:"json",
     success:function (res){
-        let num=res.count
+        let num=res;
         $("#HotelsCount").text(num);
     },
     error:function (error){
@@ -59,7 +59,7 @@ $.ajax({
     contentType:"application/json",
     dataType:"json",
     success:function (res){
-        let num=res.count
+        let num=res;
         $("#PackagesCount").text(num);
     },
     error:function (error){
@@ -76,7 +76,7 @@ $.ajax({
     contentType:"application/json",
     dataType:"json",
     success:function (res){
-        let num=res.count
+        let num=res;
         $("#customerCount").text(num);
     },
     error:function (error){
@@ -92,7 +92,7 @@ $.ajax({
     contentType:"application/json",
     dataType:"json",
     success:function (res){
-        let num=res.count
+        let num=res;
         $("#UsersCount").text(num);
     },
     error:function (error){

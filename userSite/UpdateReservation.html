@@ -21,28 +21,18 @@
     </div>
 </header>
 <aside id="sidebar" class="sidebar">
-
-        <ul class="sidebar-nav" id="sidebar-nav">
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../userSite/UserDashboard.html"><span>Dashboard</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../userSite/ManageCustomer.html" id="customer"><span>Customer</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="../userSite/Reservation.html" id="reservation"><span>Reservation</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../userSite/BookingPage.html" id="booking"><span>Booking</span> </a>
-            </li>
-            <li style="margin-top: 300px" class="nav-item"><a class="nav-link collapsed"
-                                                              href="../userSite/UserProfile.html"><span>Setting</span></a>
-            </li>
-            <li class="nav-item"><a class="nav-link collapsed" href="../pages/otherPage/LoginPage.html"><span>LogOut</span></a>
-            </li>
-        </ul>
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../registerUserSite/RegisterUser.html"><span>Account</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="../registerUserSite/Reservation.html"><span>Reservation</span> </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../registerUserSite/Booking.html"><span>Booking</span> </a>
+        </li>
+        <li class="nav-item"><a class="nav-link collapsed" href="../pages/otherPage/LoginPage.html"><span>LogOut</span></a>
+        </li>
     </ul>
 </aside>
 <main id="main" class="main">
@@ -80,7 +70,7 @@
 
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="reservation" id="reservationDetails" method="post">
                         <div class="row mb-4">
                             <div class="col">
                                 <span class="span m-1">Package</span>
@@ -150,7 +140,7 @@
                         <h5 class="h5">Hotel Details</h5>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="hotel" id="hotelDetails" method="post">
                             <div class="row ">
                                 <div class="col-4">
                                     <span class="span m-1">Hotel ID</span>
@@ -181,7 +171,7 @@
                         <h5 class="h5">Guide Details</h5>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="guide" id="guideDetails" method="post">
                             <div class="row ">
                                 <div class="col">
                                     <span class="span m-1">Guide ID</span>
@@ -208,7 +198,7 @@
                         <h5 class="h5">Vehicle Details</h5>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="vehicle" id="vehicleDetails" method="post">
                             <div class="row">
                                 <div class="col-lg-6 mt-lg-0 mt-6 mb-2">
                                     <div class="row-cols-1">
@@ -271,7 +261,7 @@
         </div>
 
         <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex">
-            <button class="btn btn-savebtn float-right" id="updateBookingBtn" type="button">Confirm</button>
+            <button class="btn btn-savebtn float-right" id="saveBookingbtn" type="button">Confirm</button>
             <button type="button" class="btn btn-cancel  float-right" id="cancelBtn">Cancel</button>
         </div>
     </div>
