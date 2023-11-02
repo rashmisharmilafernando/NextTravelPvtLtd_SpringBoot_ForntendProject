@@ -6,7 +6,6 @@ $("#loginButton").on('click', function () {
 
 /*--------Login Function-----------*/
 function login() {
-    let loginRoleType = $("#role_Type").val();
     let loginusername = $("#username").val();
     let loginPassword = $("#password").val();
 
@@ -16,8 +15,8 @@ function login() {
         dataType: "json",
         success: function (res) {
             for (var login of res.data) {
-                if (loginRoleType === login.role_Type && loginusername === login.username && loginPassword === login.password) {
-                    if (loginRoleType === "admin" && loginusername === login.username && loginPassword === login.password) {
+                if ( loginusername === login.username && loginPassword === login.password) {
+                    if ( loginusername === login.username && loginPassword === login.password) {
                         $.ajax({
                             url: loginurl + "login/?username=" + loginusername + "&password=" + loginPassword,
                             data: res.data,
@@ -26,7 +25,7 @@ function login() {
                             }
                         })
                         window.location.href = "../../adminSite/AdminDashboard.html";
-                    } else if (loginRoleType === "RegisteredUser" && loginusername === login.username && loginPassword === login.password) {
+                    } else if (  loginusername === login.username && loginPassword === login.password) {
                         $.ajax({
                             url: loginurl + "login/?username=" + loginusername + "&password=" + loginPassword,
                             data: res.data,
@@ -35,7 +34,7 @@ function login() {
                             }
                         });
                         window.location.href = "../../registerUserSite/RegisterUser.html";
-                    } else if (loginRoleType === "User" && loginPassword === login.username && loginPassword === login.password) {
+                    } else if ( loginPassword === login.username && loginPassword === login.password) {
                         window.location.href = "../../userSite/UserDashboard.html";
                     }
                     return;
