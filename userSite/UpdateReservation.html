@@ -50,7 +50,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <span class="span m-1">Reservation ID</span>
-                                <select class="form-control" id="bookingReservationId" name="bookingReservation_Id"
+                                <select class="form-control" id="loadBookingReservationId" name="loadBookingReservation_Id"
                                         placeholder="NTB-001">
                                     <!-- <option value="vehicle1">VRI-001</option>
                                      <option value="vehicle2">VRI-002</option>
@@ -60,10 +60,10 @@
                                 </select>
                             </div>
                             <div class="col-4">
-                                <span class="span m-1">Customer ID</span>
+                                <span class="span m-1">Customer ID</span>l
                                 <input type="number" class="form-control" placeholder="" readonly
-                                       name="reservation_Customer_Id"
-                                       id="reservationCustomerId">
+                                       name="userId"
+                                       id="userId">
                             </div>
                         </div>
                     </div>
@@ -261,7 +261,7 @@
         </div>
 
         <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex">
-            <button class="btn btn-savebtn float-right" id="saveBookingbtn" type="button">Confirm</button>
+            <button class="btn btn-savebtn float-right" id="updateBtn" type="button">Confirm</button>
             <button type="button" class="btn btn-cancel  float-right" id="cancelBtn">Cancel</button>
         </div>
     </div>
@@ -270,7 +270,7 @@
 <script src="../assets/lib/jquery-3.6.4.min.js"></script>
 <script src="../assets/js/BookingController.js"></script>
 <script src="../assets/js/RegisterUserController.js"></script>
-<script src="../assets/js/indexController.js"></script>
+<script src="../assets/js/UpdateReservation.js"></script>
 <script src="../assets/js/Validation.js"></script>
 <script src="../assets/js/ValidationWithRegex.js"></script>
 </body>
