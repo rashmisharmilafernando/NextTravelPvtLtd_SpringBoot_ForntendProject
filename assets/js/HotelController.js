@@ -102,7 +102,7 @@ function loadAllHotel() {
         dataType: "json",
         success: function (res) {
             console.log(res);
-            for (let i of res.data) {
+            for (let i of res) {
                 let hotelId = i.hotelId;
                 let hotelName = i.hotelName;
                 let hotelRate = i.hotelRate;

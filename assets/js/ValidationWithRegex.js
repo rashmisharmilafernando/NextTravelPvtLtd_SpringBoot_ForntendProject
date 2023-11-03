@@ -8,6 +8,7 @@ const reguserNic=/^([0-9]{12}|[0-9V]{10})$/;
 const reguserAddress=/^[A-z0-9/ ]{4,30}$/;
 
 let registerUserValidation=[];
+
 registerUserValidation.push({
     reg:reguserName,
     field:$('#regname')

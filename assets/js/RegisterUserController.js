@@ -58,8 +58,10 @@ $("#btnUpdateRegUser").click(function (){
         processData: false,
         success:function (res){
             loadAllRegisterUser();
+            alert("Successfully....!");
         },
         error: function (error) {
+            alert("Successfully....!");
             console.log(error);
         }
     })
@@ -68,16 +70,18 @@ $("#btnUpdateRegUser").click(function (){
 
 //Delete Customer form ManageCustomer.html
 $("#btnDeleteRegUser").click(function (){
-    let email=$("#email").val();
+    let userEmail=$("#reg_Email").val();
     $.ajax({
-        url:"http://localhost:8080/user/api/v1/user/userEmail?email" +email,
+        url:"http://localhost:8080/user/api/v1/user/userEmail?userEmail=" +userEmail,
         method:"DELETE",
         dataType:"json",
         success:function (res){
             loadAllRegisterUser();
+            alert("Successfully....!");
         },
         error: function (error) {
             console.log(error);
+            alert("Try Again....!");
         }
     })
 
@@ -93,21 +97,31 @@ function loadAllRegisterUser(){
         success:function (res){
             console.log(res);
 
-            for (let i of res.data){
-                let id=i.Id;
-                let name=i.Regutsername;
-                let email=i.RegutserEmail;
-                let nic=i.Regutsernic;
-                let address=i.Regutseraddrss;
+            for (let i of res){
+                let userId =i.userId;
+                let name = i.name;
+                let nic = i.nic;
+                let age = i.age;
+                let gender = i.gender;
+                let email =i.email;
+                let roleType = i.roleType;
+                let contactNumber = i.contactNumber;
+                let address =i.address;
 
-                let row ="<tr><td>" + id+"</td>" +
+
+                let row ="<tr><td>" + userId+"</td>" +
                     "<td>" + name + "</td>" +
-                    "<td>" + email+"</td>"+
                     "<td>" + nic+"</td>"+
+                    "<td>" + age+"</td>"+
+                    "<td>" + gender+"</td>"+
+                    "<td>" + email+"</td>"+
+                    "<td>" + roleType+"</td>"+
+                    "<td>" + contactNumber+"</td>"+
                     "<td>" + address+"</td></tr>";
                 $("#registerUserTable").append(row)
             }
             autoGenerateid();
+            loadTextFieldValues();
             checkValidity(registerUserValidation);
         },
         error: function (error) {
@@ -215,21 +229,30 @@ document.addEventListener("change", function (event) {
 });
 
 
-/*-------------------------------------------------------*/
-$("#updateUserDetails").click(function (){
-    let formData=new FormData($("#userAccountDetails")[0]);
-    $.ajax({
-        url:RegisterBaseUrl+"registerUser/updatedtails",
-        method:"post",
-        data:formData,
-        contentType:false,
-        processData:false,
-        success:function (res){
-            loadAllRegisterUser();
-        },
-        error:function (error){
-            console.log(error)
-        }
-    })
-});
+//----------------------------load Text Field Values-------------------------------------
 
+function loadTextFieldValues() {
+    $("#registerUserTable>tr").on("click", function () {
+        let userId = $(this).children().eq(0).text();
+        let name = $(this).children().eq(1).text();
+        let nic = $(this).children().eq(2).text();
+        let age = $(this).children().eq(3).text();
+        let gender = $(this).children().eq(4).text();
+        let email = $(this).children().eq(5).text();
+        let roleType = $(this).children().eq(6).text();
+        let contactNumber = $(this).children().eq(7).text();
+        let address = $(this).children().eq(8).text();
+
+        $("#userId").val(userId);
+        $("#reg_Name").val(name);
+        $("#reg_NIC").val(nic);
+        $("#reg_Age").val(age);
+        $("#reg_Gender").val(gender);
+        $("#reg_Email").val(email);
+        $("#reg_RoleType").val(roleType);
+        $("#rag_contactNumber").val(contactNumber);
+        $("#rag_address").val(address);
+
+
+    });
+}
