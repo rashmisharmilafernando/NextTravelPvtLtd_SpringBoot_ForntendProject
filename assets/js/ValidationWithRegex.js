@@ -87,40 +87,45 @@ const usernic = /^([0-9]{12}|[0-9V]{10})$/;
 const userAge = /^\d+$/;
 const userEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const usernumber = /^(?:\+94|0)[1-9]\d{8}$/;
+const password = /^[A-Za-z]+\d+$/;
 const userAddress = /^[A-z0-9/ ]{4,30}$/;
 
 let userValidation = [];
 userValidation.push({
     reg: userName,
-    field: $('#userName')
+    field: $('#reg_Name')
 });
 userValidation.push({
     reg: usernic,
-    field: $('#userNic')
+    field: $('#reg_NIC')
 });
 userValidation.push({
     reg: userAge,
-    field: $('#userAge')
+    field: $('#reg_Age')
 });
 userValidation.push({
     reg: userEmail,
-    field: $('#userEmail')
+    field: $('#reg_Email')
 });
 userValidation.push({
     reg: usernumber,
-    field: $('#userNumber')
+    field: $('#rag_contactNumber')
+});
+userValidation.push({
+    reg: password,
+    field: $('#reg_Password')
 });
 userValidation.push({
     reg: userAddress,
-    field: $('#userAddress')
+    field: $('#rag_address')
 });
 
 
-$("#userName,#userNic,#userAge,#userEmail,#userNumber,#userAddress").on('keyup', function (event) {
+$("#reg_Name,#reg_NIC,#reg_Age,#reg_Email,#reg_Password,#rag_contactNumber,#reg_Password,#rag_address").on('keyup', function (event) {
     checkValidity(userValidation);
 });
 
-$("#userName,#userNic,#userAge,#userEmail,#userNumber,#userAddress").on('blur', function (event) {
+$("#reg_Name,#reg_NIC,#reg_Age,#reg_Email,#reg_Password,#rag_contactNumber,#reg_Password,#rag_address").on('blur', function (event) {
     checkValidity(userValidation);
 });
 

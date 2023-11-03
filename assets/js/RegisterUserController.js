@@ -26,28 +26,29 @@ $("#register_button").click(function (){
         contentType:false,
         processData: false,
         success:function (res){
-            alert("Sign Up is Successfully....!");
+            alert("Successfully....!");
         },error: function (error) {
             console.log(error);
-            alert("Sign Up is Successfully....!");
+            alert("Successfully....!");
         }
     })
 })
+
 
 //update Customer form ManageCustomer.html
 $("#btnUpdateRegUser").click(function (){
     let formData=new FormData($("#registerForm")[0]);
     formData.append("userId", $("#userId").val());
-    formData.append("name", $("#name").val());
-    formData.append("nic", $("#nic").val());
-    formData.append("age", $("#age").val());
-    formData.append("gender", $("#gender").val());
-    formData.append("email", $("#email").val());
-    formData.append("password", $("#password").val());
-    formData.append("roleType", $("#roleType").val());
-    formData.append("contactNumber", $("#contactNumber").val());
-    formData.append("address", $("#address").val());
-    formData.append("profilePic", $("#profilePic")[0].files[0]);
+    formData.append("name", $("#reg_Name").val());
+    formData.append("nic", $("#reg_NIC").val());
+    formData.append("age", $("#reg_Age").val());
+    formData.append("gender", $("#reg_Gender").val());
+    formData.append("email", $("#reg_Email").val());
+    formData.append("password", $("#reg_Password").val());
+    formData.append("roleType", $("#reg_RoleType").val());
+    formData.append("contactNumber", $("#rag_contactNumber").val());
+    formData.append("address", $("#rag_address").val());
+    formData.append("profilePic", $("#newProfilePhoto")[0].files[0]);
 
     $.ajax({
         url:"http://localhost:8080/user/api/v1/user/update",
@@ -116,31 +117,31 @@ function loadAllRegisterUser(){
 }
 
 //Auto Generate Customer id
-function autoGenerateid(){
+function autoGenerateid() {
     $("#userId").val("NTC-001");
     $.ajax({
-        url:" http://localhost:8080/user/api/v1/user/autoGenerateId",
-        method:"GET",
-        contentType:"application/json",
-        dataType:"json",
-        success:function (res){
-            let userId=res.value;
-            console.log(userId);
-            let tempid=parseInt(userId.split("-")[1]);
-            tempid=tempid+1;
-            if (tempid <= 9){
+        url: "http://localhost:8080/user/api/v1/user/autoGenerateId",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            let userId = res.value;
+            console.log("Generated user ID: " + userId);
+            let tempid = parseInt(userId.split("-")[1]);
+            tempid = tempid + 1;
+            if (tempid <= 9) {
                 $("#userId").val("NTC-00" + tempid);
-            }else if (tempid <= 99){
+            } else if (tempid <= 99) {
                 $("#userId").val("NTC-0" + tempid);
-            }else {
-                $("#userId").val("NTC-"+tempid);
+            } else {
+                $("#userId").val("NTC-" + tempid);
             }
         },
-        error: function (error) {
-            console.log("hi");
-            console.log(error);
+        error: function (xhr, textStatus, errorThrown) {
+            console.log("Error while generating user ID: " + textStatus);
+            console.log("Error details: " + errorThrown);
         }
-    })
+    });
 }
 
 //Upload Profile Pic
