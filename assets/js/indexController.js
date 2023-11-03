@@ -1,6 +1,6 @@
 loadAllPackageName();
-loadAllHotel();
 loadAllVehicle();
+loadAllHotel();
 //-----------------------------------Load packageName------------------------------------
 function loadAllPackageName() {
     $("#packageName").empty();
@@ -61,7 +61,7 @@ function loadAllVehicle() {
     $("#vehicleSection").empty();
     vehicleCategory=$("#packageName").val();
     $.ajax({
-        url: indexBaseUrl + "vehicle/getAllVehicleCategory?vehicleCategory="+vehicleCategory,
+        url: "http://localhost:8090/vehicleServer/api/v1/Vehicle/getAllVehicleCategory?vehicleCategory="+vehicleCategory,
         method: "GET",
         dataType: "json",
         success: function (res) {
@@ -145,7 +145,7 @@ function filterPackages() {
 
 
     $.ajax({
-        url: indexBaseUrl + "vehicle/getAllVehicleByVehicleTypeSeatCapacityTransmissionTypeFuelType?vehicleCategory="+packgeName+"&vehicleSeatCapacity"+passengers+"&transmissionType"+transmission+"&vehicleFuelType"+fuelType,
+        url: "http://localhost:8090/vehicleServer/api/v1/Vehicle/getAllVehicleByVehicleTypeSeatCapacityTransmissionTypeFuelType?vehicleCategory="+packgeName+"&vehicleSeatCapacity"+passengers+"&transmissionType"+transmission+"&vehicleFuelType"+fuelType,
         method: "GET",
         data:"json",
         dataType: "json",

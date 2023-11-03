@@ -243,3 +243,52 @@ function loadBookingDetails(){
         }
     })
 }
+
+/*//-----------------------Select Package and filter the vehicle-----------------------------------
+
+function filterVehicleRegID() {
+    let packageName = $("#packageName").val();
+    console.log(packageName);
+    $("#vehicleRegId").empty();
+    $.ajax({
+        url: "http://localhost:8090/vehicleServer/api/v1/Vehicle/registrationNumber" + packageName,
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            console.log(res);
+            for (let i of res) {
+                let reg_Id = i.vehicle_Reg_Id;
+                $("#vehicleRegId").append(`<option>${reg_Id}</option>`)
+            }
+        }
+    });
+}
+
+//---------------------Select vehicle register number-------------------------------
+
+$("#vehicleRegId").click(function () {
+    var serachVehicleRegID = $("#vehicleRegId").val();
+    $.ajax({
+        url: "http://localhost:8090/vehicleServer/api/v1/Vehicle/" + serachVehicleRegID,
+        method: "GET",
+        contentType: "json",
+        data: {
+            category: "yourCategoryValue",
+            seatCapacity: 4,
+            transmissionType: "Automatic",
+            fuelType: "Petrol"
+        },success: function (res) {
+            $("#vehicle_brand").val(res.vehiclebrand);
+            $("#vehicle_seatCapacity").val(res.seatCapacity);
+            $("#vehicle_Fuel_Type").val(res.FuelType);
+            $("#vehicle_transmission").val(res.transmission);
+            let url = res.forntImageInBooking;
+            $("#imageCard").css({
+                "background": `url(${bookingBaseUrl + url})`, "background-size": "cover"
+            });
+        }, error: function (error) {
+            console.log(error);
+        }
+    });
+})*/

@@ -1,75 +1,56 @@
+autoGenerateid();
+
 loadAllRegisterUser();
 
 //Save Customer form RegisterPage.html
 $("#register_button").click(function (){
-    let formDate=new FormData($("#registerForm")[0]);
-    console.log(formDate);
+    let formData=new FormData($("#registerForm")[0]);
+    formData.append("userId", $("#userId").val());
+    formData.append("name", $("#reg_Name").val());
+    formData.append("nic", $("#reg_NIC").val());
+    formData.append("age", $("#reg_Age").val());
+    formData.append("gender", $("#reg_Gender").val());
+    formData.append("email", $("#reg_Email").val());
+    formData.append("password", $("#reg_Password").val());
+    formData.append("roleType", $("#reg_RoleType").val());
+    formData.append("contactNumber", $("#rag_contactNumber").val());
+    formData.append("address", $("#rag_address").val());
+    formData.append("profilePic", $("#newProfilePhoto")[0].files[0]);
+
+    console.log(formData.get("profilePic"));
+
     $.ajax({
-        url:RegisterBaseUrl+"registerUser",
+        url:"http://localhost:8080/user/api/v1/user",
         method:"POST",
-        data:formDate,
+        data:formData,
         contentType:false,
         processData: false,
         success:function (res){
-            loadAllRegisterUser();
+            alert("Sign Up is Successfully....!");
+        },error: function (error) {
+            console.log(error);
+            alert("Sign Up is Successfully....!");
         }
     })
-})
-
-//Save Customer form ManageCustomer.html
-$("#btnSaveRegUser").click(function (){
-    let formDate=new FormData($("#registerForm")[0]);
-    console.log(formDate);
-    $.ajax({
-        url:RegisterBaseUrl+"registerUser",
-        method:"POST",
-        data:formDate,
-        contentType:false,
-        processData: false,
-        success:function (res){
-            loadAllRegisterUser();
-        }
-    })
-})
-
-//search Customer form ManageCustomer.html
-$("#searchRegUser").on("keypress",function (event){
-    if (event.which ===13){
-        var searchRegisterUser=$("#searchRegUser").val();
-        $("#registerUserTable").empty();
-        $.ajax({
-            url:RegisterBaseUrl + "regUser/searchCustomer/?userid="+searchRegisterUser,
-            method:"GET",
-            contentType:"application/json",
-            dataType:"json",
-            success:function (res){
-                $("#RegUserId").val(res.Id);
-                $("#regname").val(res.Regutsername);
-                $("#regEmail").val(res.RegutserEmail);
-                $("#regPassword").val(res.RegutserPassword);
-                $("#regUsername").val(res.RegutserUsername);
-                $("#regNIC").val(res.Regutsernic);
-                $("#regAddress").val(res.Regutseraddrss);
-
-                let row ="<tr><td>" + res.Id+"</td>" +
-                    "<td>" + res.Regutsername + "</td>" +
-                    "<td>" + res.RegutserEmail+"</td>"+
-                    "<td>" + res.Regutsernic+"</td>"+
-                    "<td>" + res.Regutseraddrss+"</td></tr>";
-                $("#registerUserTable").append(row)
-            },
-            error:function (error){
-                loadAllRegisterUser()
-            }
-        })
-    }
 })
 
 //update Customer form ManageCustomer.html
 $("#btnUpdateRegUser").click(function (){
-    let formData=new FormData($("#registerUserTable")[0]);
+    let formData=new FormData($("#registerForm")[0]);
+    formData.append("userId", $("#userId").val());
+    formData.append("name", $("#name").val());
+    formData.append("nic", $("#nic").val());
+    formData.append("age", $("#age").val());
+    formData.append("gender", $("#gender").val());
+    formData.append("email", $("#email").val());
+    formData.append("password", $("#password").val());
+    formData.append("roleType", $("#roleType").val());
+    formData.append("contactNumber", $("#contactNumber").val());
+    formData.append("address", $("#address").val());
+    formData.append("profilePic", $("#profilePic")[0].files[0]);
+
     $.ajax({
-        url:RegisterBaseUrl+"regUser/update",
+        url:"http://localhost:8080/user/api/v1/user/update",
         method:"PUT",
         data:formData,
         contentType:false,
@@ -86,9 +67,9 @@ $("#btnUpdateRegUser").click(function (){
 
 //Delete Customer form ManageCustomer.html
 $("#btnDeleteRegUser").click(function (){
-    let id=$("#Id").val();
+    let email=$("#email").val();
     $.ajax({
-        url:RegisterBaseUrl+"regUser?id" +id,
+        url:"http://localhost:8080/user/api/v1/user/userEmail?email" +email,
         method:"DELETE",
         dataType:"json",
         success:function (res){
@@ -105,7 +86,7 @@ $("#btnDeleteRegUser").click(function (){
 function loadAllRegisterUser(){
     $("#registerUserTable").empty();
     $.ajax({
-        url:RegisterBaseUrl + "registerUser/loadAllRegisterUser",
+        url:"http://localhost:8080/user/api/v1/user/loadCustomer",
         method: "GET",
         dataType:"json",
         success:function (res){
@@ -136,25 +117,27 @@ function loadAllRegisterUser(){
 
 //Auto Generate Customer id
 function autoGenerateid(){
-    $("#Id").val("C001");
+    $("#userId").val("NTC-001");
     $.ajax({
-        url:RegisterBaseUrl+"registerUser/autoGenerateID",
+        url:" http://localhost:8080/user/api/v1/user/autoGenerateId",
         method:"GET",
         contentType:"application/json",
         dataType:"json",
-        success:function (resp){
-            let id=resp.value;
-            let tempid=parseInt(id.split("-")[1]);
+        success:function (res){
+            let userId=res.value;
+            console.log(userId);
+            let tempid=parseInt(userId.split("-")[1]);
             tempid=tempid+1;
             if (tempid <= 9){
-                $("#Id").val("C00" + tempid);
+                $("#userId").val("NTC-00" + tempid);
             }else if (tempid <= 99){
-                $("#Id").val("C0" + tempid);
+                $("#userId").val("NTC-0" + tempid);
             }else {
-                $("#Id").val("C"+tempid);
+                $("#userId").val("NTC-"+tempid);
             }
         },
         error: function (error) {
+            console.log("hi");
             console.log(error);
         }
     })

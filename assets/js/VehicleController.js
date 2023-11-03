@@ -1,5 +1,6 @@
-loadVehicles();
 autoGenerateId();
+loadVehicles();
+
 //----------------save vehicle-------------------------
 $("#saveVehiclebtn").click(function () {
     let formData = new FormData($("#vehicleForm")[0]);
@@ -19,7 +20,7 @@ $("#saveVehiclebtn").click(function () {
     formData.append("vehicleRearView", $("#vehicle_Rear_View")[0].files[0]);
 
     $.ajax({
-        url: "http://localhost:8090/vehicleServer/api/v1/vehicle",
+        url: "http://localhost:8090/vehicleServer/api/v1/Vehicle",
         method: "POST",
         data: formData,
         contentType: false,
@@ -57,7 +58,7 @@ $("#updateVehiclebtn").click(function () {
     formData.append("license", $("#license")[0].files[0]);
     formData.append("vehicleRearView", $("#vehicle_Rear_View")[0].files[0]);
     $.ajax({
-        url: "http://localhost:8090/vehicleServer/api/v1/vehicle/update",
+        url: "http://localhost:8090/vehicleServer/api/v1/Vehicle/update",
         method: "PUT",
         data: formData,
         contentType: false,
@@ -76,20 +77,20 @@ $("#updateVehiclebtn").click(function () {
 
 //----------------------delete vehicle---------------------------
 $("#deleteVehiclebtn").click(function () {
-    let id = $("#vehicleId").val();
+    let vehicleRegId = $("#vehicleId").val();
     $.ajax({
-        url: "http://localhost:8090/vehicleServer/api/v1/vehicle?id=" + id,
+        url: "http://localhost:8090/vehicleServer/api/v1/Vehicle?vehicleRegId="+vehicleRegId,
         method: "DELETE",
         dataType: "json",
-
         success: function (resp) {
-            console.log(resp);
             loadVehicles();
-            clearTextFields();
+            console.log(resp);
             alert("Successfully....!");
         },
-        error: function (xhr, status, error) {
-            alert("Successfully....!");
+        error: function (error) {
+            loadVehicles();
+            console.log(error);
+            alert("Successfully..!");
         }
     })
 });
@@ -121,13 +122,13 @@ function searchVehicleId() {
 function loadVehicles() {
     $("#vehicleTable").empty();
     $.ajax({
-        url: "http://localhost:8090/vehicleServer/api/v1/vehicle/loadAllVehicle",
+        url: "http://localhost:8090/vehicleServer/api/v1/Vehicle/getAllDetails",
         method: "GET",
         dataType: "json",
         success: function (res) {
             console.log(res);
 
-                for (let i of res.data) {
+                for (let i of res) {
                     let vehicleId = i.vehicleId;
                     let vehicleRegId = i.vehicleRegId;
                     let vehiclebrand = i.vehiclebrand;
@@ -161,7 +162,6 @@ function loadVehicles() {
                 loadTextFieldValues();
                 autoGenerateId();
                 checkValidity(vehicleValidation);
-                console.log(res.message);
             },
             error: function (error) {
                 console.log(error);
@@ -171,30 +171,33 @@ function loadVehicles() {
 
 //Auto Generate id
     function autoGenerateId() {
+
         $("#vehicleId").val("NTV-001");
+
         $.ajax({
-            url: "http://localhost:8090/vehicleServer/api/v1/vehicle/autoGenerateId",
+            url: "http://localhost:8090/vehicleServer/api/v1/Vehicle/autoGenerateId",
             method: "GET",
             contentType: "application/json",
             dataType: "json",
-            success: function (resp) {
-                let id = resp.value;
-                console.log("id  :-" + id + " " + resp);
+
+            success: function (res) {
+                let id = res.value;
+
                 let tempId = parseInt(id.split("-")[1]);
                 tempId = tempId + 1;
                 if (tempId <= 9) {
                     $("#vehicleId").val("NTV-00" + tempId);
-                } else if (tempid <= 99) {
+                } else if (tempId <= 99) {
                     $("#vehicleId").val("NTV-0" + tempId);
                 } else {
                     $("#vehicleId").val("NTV-" + tempId);
                 }
             },
             error: function (error) {
-                console.log("id" + id);
+                console.log($("#vehicleId").val());
                 console.log(error);
             }
-        })
+        });
     }
 
 
@@ -245,55 +248,6 @@ function loadVehicles() {
             )
         });
     }
-
-//-----------------------Select Package and filter the vehicle-----------------------------------
-
-    function filterVehicleRegID() {
-        let packageName = $("#packageName").val();
-        console.log(packageName);
-        $("#vehicleRegId").empty();
-        $.ajax({
-            url: vehicleBasrurl + "booking/filterVehicle/?vehicleRegisterId" + packageName,
-            method: "GET",
-            contentType: "application/json",
-            dataType: "json",
-            success: function (res) {
-                console.log(res);
-                for (let i of res) {
-                    let reg_Id = i.vehicle_Reg_Id;
-                    $("#vehicleRegId").append(`<option>${reg_Id}</option>`)
-                }
-            }
-        });
-    }
-
-//---------------------Select vehicle register number-------------------------------
-
-    $("#vehicleRegId").click(function () {
-        var serachVehicleRegID = $("#vehicleRegId").val();
-        $.ajax({
-            url: vehicleBaseurl + "vehicle/filterVehicleDetails/?vehicleRedId" + serachVehicleRegID,
-            method: "GET",
-            contentType: "json",
-            data: {
-                category: "yourCategoryValue",
-                seatCapacity: 4,
-                transmissionType: "Automatic",
-                fuelType: "Petrol"
-            },success: function (res) {
-                $("#vehicle_brand").val(res.vehiclebrand);
-                $("#vehicle_seatCapacity").val(res.seatCapacity);
-                $("#vehicle_Fuel_Type").val(res.FuelType);
-                $("#vehicle_transmission").val(res.transmission);
-                let url = res.forntImageInBooking;
-                $("#imageCard").css({
-                    "background": `url(${bookingBaseUrl + url})`, "background-size": "cover"
-                });
-            }, error: function (error) {
-                console.log(error);
-            }
-        });
-    })
 
 //------------Clear text fields-------------
 function clearTextFields() {

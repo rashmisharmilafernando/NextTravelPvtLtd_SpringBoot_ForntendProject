@@ -167,7 +167,7 @@ $("#guideName,#guideAddress,#guideNumber,#guideExperience,#guideDayValue").on('b
 });
 
 /*----------------Vehicle-------------------*/
-
+const vehicleRegNumber = /^VREG-\d{3}$/
 const vehicleName = /^[A-z ]{3,20}$/;
 const vehicleHybridStatus=/^(Yes|No)$/i
 const vehicleFuelUsage =  /^\d{4,20}$/;
@@ -177,6 +177,11 @@ const DriverNumber  =/^(?:\+94|0)[1-9]\d{8}$/;
 
 
 let vehicleValidation = [];
+vehicleValidation.push({
+    reg: vehicleRegNumber,
+    field: $('#vehicleRegId')
+});
+
 vehicleValidation.push({
     reg: vehicleName,
     field: $('#vehicle_brand')

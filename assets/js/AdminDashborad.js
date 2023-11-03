@@ -2,17 +2,17 @@
 //------------------------------Number of Vehicle-------------------------------------
 $("#VehiclesCount").val("00");
 $.ajax({
-    url: "http://localhost:8090/vehicleServer/api/v1/vehicle/getCountOfVehicle",
+    url: "http://localhost:8090/vehicleServer/api/v1/Vehicle/vehiclesCount",
     method: "GET",
     contentType: "application/json",
     dataType: "json",
     success: function (resp) {
-        let num = resp;
+        let num = resp.count;
         console.log(num);
         $("#VehiclesCount").text(num);
     },
     error: function (error) {
-        console.log(error)
+        console.log(error);
     }
 });
 
@@ -25,7 +25,7 @@ $.ajax({
     contentType: "application/json",
     dataType: "json",
     success: function (resp) {
-        let num = resp;
+        let num = resp.count;
         $("#tBookingCount").text(num);
 
     },
@@ -43,7 +43,7 @@ $.ajax({
     contentType:"application/json",
     dataType:"json",
     success:function (res){
-        let num=res;
+        let num=resp.count;
         $("#HotelsCount").text(num);
     },
     error:function (error){
@@ -59,7 +59,7 @@ $.ajax({
     contentType:"application/json",
     dataType:"json",
     success:function (res){
-        let num=res;
+        let num=resp.count;
         $("#PackagesCount").text(num);
     },
     error:function (error){
@@ -76,7 +76,7 @@ $.ajax({
     contentType:"application/json",
     dataType:"json",
     success:function (res){
-        let num=res;
+        let num=resp.count;
         $("#customerCount").text(num);
     },
     error:function (error){
@@ -92,7 +92,7 @@ $.ajax({
     contentType:"application/json",
     dataType:"json",
     success:function (res){
-        let num=res;
+        let num=resp.count;
         $("#UsersCount").text(num);
     },
     error:function (error){
