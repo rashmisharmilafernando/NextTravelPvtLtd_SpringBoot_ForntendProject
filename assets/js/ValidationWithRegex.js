@@ -80,7 +80,7 @@ $("#hotel_Name,#hotel_Email,#hotel_Number1,#hotel_Number2,#hotel_Fee").on('blur'
     checkValidity(hotelValidation);
 });
 
-/*--------------User------------------*/
+/*--------------User------------------------*/
 
 const userName = /^[A-z ]{3,20}$/;
 const usernic = /^([0-9]{12}|[0-9V]{10})$/;
