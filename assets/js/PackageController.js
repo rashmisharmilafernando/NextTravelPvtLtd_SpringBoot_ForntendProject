@@ -107,7 +107,7 @@ function loadPackages() {
             console.log(res);
             for (let i of res.data) {
                 let id = i.packageId;
-                let category = i.package_Category;
+                let category = i.packageCategory;
                 let packageFee = i.price;
                 let hotelNightCount = i.nightCount;
                 let hotelDayCount = i.dayCount;

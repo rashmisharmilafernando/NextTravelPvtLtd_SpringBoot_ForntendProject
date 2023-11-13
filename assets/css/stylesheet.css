@@ -7,6 +7,8 @@ body{
 
 #home {
     width: 100%;
+    background-image: url("../../assets/img/bgimage.png");
+    background-size: cover;
 }
 #about{
     width: 100%;
@@ -30,7 +32,7 @@ input:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #f1a501 !important;
+    border: 1px solid #805CB4 !important;
     outline-width: 0;
 }
 
@@ -38,7 +40,7 @@ input:focus {
     position: absolute;
     top: 13px;
     font-size: 20px;
-    color: #b78c2a;
+    color: #805CB4;
     z-index: 1000;
 }
 
@@ -99,8 +101,8 @@ button:focus {
 .datepicker-dropdown {
     top: 180px !important;
     left: calc(50% - 173.5px) !important;
-    border-right: #f1a501;
-    border-left: #f1a501;
+    border-right:#805CB4;
+    border-left: #805CB4;
 }
 
 .datepicker-dropdown.datepicker-orient-left:before {
@@ -109,20 +111,20 @@ button:focus {
 
 .datepicker-dropdown.datepicker-orient-left:after {
     left: calc(50% - 5px) !important;
-    border-bottom-color: #f1a501;
+    border-bottom-color: #805CB4;
 }
 
 .datepicker-dropdown.datepicker-orient-right:after {
-    border-bottom-color: #f1a501;
+    border-bottom-color: #805CB4;
 }
 
 .datepicker table tr td.today, span.focused {
     border-radius: 50% !important;
-    background-image: linear-gradient(#FFF3E0, #FFE0B2);
+    background-image: linear-gradient(#FFF3E0, #805CB4);
 }
 
 thead tr:nth-child(2) {
-    background-color: #f1a501 !important;
+    background-color: #805CB4 !important;
 }
 
 /*Weekday title*/
@@ -170,13 +172,13 @@ tfoot tr:nth-child(2) th {
 
 .active {
     border-radius: 50% !important;
-    background-image: linear-gradient(#1976D2, #1976D2) !important;
+    background-image: linear-gradient(#805CB4, #805CB4) !important;
     color: #fff !important;
 }
 
 .range-start, .range-end {
     border-radius: 50% !important;
-    background-image: linear-gradient(#1976D2, #1976D2) !important;
+    background-image: linear-gradient(#805CB4, #805CB4) !important;
 }
 
 .range {
@@ -263,13 +265,6 @@ tfoot tr:nth-child(2) th {
 }
 
 /*------------------------------------------------------------------*/
-
-#home{
-    width: 100%;
-    height: 100%;
-    background-image: url("../../assets/img/bgimage.png");
-    background-size: cover;
-}
 #aboutpage{
     width: 100%;
 }
@@ -287,19 +282,20 @@ section{
 }
 
 .homePageTitle{
-    font-family: 'Cabin', sans-serif;
-    font-weight: 2000;
-    font-size: 3.88651rem;
-    color: #181E4B;
+    font-family:'DM Serif Display', serif;
+    font-weight: 2500;
+    font-size: 4.88651rem;
+    color: #180431;
     margin-bottom: 5px;
     position: relative;
     z-index: 1;
     display: block;
 }
 .main-subtitle {
+
     font-weight: 900;
     font-size:0.88651rem;
-    color: #DF6951;
+    color: #e06951;
 }
 
 .homePageImage{
@@ -308,8 +304,9 @@ section{
 
 }
 .pageTile{
-    font-family: 'Cabin', sans-serif;
-    color: #181E4B;
+    font-family:'DM Serif Display', serif;
+    color: #180431;
+    text-transform: uppercase;
 }
 
 /*-----------------------------------------------*/
@@ -320,9 +317,16 @@ section{
 }
 
 .car-dropdown{
-    background-color: #0a53be;
+    background-color: #805CB4;
 }
 
 .car-dropdown-nav{
 
+}
+.btn-savebtn{
+    background-color: #805CB4;
+    min-width: 120px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 10px;
 }

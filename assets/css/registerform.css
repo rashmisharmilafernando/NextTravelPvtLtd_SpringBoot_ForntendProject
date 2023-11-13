@@ -129,7 +129,7 @@
     }
 }
 .btn-savebtn{
-    background-color: rgb(255, 159, 67);
+    background-color: #805CB4;
     min-width: 120px;
     font-size: 14px;
     font-weight: 700;
@@ -150,4 +150,11 @@
     font-size: 12px;
     font-weight: 700;
     padding: 10px 10px;
+}
+.pageTile{
+    font-family:'DM Serif Display', serif;
+    color: #180431;
+    font-weight: 2500;
+    font-size: 1.88651rem;
+    text-transform: uppercase;
 }

@@ -7,113 +7,116 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <link rel="stylesheet" href="../../assets/css/registerform.css">
 </head>
-
 <body>
 <section>
     <div>
-        <div class="row  justify-content-center align-items-center">
-            <div style="padding-right: 0px;padding-left: 0px;">
-                <div class="card card-registration">
-                    <div class="row g-0">
-                        <div class="col-xl-6 d-none d-xl-block">
-                            <img src="https://i.pinimg.com/564x/a2/f7/37/a2f737fc3dd3eabc66cc91bf32248194.jpg"
-                                 alt="Sample photo" class="img-fluid"
-                                 style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem "/>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card-body text-black">
-                                <h3 class="text-uppercase mb-5">Create an Account</h3>
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="span m-1 small">ID</span>
-                                        <input class="form-control" id="userId" readonly
-                                               name="userId"
-                                               placeholder="NTC-001" type="text">
-                                    </div>
-                                    <div class="col">
-                                        <span class="span m-1 small">Name</span>
-                                        <input id="reg_Name" name="name" type="text" class="form-control"
-                                               placeholder="">
-                                    </div>
+        <div>
+            <div class="card-registration">
+                <div class="row">
+                    <div class="col mx-lg-5 mt-5">
+                        <div class="card-body">
+                            <h3 class="text-uppercase pageTile">Create an Account</h3>
+                            <div class="row mt-5">
+                                <div class="col">
+                                    <span class="span m-1 small">ID</span>
+                                    <input class="form-control" id="userId" readonly
+                                           name="userId"
+                                           placeholder="NTC-001" type="text">
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="span m-1 small">NIC</span>
-                                        <input id="reg_NIC" name="nic" type="text"
-                                               class="form-control" placeholder="">
-                                    </div>
-                                    <div class="col">
-                                        <span class="span m-1 small">Age</span>
-                                        <input id="reg_Age" name="age" type="int" class="form-control"
-                                               placeholder="">
-                                    </div>
+                                <div class="col">
+                                    <span class="span m-1 small">Name</span>
+                                    <input id="reg_Name" name="name" type="text" class="form-control"
+                                           placeholder="">
+                                </div>
 
-
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span class="span m-1 small">NIC</span>
+                                    <input id="reg_NIC" name="nic" type="text"
+                                           class="form-control" placeholder="">
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="span m-1 small">Gender</span>
-                                        <select id="reg_Gender" name="gender" type="text"
-                                                class="form-control"
-                                                placeholder="">
-                                            <option value="FEMALE">FEMALE</option>
-                                            <option value="MALE">MALE</option>
-                                        </select>
-                                    </div>
-                                    <div class="col">
-                                        <span class="span m-1 small">Email</span>
-                                        <input id="reg_Email" name="email" type="email"
-                                               class="form-control"
-                                               placeholder="">
-
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="span m-1 small">Password</span>
-                                        <input id="reg_Password" name="password" type="password"
-                                               class="form-control"
-                                               placeholder="">
-                                    </div>
-                                    <div class="col">
-                                        <span class="span m-1 small">Role Type</span>
-                                        <select id="reg_RoleType" name="roleType" type="text"
-                                                class="form-control"
-                                                placeholder="">
-                                            <option value="CUSTOMER">CUSTOMER</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="span m-1 small">Address</span>
-                                        <input id="rag_address" name="address" type="text"
-                                               class="form-control"
-                                               placeholder="">
-                                    </div>
-                                    <div class="col">
-                                        <span class="span m-1 small">Contact Number</span>
-                                        <input id="rag_contactNumber" name="contactNumber" type="text"
-                                               class="form-control"
-                                               placeholder="">
-                                    </div>
-                                    <div class="col">
-                                        <span class="span m-1 small">Profile</span>
-                                        <input id="newProfilePhoto" name="profilePic" type="file"
-                                               class="form-control"
-                                               placeholder="">
-                                    </div>
+                                <div class="col">
+                                    <span class="span m-1 small">Age</span>
+                                    <input id="reg_Age" name="age" type="int" class="form-control"
+                                           placeholder="">
                                 </div>
                             </div>
-                            <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex">
-                                <button class="btn btn-savebtn float-right" id="register_button" type="button">Sign Up</button>
+                            <div class="row">
+                                <div class="col">
+                                    <span class="span m-1 small">Gender</span>
+                                    <select id="reg_Gender" name="gender" type="text"
+                                            class="form-control"
+                                            placeholder="">
+                                        <option value="FEMALE">FEMALE</option>
+                                        <option value="MALE">MALE</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1 small">Email</span>
+                                    <input id="reg_Email" name="email" type="email"
+                                           class="form-control"
+                                           placeholder="">
+
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span class="span m-1 small">Password</span>
+                                    <input id="reg_Password" name="password" type="password"
+                                           class="form-control"
+                                           placeholder="">
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1 small">Role Type</span>
+                                    <select id="reg_RoleType" name="roleType" type="text"
+                                            class="form-control"
+                                            placeholder="">
+                                        <option value="CUSTOMER">CUSTOMER</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span class="span m-1 small">Address</span>
+                                    <input id="rag_address" name="address" type="text"
+                                           class="form-control"
+                                           placeholder="">
+                                </div>
+                                <div class="col">
+                                    <span class="span m-1 small">Contact Number</span>
+                                    <input id="rag_contactNumber" name="contactNumber" type="text"
+                                           class="form-control"
+                                           placeholder="">
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                                <div class="col">
+                                    <span class="span m-1 small">Profile</span>
+                                    <input id="newProfilePhoto" name="profilePic" type="file"
+                                           class="form-control"
+                                           placeholder="">
+                                </div>
                             </div>
                         </div>
-
+                        <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex">
+                            <button class="btn btn-savebtn float-right" id="register_button" type="button">Sign Up
+                            </button>
+                        </div>
                     </div>
+                    <div class="col mt-5">
+                        <img src="../../assets/img/reg.png"
+                             alt="Sample photo"/>
+                    </div>
+
+
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 <script src="../../assets/lib/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
@@ -122,73 +125,6 @@
 <script src="../../assets/js/Validation.js"></script>
 </body>
 <script>
-    document.addEventListener("change", function (event) {
-        if (event.target.classList.contains("uploadProfileInput")) {
-            var triggerInput = event.target;
-            var currentImg = triggerInput.closest(".pic-holder").querySelector(".pic")
-                .src;
-            var holder = triggerInput.closest(".pic-holder");
-            var wrapper = triggerInput.closest(".profile-pic-wrapper");
 
-            var alerts = wrapper.querySelectorAll('[role="alert"]');
-            alerts.forEach(function (alert) {
-                alert.remove();
-            });
-
-            triggerInput.blur();
-            var files = triggerInput.files || [];
-            if (!files.length || !window.FileReader) {
-                return;
-            }
-
-            if (/^image/.test(files[0].type)) {
-                var reader = new FileReader();
-                reader.readAsDataURL(files[0]);
-
-                reader.onloadend = function () {
-                    holder.classList.add("uploadInProgress");
-                    holder.querySelector(".pic").src = this.result;
-
-                    var loader = document.createElement("div");
-                    loader.classList.add("upload-loader");
-                    loader.innerHTML =
-                        '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>';
-                    holder.appendChild(loader);
-
-                    setTimeout(function () {
-                        holder.classList.remove("uploadInProgress");
-                        loader.remove();
-
-                        var random = Math.random();
-                        if (random < 0.9) {
-                            wrapper.innerHTML +=
-                                '<div class="snackbar show" role="alert"><i class="fa fa-check-circle text-success"></i> Profile image updated successfully</div>';
-                            triggerInput.value = "";
-                            setTimeout(function () {
-                                wrapper.querySelector('[role="alert"]').remove();
-                            }, 3000);
-                        } else {
-                            holder.querySelector(".pic").src = currentImg;
-                            wrapper.innerHTML +=
-                                '<div class="snackbar show" role="alert"><i class="fa fa-times-circle text-danger"></i> There is an error while uploading! Please try again later.</div>';
-                            triggerInput.value = "";
-                            setTimeout(function () {
-                                wrapper.querySelector('[role="alert"]').remove();
-                            }, 3000);
-                        }
-                    }, 1500);
-                };
-            } else {
-                wrapper.innerHTML +=
-                    '<div class="alert alert-danger d-inline-block p-2 small" role="alert">Please choose a valid image.</div>';
-                setTimeout(function () {
-                    var invalidAlert = wrapper.querySelector('[role="alert"]');
-                    if (invalidAlert) {
-                        invalidAlert.remove();
-                    }
-                }, 3000);
-            }
-        }
-    });
 </script>
 </html>
